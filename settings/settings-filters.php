@@ -1,0 +1,1 @@
+<h2>IDX General Settings</h2>
