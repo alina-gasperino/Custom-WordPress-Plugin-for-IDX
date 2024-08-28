@@ -1,0 +1,7 @@
+.idx_settings input[type="text"] {
+    width: 100%;
+}
+.idx_settings select {
+    max-width: 100%;
+    width: 100%;
+}
