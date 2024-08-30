@@ -13,12 +13,12 @@
  * @package           Idx_Integration
  *
  * @wordpress-plugin
- * Plugin Name:       IDX Integration
- * Plugin URI:        https://portlandhomesforsale.com/
+ * Plugin Name:       Vestor Filter IDX Integration
+ * Plugin URI:        https://vestorfilter.com/
  * Description:       WordPress plugin for custom IDX integration. It provides the all-in-one solution to integrate MLS, display, search, and filter properties.
  * Version:           1.0.0
  * Author:            Alina Gasperino
- * Author URI:        https://portlandhomesforsale.com//
+ * Author URI:        https://vestorfilter.com/support/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       idx-integration
@@ -63,6 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_idx_integration' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-integration.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-idx-agent-dashboard.php';
 
 /**
  * Begins execution of the plugin.
@@ -83,8 +84,8 @@ run_idx_integration();
 
 function my_idx_add_admin_menu() {
     add_menu_page(
-        'IDX Settings',             // Page title
-        'IDX Settings',             // Menu title
+        'Vestor Filter IDX Settings',             // Page title
+        'Vestor Filter IDX Settings',             // Menu title
         'manage_options',             // Capability
         'my_idx_settings',          // Menu slug
         'my_idx_settings_page',     // Function to display the page
@@ -97,7 +98,7 @@ add_action('admin_menu', 'my_idx_add_admin_menu');
 function my_idx_settings_page() {
     ?>
     <div class="wrap idx_settings">
-        <h1>IDX Settings</h1>
+        <h1>Vestor Filter IDX Settings</h1>
         <h2 class="nav-tab-wrapper">
             <a href="?page=my_idx_settings&tab=general" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'general') ? 'nav-tab-active' : ''; ?>">General Settings</a>
 			<a href="?page=my_idx_settings&tab=maps" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'maps') ? 'nav-tab-active' : ''; ?>">Maps</a>
@@ -404,9 +405,4 @@ function my_idx_sanitize_callback($input) {
 		$sanitized['longitude'] = sanitize_text_field($input['longitude']);
 	}
     return $sanitized;
-}
-
-function my_idx_field_maps_cb() {
-    $options = get_option('my_idx_options_maps');
-    echo '<input type="text" name="my_idx_options_maps[my_idx_field_maps]" value="' . esc_attr($options['my_idx_field_maps']) . '">';
 }
