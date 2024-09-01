@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "vestorfilter/map",
+	"version": "2.0.0",
+	"title": "VestorFilter Map",
+	"category": "widgets",
+	"icon": "location-alt",
+	"description": "Adds an embedded property map to your page content.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "vestorfilter",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

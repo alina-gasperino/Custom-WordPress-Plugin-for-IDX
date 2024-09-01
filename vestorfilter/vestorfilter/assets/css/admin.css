@@ -1,0 +1,187 @@
+#_datasource_url {
+	width: 100%;
+}
+
+.rwmb-field.fullwidth input {
+	width: 100%;
+}
+
+#vestorfilter-import-log {
+	max-height:80vh;
+	overflow: auto;
+}
+
+.agent-tag {
+	font-size: 12px;
+	color: white;
+	text-transform: uppercase;
+	padding: 2px 5px;
+	border-radius: 20px;
+	font-weight: bold;
+}
+.agent-tag.hot {
+	background: red;
+}
+.agent-tag.warm {
+	background: orange;
+}
+.agent-tag.cold {
+	background: blue;
+}
+.agent-tag.ignore {
+	background: #555;
+}
+.agent-tag.sold {
+	background: green;
+}
+.agent-tag.new {
+	background: black;
+}
+
+.calendar-lead-table {
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.calendar-lead-table .tablenav,
+.calendar-lead-table h3 {
+	flex: 1 1 auto;
+}
+
+@media screen and (max-width: 782px) {
+
+	.lead-table p.search-box {
+		float: none;
+		position: static;
+		bottom: auto;
+		width: 100%;
+		height: auto;
+
+		display: flex;
+		align-items: stretch;
+	}
+
+	.lead-table .pagination-links {
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+	}
+	.lead-table .tablenav .tablenav-pages .pagination-links .button + .button {
+		margin-left: 3px;
+	}
+
+	.lead-table .pagination-links .paging-input {
+		display: flex;
+		align-items: center;
+		margin-left: 3px;
+	}
+
+	.lead-table .pagination-links .paging-input .tablenav-paging-text {
+		padding-top: 0;
+	}
+
+}
+
+button[data-action="open-task-notes"],
+button[data-action="open-task-editor"] {
+	appearance: none;
+	border: none;
+	background: none;
+	box-shadow: none;
+	padding: 0;
+	display: inline;
+	cursor: pointer;
+	color: #0071a1;
+}
+button[data-action="open-task-notes"]:hover,
+button[data-action="open-task-editor"]:hover {
+	text-decoration: underline;
+
+}
+button[data-action="open-task-notes"] {
+	margin-right: 0.5em;
+}
+.column-note .row-actions {
+	padding-top: 0;
+}
+.column-note.editor-open .row-actions {
+	display: none !important;
+}
+.wp-core-ui .note-editor button.button {
+	margin-left: auto;
+}
+.wp-core-ui .note-editor button.button + button.button {
+	margin-left: 5px;
+}
+.column-note {
+	width: 300px;
+	max-width: 300px;
+}
+@media (max-width:1000px) {
+	.column-note {
+		width: 200px;
+		max-width: 200px;
+	}
+}
+.column-note textarea {
+	width: 100%;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+.note-editor[aria-hidden="true"] {
+	display: none;
+}
+.note-editor[aria-hidden="false"] {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+td:not(.notes-expanded) .note-text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+td:not(.notes-expanded) .note-text br {
+	display: none;
+}
+.note-text:not(:empty) {
+	margin-bottom: 5px;
+}
+.column-note.editor-open .note-text {
+	display: none;
+}
+.note-text:empty + .row-actions button[data-action="open-task-notes"] {
+	display: none;
+}
+
+form.new-task {
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+}
+@media (max-width:781px) {
+	form.new-task {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	form.new-task input {
+		margin-bottom: 5px;
+	}
+}
+form.new-task select[name="user_id"] {
+	width: 200px;
+}
+form.new-task .select2 {
+	align-self: stretch;
+	min-height: 30px;
+}
+form.new-task .select2-selection {
+	border: 1px solid #7e8993;
+	min-height: 30px;
+}
+tr .row-actions {
+	position: static;
+}

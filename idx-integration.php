@@ -64,6 +64,7 @@ register_deactivation_hook( __FILE__, 'deactivate_idx_integration' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-integration.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-agent-dashboard.php';
+require plugin_dir_path( __FILE__ ) . 'vestorfilter/index.php';
 
 /**
  * Begins execution of the plugin.
@@ -94,6 +95,8 @@ function my_idx_add_admin_menu() {
     );
 }
 add_action('admin_menu', 'my_idx_add_admin_menu');
+
+$tz = new \DateTimeZone( 'UTC' );
 
 function my_idx_settings_page() {
     ?>

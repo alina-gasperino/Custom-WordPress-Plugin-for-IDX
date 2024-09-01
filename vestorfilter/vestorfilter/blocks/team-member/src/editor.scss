@@ -1,0 +1,123 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-vestorfilter-team-member {
+	background: #e0e0e0;
+	padding: 15px;
+
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-areas: 
+		"left name"
+		"left subtitle"
+		"left phone"
+		"left link"
+		"left email"
+		"left bio";
+	grid-gap: 15px;
+
+	.left-controls {
+		grid-area: left;
+	}
+
+	&--placeholder {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+	}
+
+	& &--image {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		padding: 5px;
+		background: white;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	&--bio,
+	textarea.block-editor-plain-text {
+		padding: 5px 10px;
+		background: white;
+		border-radius: 4px;
+	}
+
+	&--bio:not(:focus-within):not(:focus) {
+		overflow: hidden;
+		max-height: 50px;
+	}
+
+	.add-social-media {
+		width: 100%;
+		border: 1px solid black;
+		text-align: center;
+		justify-content: center;
+		&:hover {
+			background: black;
+			color: white;
+		}
+	}
+
+	.edit-social-media {
+		margin-bottom: 5px;
+		width: 100%;
+		text-transform: capitalize;
+		text-align: center;
+		justify-content: center;
+
+		.dashicon {
+			width: 1.2em;
+			height: 1.2em;
+			font-size: 1.2em;
+			margin-left: 0.5em;
+		}
+	}
+
+	.social-controls-popup {
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		background: rgba( 200, 200, 200, 0.75 );
+		backdrop-filter: blur(5px);
+		padding: 15px;
+
+		input, button, select {
+			height: 32px;
+		}
+
+		select {
+			flex: 0 0 200px;
+		}
+		input {
+			flex: 1 1 auto;
+		}
+		button {
+			flex: 0 0 auto;
+		}
+
+		&:not(.is-visible) {
+			display: none;
+		}
+	}
+}
+
+.team-bio-list {
+
+	background: #f0f0f0;
+	padding: 20px;
+
+	.wp-block-vestorfilter-team-member {
+		border: 4px solid white;
+		border-radius: 4px;
+	}
+
+}

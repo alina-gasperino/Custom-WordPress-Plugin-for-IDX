@@ -1,0 +1,14 @@
+{
+	"apiVersion": 2,
+	"name": "vestorfilter/team-member",
+	"title": "Team Member",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A VestorFilter site team roster block",
+	"textdomain": "team-member",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css"
+}
