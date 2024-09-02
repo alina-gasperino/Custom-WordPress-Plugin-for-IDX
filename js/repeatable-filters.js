@@ -5,13 +5,18 @@ jQuery(document).ready(function($) {
         var index = container.children().length + 1;
         var html = `
             <div class="lot-size-field">
-                <h3>Entry ${index}</h3><a class="remove-lot-size">Remove</a>
+                <div class="label_wrapper"><h3>Entry ${index}</h3><a class="remove-lot-size">Remove</a></div>
                 <label for="my_idx_options_filters[available_lot_sizes][${index}][size]">Lot Size Label</label>
                 <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][size]" placeholder="Size">
                 <label for="my_idx_options_filters[available_lot_sizes][${index}][description]">Lot Size Value</label>
                 <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][description]" placeholder="Description">
+                <label for="my_idx_options_filters[available_lot_sizes][${index}][range]">Actual Lot Size Range</label>
+                <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][range]" placeholder="Actual Lot Size Range">
                 <div class="categories-container">
-                    <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][categories][0]" placeholder="Category">
+                    <div class="category-field">
+                        <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][categories][0]" placeholder="Category">
+                        <a class="remove-category"><i class="fa fa-times-circle"></i></a>
+                    </div>
                 </div>
                 <button type="button" class="add-category">Add Category</button>
             </div>
@@ -22,7 +27,7 @@ jQuery(document).ready(function($) {
     // Handle adding new categories and removing lot sizes
     $("#available-lot-sizes-container").on("click", ".add-category", function() {
         var $lotSizeField = $(this).closest(".lot-size-field");
-        var $categoriesContainer = $lotSizeField.find(".categories-container");
+        var $categoriesContainer = $lotSizeField.find(".categories-container").find(".categories");
         var index = $categoriesContainer.children().length;
         var lotSizeIndex = $lotSizeField.find('input[name^="my_idx_options_filters[available_lot_sizes]"]').attr('name').match(/\d+/)[0];
         var newInputName = `my_idx_options_filters[available_lot_sizes][${lotSizeIndex}][categories][${index}]`;
@@ -30,7 +35,7 @@ jQuery(document).ready(function($) {
         var newInput = `
             <div class="category-field">
                 <input type="text" name="${newInputName}" placeholder="Category">
-                <button type="button" class="remove-category">Remove Category</button>
+                <a class="remove-category"><i class="fa fa-times-circle"></i></a>
             </div>
         `;
         $categoriesContainer.append(newInput);

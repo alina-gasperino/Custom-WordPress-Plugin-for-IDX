@@ -457,13 +457,22 @@ function available_lot_size_cb() {
         echo '<h3>Entry '.$num. '</h3>';
         echo '<a class="remove-lot-size">Remove</a>';
         echo '</div>';
+        echo '<div class="input_wrapper">';
         echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][size]">Lot Size Label</label>';
         echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][size]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][size]" value="' . esc_attr($size['size']) . '" placeholder="Size">';
+        echo '</div>';
+        echo '<div class="input_wrapper">';
         echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][description]">Lot Size Value</label>';
         echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][description]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][description]" value="' . esc_attr($size['description']) . '" placeholder="Description">';
-        
+        echo '</div>';
+        echo '<div class="input_wrapper">';
+        echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][range]">Actual Lot Size Range</label>';
+        echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][range]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][range]" value="' . esc_attr($size['range']) . '" placeholder="Actual Lot Size Range">';
+        echo '</div>';
         // Add Category field
-        echo '<div class="categories-container">';
+        echo '<div class="categories-container input_wrapper">';
+        echo '<label for="my_idx_options_filters[categories]">Lot Categories in RETS</label>';
+        echo '<div class="categories">';
         if (isset($size['categories']) && is_array($size['categories'])) {
             foreach ($size['categories'] as $cat_index => $category) {
                 echo '<div class="category-field">';
@@ -472,6 +481,7 @@ function available_lot_size_cb() {
                 echo '</div>';
             }
         }
+        echo '</div>';
         echo '</div>';
         echo '<button type="button" class="add-category">Add Category</button>';
         echo '</div>';

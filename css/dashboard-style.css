@@ -36,3 +36,16 @@
 .remove-category:hover {
     color: #a00;
 }
+.input_wrapper {
+    display: flex;
+    margin-top: 20px;
+}
+.idx_settings .input_wrapper label {
+    width: 25%;
+}
+.idx_settings .input_wrapper input, .idx_settings .input_wrapper .categories {
+    width: 75%;
+}
+.idx_settings .input_wrapper .categories input {
+    width: 100%;
+}
