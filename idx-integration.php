@@ -96,8 +96,6 @@ function my_idx_add_admin_menu() {
 }
 add_action('admin_menu', 'my_idx_add_admin_menu');
 
-$tz = new \DateTimeZone( 'UTC' );
-
 function my_idx_settings_page() {
     ?>
     <div class="wrap idx_settings">
@@ -173,6 +171,34 @@ function my_idx_settings_init() {
 	add_settings_field('latitude', 'Latitude', 'latitude_cb', 'my_idx_maps', 'my_idx_maps_section');
 	add_settings_field('longitude', 'Longitude', 'longitude_cb', 'my_idx_maps', 'my_idx_maps_section');
 	add_settings_field('zoom', 'Zoom', 'zoom_cb', 'my_idx_maps', 'my_idx_maps_section');
+
+    // Email settings
+    register_setting('my_idx_emails', 'my_idx_options_emails', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_emails_section', '', null, 'my_idx_emails');
+
+    add_settings_field('from_email', 'Email From: Address', 'from_email_cb', 'my_idx_emails', 'my_idx_emails_section');
+    add_settings_field('from_name', 'Email From: Name', 'from_name_cb', 'my_idx_emails', 'my_idx_emails_section');
+    add_settings_field('reply_email', 'Email Reply-To: Address', 'reply_email_cb', 'my_idx_emails', 'my_idx_emails_section');
+    add_settings_field('email_footer', 'Email Footer Text', 'email_footer_cb', 'my_idx_emails', 'my_idx_emails_section');
+    add_settings_field('welcome_footer', 'Welcome Email Footer', 'welcome_footer_cb', 'my_idx_emails', 'my_idx_emails_section');
+    add_settings_field('agency_address', 'Agency Address', 'agency_address_cb', 'my_idx_emails', 'my_idx_emails_section');
+
+    //SMS settings
+    register_setting('my_idx_sms', 'my_idx_options_sms', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_sms_section', '', null, 'my_idx_sms');
+
+    add_settings_field('message_1', 'Onboard Message 1', 'message_1_cb', 'my_idx_sms', 'my_idx_sms_section');
+    add_settings_field('message_2', 'Onboard Message 2', 'message_2_cb', 'my_idx_sms', 'my_idx_sms_section');
+    add_settings_field('message_3', 'Onboard Message 3', 'message_3_cb', 'my_idx_sms', 'my_idx_sms_section');
+    add_settings_field('message_4', 'Onboard Message 4', 'message_4_cb', 'my_idx_sms', 'my_idx_sms_section');
+    add_settings_field('forward_email', 'Forward Replies to (email)', 'forward_email_cb', 'my_idx_sms', 'my_idx_sms_section');
+    add_settings_field('sms_signature', 'SMS Message Signature', 'sms_signature_cb', 'my_idx_sms', 'my_idx_sms_section');
+
+    //Filters settings
+    register_setting('my_idx_filters', 'my_idx_options_filters', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_filters_section', '', null, 'my_idx_filters');
+
+    add_settings_field('available_lot_sizes', 'Available Lot Sizes', 'available_lot_size_cb', 'my_idx_filters', 'my_idx_filters_section');
 }
 add_action('admin_init', 'my_idx_settings_init');
 
@@ -337,15 +363,134 @@ function zoom_cb() {
     echo '<input type="text" name="my_idx_options_maps[zoom]" value="' . esc_attr($options['zoom']) . '">';
 }
 
+function from_email_cb() {
+    $options = get_option('my_idx_options_emails');
+    echo '<input type="text" name="my_idx_options_emails[from_email]" value="' . esc_attr($options['from_email']) . '">';
+}
+
+function from_name_cb() {
+    $options = get_option('my_idx_options_emails');
+    echo '<input type="text" name="my_idx_options_emails[from_name]" value="' . esc_attr($options['from_name']) . '">';
+}
+
+function reply_email_cb() {
+    $options = get_option('my_idx_options_emails');
+    echo '<input type="text" name="my_idx_options_emails[reply_email]" value="' . esc_attr($options['reply_email']) . '">';
+}
+
+function email_footer_cb() {
+    $options = get_option('my_idx_options_emails');
+	$textarea_value = $options['email_footer'] ?? '';
+	?>
+	<textarea id="email_footer" name="my_idx_options_emails[email_footer]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<?php
+}
+
+function welcome_footer_cb() {
+    $options = get_option('my_idx_options_emails');
+	$textarea_value = $options['welcome_footer'] ?? '';
+	?>
+	<textarea id="welcome_footer" name="my_idx_options_emails[welcome_footer]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<?php
+}
+
+function agency_address_cb() {
+    $options = get_option('my_idx_options_emails');
+	$textarea_value = $options['agency_address'] ?? '';
+	?>
+	<textarea id="agency_address" name="my_idx_options_emails[agency_address]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<?php
+}
+
+function message_1_cb() {
+    $options = get_option('my_idx_options_sms');
+	$textarea_value = $options['message_1'] ?? '';
+	?>
+	<textarea id="message_1" name="my_idx_options_sms[message_1]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<p>Sent 3 minutes after registration or the following day when after 10pm.</p>
+    <?php
+}
+function message_2_cb() {
+    $options = get_option('my_idx_options_sms');
+	$textarea_value = $options['message_2'] ?? '';
+	?>
+	<textarea id="message_2" name="my_idx_options_sms[message_2]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<P>Sent 10 minutes after registration or the following day when after 10pm.</P>
+    <?php
+}
+function message_3_cb() {
+    $options = get_option('my_idx_options_sms');
+	$textarea_value = $options['message_3'] ?? '';
+	?>
+	<textarea id="message_3" name="my_idx_options_sms[message_3]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<p>Sent 2 days after registration.</p>
+    <?php
+}
+function message_4_cb() {
+    $options = get_option('my_idx_options_sms');
+	$textarea_value = $options['message_4'] ?? '';
+	?>
+	<textarea id="message_4" name="my_idx_options_sms[message_4]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
+	<p>Sent 7 days after registration.</p>
+    <?php
+}
+function forward_email_cb() {
+    $options = get_option('my_idx_options_sms');
+    echo '<input type="text" name="my_idx_options_sms[forward_email]" value="' . esc_attr($options['forward_email']) . '">';
+}
+function sms_signature_cb() {
+    $options = get_option('my_idx_options_sms');
+    echo '<input type="text" name="my_idx_options_sms[sms_signature]" value="' . esc_attr($options['sms_signature']) . '">';
+}
+
+function available_lot_size_cb() {
+    $options = get_option('my_idx_options_filters');
+    $lot_sizes = isset($options['available_lot_sizes']) && is_array($options['available_lot_sizes']) 
+                ? $options['available_lot_sizes'] 
+                : array();
+
+    echo '<div id="available-lot-sizes-container">';
+    foreach ($lot_sizes as $index => $size) {
+        $num = $index + 1;
+        echo '<div class="lot-size-field">';
+        echo '<div class="label_wrapper">';
+        echo '<h3>Entry '.$num. '</h3>';
+        echo '<a class="remove-lot-size">Remove</a>';
+        echo '</div>';
+        echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][size]">Lot Size Label</label>';
+        echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][size]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][size]" value="' . esc_attr($size['size']) . '" placeholder="Size">';
+        echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][description]">Lot Size Value</label>';
+        echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][description]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][description]" value="' . esc_attr($size['description']) . '" placeholder="Description">';
+        
+        // Add Category field
+        echo '<div class="categories-container">';
+        if (isset($size['categories']) && is_array($size['categories'])) {
+            foreach ($size['categories'] as $cat_index => $category) {
+                echo '<div class="category-field">';
+                echo '<input type="text" name="my_idx_options_filters[available_lot_sizes][' . $index . '][categories][' . $cat_index . ']" value="' . esc_attr($category) . '" placeholder="Category">';
+                echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
+                echo '</div>';
+            }
+        }
+        echo '</div>';
+        echo '<button type="button" class="add-category">Add Category</button>';
+        echo '</div>';
+    }
+    echo '</div>';
+    echo '<button type="button" id="add-lot-size">Add Lot Size</button>';
+}
+
 // Enqueue the media uploader script
 function idx_media_uploader() {
     wp_enqueue_media();
     wp_enqueue_script('idx-media-uploader', plugin_dir_url( __FILE__ ) . 'js/media-uploader.js', array('jquery'), null, true);
+    wp_enqueue_script('repeatable-filters', plugin_dir_url( __FILE__ ) . 'js/repeatable-filters.js', array('jquery'), null, true);
 }
 add_action('admin_enqueue_scripts', 'idx_media_uploader');
 
 function idx_styles() {
 	wp_enqueue_style('style', plugin_dir_url( __FILE__ ) . 'css/dashboard-style.css', array(), 1.0);
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), 1.0);
 }
 add_action('admin_enqueue_scripts', 'idx_styles');
 
@@ -407,5 +552,54 @@ function my_idx_sanitize_callback($input) {
 	if (isset($input['longitude'])) {
 		$sanitized['longitude'] = sanitize_text_field($input['longitude']);
 	}
+    if (isset($input['from_email'])) {
+        $sanitized['from_email'] = sanitize_text_field($input['from_email']);
+    }
+    if (isset($input['from_name'])) {
+        $sanitized['from_name'] = sanitize_text_field($input['from_name']);
+    }
+    if (isset($input['reply_email'])) {
+        $sanitized['reply_email'] = sanitize_text_field($input['reply_email']);
+    }
+    if (isset($input['email_footer'])) {
+        $sanitized['email_footer'] = sanitize_textarea_field($input['email_footer']);
+    }
+    if (isset($input['welcome_footer'])) {
+        $sanitized['welcome_footer'] = sanitize_textarea_field($input['welcome_footer']);
+    }
+    if (isset($input['agency_address'])) {
+        $sanitized['agency_address'] = sanitize_textarea_field($input['agency_address']);
+    }
+    if (isset($input['message_1'])) {
+        $sanitized['message_1'] = sanitize_textarea_field($input['message_1']);
+    }
+    if (isset($input['message_2'])) {
+        $sanitized['message_2'] = sanitize_textarea_field($input['message_2']);
+    }
+    if (isset($input['message_3'])) {
+        $sanitized['message_3'] = sanitize_textarea_field($input['message_3']);
+    }
+    if (isset($input['message_4'])) {
+        $sanitized['message_4'] = sanitize_textarea_field($input['message_4']);
+    }
+    if (isset($input['forward_email'])) {
+        $sanitized['forward_email'] = sanitize_text_field($input['forward_email']);
+    }
+    if (isset($input['sms_signature'])) {
+        $sanitized['sms_signature'] = sanitize_text_field($input['sms_signature']);
+    }
+    if (isset($input['available_lot_sizes']) && is_array($input['available_lot_sizes'])) {
+        foreach ($input['available_lot_sizes'] as $index => $size) {
+            $sanitized['available_lot_sizes'][$index]['size'] = sanitize_text_field($size['size']);
+            $sanitized['available_lot_sizes'][$index]['description'] = sanitize_textarea_field($size['description']);
+
+            // Sanitize categories
+            if (isset($size['categories']) && is_array($size['categories'])) {
+                $sanitized['available_lot_sizes'][$index]['categories'] = array_map('sanitize_text_field', $size['categories']);
+            } else {
+                $sanitized['available_lot_sizes'][$index]['categories'] = array();
+            }
+        }
+    }
     return $sanitized;
 }

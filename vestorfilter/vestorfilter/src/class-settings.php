@@ -19,9 +19,6 @@ class Settings extends \VestorFilter\Util\Singleton {
 
 	public function install() {
 
-		// add_action( 'admin_init', array( $this, 'register_settings' ) );
-		// add_action( 'admin_menu', array( $this, 'register_option_page' ) );
-
 		add_filter( 'mb_settings_pages', [ $this, 'settings_page' ] );
 		add_filter( 'rwmb_meta_boxes', [ $this, 'general_settings_meta' ] );
 
@@ -197,33 +194,6 @@ class Settings extends \VestorFilter\Util\Singleton {
 		</script>
 
 		<?php 
-		
-		/*
-
-			<!-- Google Tag Manager -->
-			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','<?=esc_attr($id)?>');</script>
-			<!-- End Google Tag Manager -->
-
-		*/
-
-	}
-
-	function gtm_body() {
-
-		$id = self::get( 'gtm_id' );
-		if ( ! empty( $id ) ) { ?>
-
-			<!-- Google Tag Manager (noscript) -->
-			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?=esc_attr($id)?>"
-			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-			<!-- End Google Tag Manager (noscript) -->
-
-		<?php }
-
 	}
 	
 	public static function get_aws( $what ) {
@@ -760,28 +730,3 @@ class Settings extends \VestorFilter\Util\Singleton {
 }
 
 add_action( 'vestorfilter_installed', array( 'VestorFilter\Settings', 'init' ) );
-
-/*
-if ( ! empty( $rets ) ) {
-	$classes = get_post_meta( $post_id, $prefix . 'classes' );
-	$status = get_post_meta( $post_id, $prefix . 'status_field' ) ?: 'ListingStatus';
-	$statuses = [];
-	if ( ! empty( $classes ) ) {
-		foreach( $classes as $class ) {
-			$fields = $rets->GetTableMetadata( 'Property', $class );
-			foreach ( $fields as $field ) {
-				if ( ! empty( $field['LookupName'] ) ) {
-					switch( $field['SystemName'] ) {
-						case $status:
-							$values = $rets->GetLookupValues( 'Property', $field['LookupName'] );
-							foreach ( $values as $key => $value ) {
-								$statuses[ $value['LongValue'] ] = $value['LongValue'];
-							}
-						break;
-					}
-				}
-			}
-		}
-	}
-}
-*/

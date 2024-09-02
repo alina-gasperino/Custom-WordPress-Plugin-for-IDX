@@ -5,3 +5,34 @@
     max-width: 100%;
     width: 100%;
 }
+.wrap.idx_settings h3 {
+    padding-top: 0;
+    margin: 0;
+}
+.lot-size-field {
+    margin-bottom: 20px;
+}
+.label_wrapper {
+    display: flex;
+    align-items: center;
+    background: #ddd;
+    padding: 10px;
+}
+.label_wrapper a {
+    cursor: pointer;
+    color: #a00;
+    margin-left: 10px;
+}
+.category-field {
+    display: flex;
+    align-items: center;
+}
+.remove-category {
+    font-size: 20px;
+    color: #ccc;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.remove-category:hover {
+    color: #a00;
+}
