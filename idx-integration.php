@@ -213,6 +213,20 @@ function my_idx_settings_init() {
     add_settings_field('foreclosure_list', 'Foreclosure List', 'foreclosure_list_cb', 'my_idx_filters', 'my_idx_filters_section');
     add_settings_field('short_sale_list', 'Short Sale List', 'short_sale_list_cb', 'my_idx_filters', 'my_idx_filters_section');
     add_settings_field('auction_list', 'Auction List', 'auction_list_cb', 'my_idx_filters', 'my_idx_filters_section');
+
+    //Templates settings
+    register_setting('my_idx_templates', 'my_idx_options_templates', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_templates_section', '', null, 'my_idx_templates');
+
+    add_settings_field('single_property', 'Single Property', 'single_property_cb', 'my_idx_templates', 'my_idx_templates_section');
+    add_settings_field('search_page', 'Search Page', 'search_page_cb', 'my_idx_templates', 'my_idx_templates_section');
+    add_settings_field('saved_properties', 'Favorites/Saved Properties Page', 'saved_properties_cb', 'my_idx_templates', 'my_idx_templates_section');
+
+    //Tools settings
+    register_setting('my_idx_tools', 'my_idx_options_tools', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_tools_section', '', null, 'my_idx_tools');
+
+    add_settings_field('download_lead_data', 'Download Lead Data', 'download_lead_data_cb', 'my_idx_tools', 'my_idx_tools_section');
 }
 add_action('admin_init', 'my_idx_settings_init');
 
@@ -599,6 +613,92 @@ function auction_list_cb() {
     echo '<input type="text" name="my_idx_options_filters[auction_list]" value="' . esc_attr($options['auction_list']) . '">';
 }
 
+function single_property_cb() {
+    $options = get_option('my_idx_options_templates');
+    $selected = $options['single_property'] ?? '';
+    $pages = get_posts(
+        [
+            'post_type'      => 'page',
+            'nopaging'       => true,
+            'posts_per_page' => -1,
+            'orderby'        => 'post_title',
+            'order'          => 'ASC',
+            'parent'         => 0,
+        ]
+    );
+    $page_options = [ '' => '' ];
+    foreach ( $pages as $page ) {
+        $page_options[ $page->ID ] = $page->post_title;
+    }
+    ?>
+    <select name="my_idx_options_templates[single_property]">
+        <?php
+        foreach ($page_options as $key => $value) {
+            echo '<option value="' . $key . '" ' . selected($selected, $key, false) . '>' . $value . '</option>';
+        }
+        ?>
+    </select>
+    <?php
+}
+function search_page_cb() {
+    $options = get_option('my_idx_options_templates');
+    $selected = $options['search_page'] ?? '';
+    $pages = get_posts(
+        [
+            'post_type'      => 'page',
+            'nopaging'       => true,
+            'posts_per_page' => -1,
+            'orderby'        => 'post_title',
+            'order'          => 'ASC',
+            'parent'         => 0,
+        ]
+    );
+    $page_options = [ '' => '' ];
+    foreach ( $pages as $page ) {
+        $page_options[ $page->ID ] = $page->post_title;
+    }
+    ?>
+    <select name="my_idx_options_templates[search_page]">
+        <?php
+        foreach ($page_options as $key => $value) {
+            echo '<option value="' . $key . '" ' . selected($selected, $key, false) . '>' . $value . '</option>';
+        }
+        ?>
+    </select>
+    <?php
+}
+function saved_properties_cb() {
+    $options = get_option('my_idx_options_templates');
+    $selected = $options['saved_properties'] ?? '';
+    $pages = get_posts(
+        [
+            'post_type'      => 'page',
+            'nopaging'       => true,
+            'posts_per_page' => -1,
+            'orderby'        => 'post_title',
+            'order'          => 'ASC',
+            'parent'         => 0,
+        ]
+    );
+    $page_options = [ '' => '' ];
+    foreach ( $pages as $page ) {
+        $page_options[ $page->ID ] = $page->post_title;
+    }
+    ?>
+    <select name="my_idx_options_templates[saved_properties]">
+        <?php
+        foreach ($page_options as $key => $value) {
+            echo '<option value="' . $key . '" ' . selected($selected, $key, false) . '>' . $value . '</option>';
+        }
+        ?>
+    </select>
+    <?php
+}
+
+function download_lead_data_cb() {
+    echo '<button type="button" id="export" name="export" data-action="export-data" aria-labelledby="export-label">Export to CSV</button>';
+}
+
 // Enqueue the media uploader script
 function idx_media_uploader() {
     wp_enqueue_media();
@@ -772,6 +872,15 @@ function my_idx_sanitize_callback($input) {
     }
     if (isset($input['auction_list'])) {
         $sanitized['auction_list'] = sanitize_text_field($input['auction_list']);
+    }
+    if (isset($input['single_property'])) {
+        $sanitized['single_property'] = sanitize_text_field($input['single_property']);
+    }
+    if (isset($input['search_page'])) {
+        $sanitized['search_page'] = sanitize_text_field($input['search_page']);
+    }
+    if (isset($input['saved_properties'])) {
+        $sanitized['saved_properties'] = sanitize_text_field($input['saved_properties']);
     }
     return $sanitized;
 }

@@ -50,3 +50,13 @@
 .idx_settings .input_wrapper .categories input {
     width: 100%;
 }
+#export {
+    color: #2271b1;
+    border-color: #2271b1;
+    background: #f6f7f7;
+    line-height: 2.15384615;
+    cursor: pointer;
+    padding: 0 10px;
+    border-width: 1px;
+    border-radius: 3px;
+}
