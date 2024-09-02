@@ -9,7 +9,7 @@
     padding-top: 0;
     margin: 0;
 }
-.lot-size-field {
+.lot-size-field, .status-option-field {
     margin-bottom: 20px;
 }
 .label_wrapper {
@@ -26,6 +26,7 @@
 .category-field {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 .remove-category {
     font-size: 20px;

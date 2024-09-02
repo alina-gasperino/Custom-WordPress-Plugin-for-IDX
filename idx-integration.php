@@ -199,6 +199,20 @@ function my_idx_settings_init() {
     add_settings_section('my_idx_filters_section', '', null, 'my_idx_filters');
 
     add_settings_field('available_lot_sizes', 'Available Lot Sizes', 'available_lot_size_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('available_status_options', 'Available Status Options', 'available_status_options_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('best_price_per_sqft', 'Best price per square foot', 'best_price_per_sqft_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('biggest_price_seven', 'Biggest price drop last 7 days', 'biggest_price_seven_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('best_price_per_acre', 'Best price per acre', 'best_price_per_acre_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('best_priced_condo', 'Best priced condo', 'best_priced_condo_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('best_price_per_unit', 'Best price per unit', 'best_price_per_unit_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('best_price_per_bedroom', 'Best price per bedroom', 'best_price_per_bedroom_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('extra_living', 'Extra Living Quarters', 'extra_living_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('newest_market', 'Newest on the market', 'newest_market_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('longest_market', 'Longest on the market', 'longest_market_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('smart_fixer_list', 'Smart Fixer List', 'smart_fixer_list_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('foreclosure_list', 'Foreclosure List', 'foreclosure_list_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('short_sale_list', 'Short Sale List', 'short_sale_list_cb', 'my_idx_filters', 'my_idx_filters_section');
+    add_settings_field('auction_list', 'Auction List', 'auction_list_cb', 'my_idx_filters', 'my_idx_filters_section');
 }
 add_action('admin_init', 'my_idx_settings_init');
 
@@ -490,6 +504,101 @@ function available_lot_size_cb() {
     echo '<button type="button" id="add-lot-size">Add Lot Size</button>';
 }
 
+function available_status_options_cb() {
+    $options = get_option('my_idx_options_filters');
+    $status_options = isset($options['available_status_options']) && is_array($options['available_status_options']) 
+                ? $options['available_status_options'] 
+                : array();
+
+    echo '<div id="available-status-options-container">';
+    foreach ($status_options as $index => $size) {
+        $num = $index + 1;
+        echo '<div class="status-option-field">';
+        echo '<div class="label_wrapper">';
+        echo '<h3>Entry '.$num. '</h3>';
+        echo '<a class="remove-status-option">Remove</a>';
+        echo '</div>';
+        echo '<div class="input_wrapper">';
+        echo '<label for="my_idx_options_filters[available_status_options][' . $index . '][size]">Status Label</label>';
+        echo '<input type="text" id="my_idx_options_filters[available_status_options][' . $index . '][size]" name="my_idx_options_filters[available_status_options][' . $index . '][size]" value="' . esc_attr($size['size']) . '" placeholder="Size">';
+        echo '</div>';
+        echo '<div class="input_wrapper">';
+        echo '<label for="my_idx_options_filters[available_status_options][' . $index . '][description]">Status Value</label>';
+        echo '<input type="text" id="my_idx_options_filters[available_status_options][' . $index . '][description]" name="my_idx_options_filters[available_status_options][' . $index . '][description]" value="' . esc_attr($size['description']) . '" placeholder="Description">';
+        echo '</div>';
+        // Add Category field
+        echo '<div class="categories-container input_wrapper">';
+        echo '<label for="my_idx_options_filters[categories]">Status Categories in RETS</label>';
+        echo '<div class="categories">';
+        if (isset($size['categories']) && is_array($size['categories'])) {
+            foreach ($size['categories'] as $cat_index => $category) {
+                echo '<div class="category-field">';
+                echo '<input type="text" name="my_idx_options_filters[available_status_options][' . $index . '][categories][' . $cat_index . ']" value="' . esc_attr($category) . '" placeholder="Category">';
+                echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
+                echo '</div>';
+            }
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '<button type="button" class="add-category">Add Category</button>';
+        echo '</div>';
+    }
+    echo '</div>';
+    echo '<button type="button" id="add-status-option">Add more</button>';
+}
+function best_price_per_sqft_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[best_price_per_sqft]" value="' . esc_attr($options['best_price_per_sqft']) . '">';
+}
+function biggest_price_seven_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[biggest_price_seven]" value="' . esc_attr($options['biggest_price_seven']) . '">';
+}
+function best_price_per_acre_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[best_price_per_acre]" value="' . esc_attr($options['best_price_per_acre']) . '">';
+}
+function best_priced_condo_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[best_priced_condo]" value="' . esc_attr($options['best_priced_condo']) . '">';
+}
+function best_price_per_unit_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[best_price_per_unit]" value="' . esc_attr($options['best_price_per_unit']) . '">';
+}
+function best_price_per_bedroom_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[best_price_per_bedroom]" value="' . esc_attr($options['best_price_per_bedroom']) . '">';
+}
+function extra_living_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[extra_living]" value="' . esc_attr($options['extra_living']) . '">';
+}
+function newest_market_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[newest_market]" value="' . esc_attr($options['newest_market']) . '">';
+}
+function longest_market_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[longest_market]" value="' . esc_attr($options['longest_market']) . '">';
+}
+function smart_fixer_list_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[smart_fixer_list]" value="' . esc_attr($options['smart_fixer_list']) . '">';
+}
+function foreclosure_list_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[foreclosure_list]" value="' . esc_attr($options['foreclosure_list']) . '">';
+}
+function short_sale_list_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[short_sale_list]" value="' . esc_attr($options['short_sale_list']) . '">';
+}
+function auction_list_cb() {
+    $options = get_option('my_idx_options_filters');
+    echo '<input type="text" name="my_idx_options_filters[auction_list]" value="' . esc_attr($options['auction_list']) . '">';
+}
+
 // Enqueue the media uploader script
 function idx_media_uploader() {
     wp_enqueue_media();
@@ -602,6 +711,7 @@ function my_idx_sanitize_callback($input) {
         foreach ($input['available_lot_sizes'] as $index => $size) {
             $sanitized['available_lot_sizes'][$index]['size'] = sanitize_text_field($size['size']);
             $sanitized['available_lot_sizes'][$index]['description'] = sanitize_textarea_field($size['description']);
+            $sanitized['available_lot_sizes'][$index]['range'] = sanitize_textarea_field($size['range']);
 
             // Sanitize categories
             if (isset($size['categories']) && is_array($size['categories'])) {
@@ -610,6 +720,58 @@ function my_idx_sanitize_callback($input) {
                 $sanitized['available_lot_sizes'][$index]['categories'] = array();
             }
         }
+    }
+    if (isset($input['available_status_options']) && is_array($input['available_status_options'])) {
+        foreach ($input['available_status_options'] as $index => $size) {
+            $sanitized['available_status_options'][$index]['size'] = sanitize_text_field($size['size']);
+            $sanitized['available_status_options'][$index]['description'] = sanitize_textarea_field($size['description']);
+
+            // Sanitize categories
+            if (isset($size['categories']) && is_array($size['categories'])) {
+                $sanitized['available_status_options'][$index]['categories'] = array_map('sanitize_text_field', $size['categories']);
+            } else {
+                $sanitized['available_status_options'][$index]['categories'] = array();
+            }
+        }
+    }
+    if (isset($input['best_price_per_sqft'])) {
+        $sanitized['best_price_per_sqft'] = sanitize_text_field($input['best_price_per_sqft']);
+    }
+    if (isset($input['biggest_price_seven'])) {
+        $sanitized['biggest_price_seven'] = sanitize_text_field($input['biggest_price_seven']);
+    }
+    if (isset($input['best_price_per_acre'])) {
+        $sanitized['best_price_per_acre'] = sanitize_text_field($input['best_price_per_acre']);
+    }
+    if (isset($input['best_priced_condo'])) {
+        $sanitized['best_priced_condo'] = sanitize_text_field($input['best_priced_condo']);
+    }
+    if (isset($input['best_price_per_unit'])) {
+        $sanitized['best_price_per_unit'] = sanitize_text_field($input['best_price_per_unit']);
+    }
+    if (isset($input['best_price_per_bedroom'])) {
+        $sanitized['best_price_per_bedroom'] = sanitize_text_field($input['best_price_per_bedroom']);
+    }
+    if (isset($input['extra_living'])) {
+        $sanitized['extra_living'] = sanitize_text_field($input['extra_living']);
+    }
+    if (isset($input['newest_market'])) {
+        $sanitized['newest_market'] = sanitize_text_field($input['newest_market']);
+    }
+    if (isset($input['longest_market'])) {
+        $sanitized['longest_market'] = sanitize_text_field($input['longest_market']);
+    }
+    if (isset($input['smart_fixer_list'])) {
+        $sanitized['smart_fixer_list'] = sanitize_text_field($input['smart_fixer_list']);
+    }
+    if (isset($input['foreclosure_list'])) {
+        $sanitized['foreclosure_list'] = sanitize_text_field($input['foreclosure_list']);
+    }
+    if (isset($input['short_sale_list'])) {
+        $sanitized['short_sale_list'] = sanitize_text_field($input['short_sale_list']);
+    }
+    if (isset($input['auction_list'])) {
+        $sanitized['auction_list'] = sanitize_text_field($input['auction_list']);
     }
     return $sanitized;
 }
