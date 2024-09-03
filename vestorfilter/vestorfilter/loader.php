@@ -46,7 +46,7 @@ class Plugin {
 
 		do_action( 'vestorfilter_init', $self );
 
-		self::$plugin_uri = trailingslashit( get_bloginfo( 'url' ) ) . 'wp-content/mu-plugins/vestorfilter';
+		self::$plugin_uri = trailingslashit( get_bloginfo( 'url' ) ) . 'wp-content/plugins/idx-integration/vestorfilter/vestorfilter';
 
 		add_action(
 			'wp_enqueue_scripts',
