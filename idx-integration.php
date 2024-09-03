@@ -227,6 +227,16 @@ function my_idx_settings_init() {
     add_settings_section('my_idx_tools_section', '', null, 'my_idx_tools');
 
     add_settings_field('download_lead_data', 'Download Lead Data', 'download_lead_data_cb', 'my_idx_tools', 'my_idx_tools_section');
+
+    // Auto Tasks settings
+    register_setting('my_idx_autotask', 'my_idx_options_autotask', 'my_idx_sanitize_callback');
+    add_settings_section('my_idx_autotask_section', '', null, 'my_idx_autotask');
+
+    add_settings_field('new_leads', 'New Leads', 'new_leads_cb', 'my_idx_autotask', 'my_idx_autotask_section');
+    add_settings_field('hot_leads', 'Hot Leads', 'hot_leads_cb', 'my_idx_autotask', 'my_idx_autotask_section');
+    add_settings_field('warm_leads', 'Warm Leads', 'warm_leads_cb', 'my_idx_autotask', 'my_idx_autotask_section');
+    add_settings_field('cold_leads', 'Cold Leads', 'cold_leads_cb', 'my_idx_autotask', 'my_idx_autotask_section');
+    add_settings_field('sold_leads', 'Sold Leads', 'sold_leads_cb', 'my_idx_autotask', 'my_idx_autotask_section');
 }
 add_action('admin_init', 'my_idx_settings_init');
 
@@ -699,6 +709,52 @@ function download_lead_data_cb() {
     echo '<button type="button" id="export" name="export" data-action="export-data" aria-labelledby="export-label">Export to CSV</button>';
 }
 
+function new_leads_cb() {
+    $options = get_option('my_idx_options_autotask');
+    $checked = !empty($options['new_leads']) ? 'checked' : '';
+    ?>
+    <input type="checkbox" id="new_leads" name="my_idx_options_autotask[new_leads]" value="1" <?php echo $checked; ?> />
+    <label for="new_leads">Create New Tasks Automatically For New Leads</label>
+    <p><i>Creates four follow up tasks for Agents when a user signs up on the site.</i></p>
+    <p>Follow up same day, next day, then on day four and day seven after initial registration.</p>
+    <?php
+}
+function hot_leads_cb() {
+    $options = get_option('my_idx_options_autotask');
+    $checked = !empty($options['hot_leads']) ? 'checked' : '';
+    ?>
+    <input type="checkbox" id="hot_leads" name="my_idx_options_autotask[hot_leads]" value="1" <?php echo $checked; ?> />
+    <label for="hot_leads">Create Follow-Up Task When Lead Set to "Hot"</label>
+    <p><i>Creates one follow-up task a week for 24 weeks after the lead has been tagged "Hot."</i></p>
+    <?php
+}
+function warm_leads_cb() {
+    $options = get_option('my_idx_options_autotask');
+    $checked = !empty($options['warm_leads']) ? 'checked' : '';
+    ?>
+    <input type="checkbox" id="warm_leads" name="my_idx_options_autotask[warm_leads]" value="1" <?php echo $checked; ?> />
+    <label for="warm_leads">Create Follow-Up Task When Lead Set to "Warm"</label>
+    <p><i>Creates one follow-up task a month for 24 months after the lead has been tagged "Warm."</i></p>
+    <?php
+}
+function cold_leads_cb() {
+    $options = get_option('my_idx_options_autotask');
+    $checked = !empty($options['cold_leads']) ? 'checked' : '';
+    ?>
+    <input type="checkbox" id="cold_leads" name="my_idx_options_autotask[cold_leads]" value="1" <?php echo $checked; ?> />
+    <label for="cold_leads">Create Follow-Up Task When Lead Set to "Cold"</label>
+    <p><i>Creates one follow-up task a year for 5 years after the lead has been tagged "Cold."</i></p>
+    <?php
+}
+function sold_leads_cb() {
+    $options = get_option('my_idx_options_autotask');
+    $checked = !empty($options['sold_leads']) ? 'checked' : '';
+    ?>
+    <input type="checkbox" id="sold_leads" name="my_idx_options_autotask[sold_leads]" value="1" <?php echo $checked; ?> />
+    <label for="sold_leads">Create Follow-Up Task When Lead Set to "Sold"</label>
+    <p><i>Creates one follow-up task a year for 5 years after the lead has been tagged "Sold."</i></p>
+    <?php
+}
 // Enqueue the media uploader script
 function idx_media_uploader() {
     wp_enqueue_media();
@@ -717,6 +773,11 @@ function my_idx_sanitize_callback($input) {
     $sanitized = array();
 	$sanitized['use_geocode_for_cities'] = !empty($input['use_geocode_for_cities']) ? 1 : 0;
 	$sanitized['use_geocode_for_properties'] = !empty($input['use_geocode_for_properties']) ? 1 : 0;
+    $sanitized['new_leads'] = !empty($input['new_leads']) ? 1 : 0;
+    $sanitized['hot_leads'] = !empty($input['hot_leads']) ? 1 : 0;
+    $sanitized['warm_leads'] = !empty($input['warm_leads']) ? 1 : 0;
+    $sanitized['cold_leads'] = !empty($input['cold_leads']) ? 1 : 0;
+    $sanitized['sold_leads'] = !empty($input['sold_leads']) ? 1 : 0;
     if (isset($input['location_area'])) {
         $sanitized['location_area'] = sanitize_text_field($input['location_area']);
     }
