@@ -154,6 +154,9 @@ function my_idx_settings_init() {
 	add_settings_field('footer_text', 'Footer Text', 'footer_text_cb', 'my_idx_general', 'my_idx_general_section');
     add_settings_field('label', '', 'label_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('twilio_phone', 'Twilio Phone Number', 'twilio_phone_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('aws_bucket', 'AWS Bucket Name', 'aws_bucket_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('aws_url', 'AWS URL', 'aws_url_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('aws_region', 'AWS Region', 'aws_region_cb', 'my_idx_general', 'my_idx_general_section');
     add_settings_field('mc_key', 'Mailchimp API Key', 'mc_key_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('mc_aud_id', 'Mailchimp Audience ID', 'mc_aud_id_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('gtm', 'Google Tag Manager', 'gtm_cb', 'my_idx_general', 'my_idx_general_section');
@@ -350,7 +353,18 @@ function twilio_phone_cb() {
     $options = get_option('my_idx_options_general');
     echo '<input type="text" name="my_idx_options_general[twilio_phone]" value="' . esc_attr($options['twilio_phone']) . '">';
 }
-
+function aws_bucket_cb() {
+    $options = get_option('my_idx_options_general');
+    echo '<input type="text" name="my_idx_options_general[aws_bucket]" value="' . esc_attr($options['aws_bucket']) . '">';
+}
+function aws_url_cb() {
+    $options = get_option('my_idx_options_general');
+    echo '<input type="text" name="my_idx_options_general[aws_url]" value="' . esc_attr($options['aws_url']) . '">';
+}
+function aws_region_cb() {
+    $options = get_option('my_idx_options_general');
+    echo '<input type="text" name="my_idx_options_general[aws_region]" value="' . esc_attr($options['aws_region']) . '">';
+}
 function ne_boundary_cb() {
     $options = get_option('my_idx_options_maps');
     echo '<input type="text" name="my_idx_options_maps[ne_boundary]" value="' . esc_attr($options['ne_boundary']) . '">';
@@ -813,6 +827,15 @@ function my_idx_sanitize_callback($input) {
 	}
 	if (isset($input['twilio_phone'])) {
 		$sanitized['twilio_phone'] = sanitize_text_field($input['twilio_phone']);
+	}
+    if (isset($input['aws_bucket'])) {
+		$sanitized['aws_bucket'] = sanitize_text_field($input['aws_bucket']);
+	}
+    if (isset($input['aws_url'])) {
+		$sanitized['aws_url'] = sanitize_text_field($input['aws_url']);
+	}
+    if (isset($input['aws_region'])) {
+		$sanitized['aws_region'] = sanitize_text_field($input['aws_region']);
 	}
 	if (isset($input['ne_boundary'])) {
 		$sanitized['ne_boundary'] = sanitize_text_field($input['ne_boundary']);
