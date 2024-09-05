@@ -102,12 +102,13 @@ function my_idx_settings_page() {
         <h1>Vestor Filter IDX Settings</h1>
         <h2 class="nav-tab-wrapper">
             <a href="?page=my_idx_settings&tab=general" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'general') ? 'nav-tab-active' : ''; ?>">General Settings</a>
+			<a href="?page=my_idx_settings&tab=mls_setup" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'mls_setup') ? 'nav-tab-active' : ''; ?>">MLS Setup</a>
 			<a href="?page=my_idx_settings&tab=maps" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'maps') ? 'nav-tab-active' : ''; ?>">Maps</a>
 			<a href="?page=my_idx_settings&tab=emails" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'emails') ? 'nav-tab-active' : ''; ?>">Emails</a>
 			<a href="?page=my_idx_settings&tab=sms" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'sms') ? 'nav-tab-active' : ''; ?>">SMS</a>
 			<a href="?page=my_idx_settings&tab=filters" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'filters') ? 'nav-tab-active' : ''; ?>">Filters</a>
 			<a href="?page=my_idx_settings&tab=templates" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'templates') ? 'nav-tab-active' : ''; ?>">Templates</a>
-			<a href="?page=my_idx_settings&tab=tools" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'tools') ? 'nav-tab-active' : ''; ?>">Tools</a>
+			<a href="?page=my_idx_settings&tab=tools" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'tools') ? 'nav-tab-active' : ''; ?>">Leads</a>
             <a href="?page=my_idx_settings&tab=autotask" class="nav-tab <?php echo (isset($_GET['tab']) && $_GET['tab'] == 'autotask') ? 'nav-tab-active' : ''; ?>">Auto Tasks</a>
         </h2>
 
@@ -132,6 +133,9 @@ function my_idx_settings_page() {
         }
 		elseif (isset($_GET['tab']) && $_GET['tab'] == 'tools') {
             include 'settings/settings-tools.php';
+        }
+        elseif (isset($_GET['tab']) && $_GET['tab'] == 'mls_setup') {
+            include 'settings/settings-mls_setup.php';
         }
 		else {
             include 'settings/settings-general.php';
@@ -383,6 +387,7 @@ function states_allowed_cb() {
 function geocoding_api_cb() {
     $options = get_option('my_idx_options_maps');
     echo '<input type="text" name="my_idx_options_maps[geocoding_api]" value="' . esc_attr($options['geocoding_api']) . '">';
+    echo '<p>Click <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">here</a> to learn more about obtaining and adding your Google Maps account.</p>';
 }
 
 function use_geocode_for_cities_cb() {
