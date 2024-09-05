@@ -1016,5 +1016,4 @@ class Dashboard {
 
 }
 
-add_action( 'vestorfilter_installed', array( 'VestorFilter\Dashboard', 'init' ) );
-
+add_action( 'vestorfilter_installed', array( 'Dashboard', 'init' ) );

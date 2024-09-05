@@ -152,11 +152,12 @@ function my_idx_settings_init() {
 	add_settings_field('header_logo', 'Header Logo', 'header_logo_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('company_logo', 'Company Logo', 'company_logo_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('footer_text', 'Footer Text', 'footer_text_cb', 'my_idx_general', 'my_idx_general_section');
-	add_settings_field('gtm', 'Google Tag Manager', 'gtm_cb', 'my_idx_general', 'my_idx_general_section');
-	add_settings_field('ga', 'Google Analytics ID', 'ga_cb', 'my_idx_general', 'my_idx_general_section');
-	add_settings_field('mc_key', 'Mailchimp API Key', 'mc_key_cb', 'my_idx_general', 'my_idx_general_section');
-	add_settings_field('mc_aud_id', 'Mailchimp Audience ID', 'mc_aud_id_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('label', '', 'label_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('twilio_phone', 'Twilio Phone Number', 'twilio_phone_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('mc_key', 'Mailchimp API Key', 'mc_key_cb', 'my_idx_general', 'my_idx_general_section');
+	add_settings_field('mc_aud_id', 'Mailchimp Audience ID', 'mc_aud_id_cb', 'my_idx_general', 'my_idx_general_section');
+	add_settings_field('gtm', 'Google Tag Manager', 'gtm_cb', 'my_idx_general', 'my_idx_general_section');
+	add_settings_field('ga', 'Google Analytics ID', 'ga_cb', 'my_idx_general', 'my_idx_general_section');	
 
     // Map settings
     register_setting('my_idx_maps', 'my_idx_options_maps', 'my_idx_sanitize_callback');
@@ -322,7 +323,9 @@ function footer_text_cb() {
 	<textarea id="footer_text" name="my_idx_options_general[footer_text]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
 	<?php
 }
-
+function label_cb() {
+    echo '<tr class="info_wrapper"><td colspan="2"><h4>Third-Party Integration (Optional)</h4><hr /></td></tr>';
+}
 function gtm_cb() {
     $options = get_option('my_idx_options_general');
     echo '<input type="text" name="my_idx_options_general[gtm]" value="' . esc_attr($options['gtm']) . '">';

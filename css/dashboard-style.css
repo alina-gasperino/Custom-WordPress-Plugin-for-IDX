@@ -60,3 +60,12 @@
     border-width: 1px;
     border-radius: 3px;
 }
+.idx_settings .form-table td {
+    padding: 25px 10px;
+}
+.idx_settings .form-table th {
+    padding-top: 25px;
+}
+tr.info_wrapper td {
+    padding: 0;
+}
