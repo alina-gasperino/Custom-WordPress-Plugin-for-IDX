@@ -158,15 +158,6 @@ class Data {
 
         $lot_options = self::sort_lot_options( Cache::get_index_values( 'lot-size' ) ?: [] );
 
-        /*$status_options = Settings::get_filter_options( 'status' );
-        $status_indexes = Cache::get_index_values( 'status' );
-        $status_values  = [];
-        foreach( $status_indexes as $term ) {
-            if ( in_array( $term->ID, $status_options ) ) {
-                $status_values[ $term->value ] = $term->value;
-            }
-        }*/
-
         $status_options = Settings::get_filter_options( 'status' );
         $status_values  = [];
         foreach( $status_options as $status ) {

@@ -26,7 +26,6 @@ class Settings extends \VestorFilter\Util\Singleton {
 		add_action( 'wp_footer', [ $this, 'footer_scripts' ], 1 );
 		add_action( 'wp_head', [ $this, 'analytics' ], 99 );
 		add_action( 'wp_footer', [ $this, 'gtm_head' ], 1 );
-		//add_action( 'wp_body_open', [ $this, 'gtm_body' ], 1 );
 
 		add_action( 'mb_settings_page_submit_buttons', [ $this, 'hide_some_meta_boxes' ] );
 
@@ -112,8 +111,15 @@ class Settings extends \VestorFilter\Util\Singleton {
 	}
 
 	public static function get_filter_options( $key ) {
-
-		$value = get_option('my_idx_options_' . $key);
+		switch ($key) {
+			case 'status':
+				$value = get_option('my_idx_options_filters')['available_status_options'];
+				break;
+			
+			default:
+				$value = get_option('my_idx_options_filters')[$key];
+				break;
+		}
 
 		return $value;
 

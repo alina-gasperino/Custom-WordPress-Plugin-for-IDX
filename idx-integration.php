@@ -63,7 +63,6 @@ register_deactivation_hook( __FILE__, 'deactivate_idx_integration' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-integration.php';
-require plugin_dir_path( __FILE__ ) . 'includes/class-idx-agent-dashboard.php';
 require plugin_dir_path( __FILE__ ) . 'vestorfilter/index.php';
 
 /**
