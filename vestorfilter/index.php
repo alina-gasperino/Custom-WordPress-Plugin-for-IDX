@@ -13,7 +13,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
+define( 'GOOGLE_MAP_KEY', 'AIzaSyBlJeUhIAmEBAWL9jOaAAMHtlJe5_X3Xe8' );
+define( 'GOOGLE_CLIENT_ID', '262677866211-faeo4sjteuu1e6son4luvvjbigmchne4' );
+define( 'GOOGLE_CLIENT_SECRET', 'mPZ8SQ85-WO_6Vk-uwKeLt50' );
+define( 'FACEBOOK_APP_ID', '795764537891600' );
+define( 'FACEBOOK_APP_SECRET', 'bf2b3399a3bed129efaedcfbab9c8da6' );
+define( 'LINKEDIN_CLIENT_ID', '788y19ij3zhdzl' );
+define( 'LINKEDIN_CLIENT_SECRET', 'RRSNELwMaMsBPnr7' );
+ 
+define( 'TWILIO_SID', 'AC0c9e1b3252223abec1f45891ae0aee79' );
+define( 'TWILIO_TOKEN', '26002c558e6985e5ce7696ef13b87c1b' );
+define( 'TWILIO_NUMBER', '+15034003757' );
 define( 'IMAGE_SWAP_DIR', __DIR__ . '/.tmp/' );
 
 define( 'VF_MAP_STATES', ['OR','WA'] );
