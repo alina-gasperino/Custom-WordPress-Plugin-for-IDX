@@ -63,6 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_idx_integration' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-integration.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-preinstall.php';
 require plugin_dir_path( __FILE__ ) . 'vestorfilter/index.php';
 
 /**
@@ -74,6 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'vestorfilter/index.php';
  *
  * @since    1.0.0
  */
+
 function run_idx_integration() {
 
 	$plugin = new Idx_Integration();
@@ -81,7 +83,8 @@ function run_idx_integration() {
 
 }
 run_idx_integration();
-
+$value = get_option('my_idx_options_filters')['available_lot_sizes'];
+print_r($value);
 function my_idx_add_admin_menu() {
     add_menu_page(
         'Vestor Filter IDX Settings',             // Page title
@@ -504,16 +507,19 @@ function sms_signature_cb() {
 
 function available_lot_size_cb() {
     $options = get_option('my_idx_options_filters');
-    $lot_sizes = isset($options['available_lot_sizes']) && is_array($options['available_lot_sizes']) 
-                ? $options['available_lot_sizes'] 
-                : array();
+    $lot_filters = get_index_values('lot-size') ?: []; // Replace with actual function to get lot sizes
+    $lot_options = [];
+    $lot_sizes = isset($options['available_lot_sizes']) && is_array($options['available_lot_sizes'])
+                ? $options['available_lot_sizes']
+                : [];
 
     echo '<div id="available-lot-sizes-container">';
+    
     foreach ($lot_sizes as $index => $size) {
         $num = $index + 1;
         echo '<div class="lot-size-field">';
         echo '<div class="label_wrapper">';
-        echo '<h3>Entry '.$num. '</h3>';
+        echo '<h3>Entry ' . $num . '</h3>';
         echo '<a class="remove-lot-size">Remove</a>';
         echo '</div>';
         echo '<div class="input_wrapper">';
@@ -528,23 +534,45 @@ function available_lot_size_cb() {
         echo '<label for="my_idx_options_filters[available_lot_sizes][' . $index . '][range]">Actual Lot Size Range</label>';
         echo '<input type="text" id="my_idx_options_filters[available_lot_sizes][' . $index . '][range]" name="my_idx_options_filters[available_lot_sizes][' . $index . '][range]" value="' . esc_attr($size['range']) . '" placeholder="Actual Lot Size Range">';
         echo '</div>';
+        
         // Add Category field
         echo '<div class="categories-container input_wrapper">';
-        echo '<label for="my_idx_options_filters[categories]">Lot Categories in RETS</label>';
+        echo '<label>Lot Categories in RETS</label>';
         echo '<div class="categories">';
+        
         if (isset($size['categories']) && is_array($size['categories'])) {
-            foreach ($size['categories'] as $cat_index => $category) {
+            foreach ($size['categories'] as $catIndex => $catId) {
                 echo '<div class="category-field">';
-                echo '<input type="text" name="my_idx_options_filters[available_lot_sizes][' . $index . '][categories][' . $cat_index . ']" value="' . esc_attr($category) . '" placeholder="Category">';
-                echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
+                echo '<select name="my_idx_options_filters[available_lot_sizes][' . $index . '][categories][' . $catIndex . ']">';
+                
+                foreach ($lot_filters as $filter) {
+                    $selected = selected($filter->ID, $catId, false);
+                    echo '<option value="' . esc_attr($filter->ID) . '" ' . $selected . '>' . esc_html($filter->value) . '</option>';
+                }
+                
+                echo '</select>';
+                echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
                 echo '</div>';
             }
+        } else {
+            // If no categories are set, display a default empty select
+            echo '<div class="category-field">';
+            echo '<select name="my_idx_options_filters[available_lot_sizes][' . $index . '][categories][0]">';
+            
+            foreach ($lot_filters as $filter) {
+                echo '<option value="' . esc_attr($filter->ID) . '">' . esc_html($filter->value) . '</option>';
+            }
+            
+            echo '</select>';
+            echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
+            echo '</div>';
         }
+        
         echo '</div>';
         echo '</div>';
         echo '<button type="button" class="add-category">Add Category</button>';
-        echo '</div>';
     }
+    
     echo '</div>';
     echo '<button type="button" id="add-lot-size">Add Lot Size</button>';
 }
@@ -908,7 +936,7 @@ function my_idx_sanitize_callback($input) {
             if (isset($size['categories']) && is_array($size['categories'])) {
                 $sanitized['available_lot_sizes'][$index]['categories'] = array_map('sanitize_text_field', $size['categories']);
             } else {
-                $sanitized['available_lot_sizes'][$index]['categories'] = array();
+                $sanitized['available_lot_sizes'][$index]['categories'] = [];
             }
         }
     }
