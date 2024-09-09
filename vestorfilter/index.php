@@ -21,7 +21,7 @@ define( 'FACEBOOK_APP_SECRET', 'bf2b3399a3bed129efaedcfbab9c8da6' );
 define( 'LINKEDIN_CLIENT_ID', '788y19ij3zhdzl' );
 define( 'LINKEDIN_CLIENT_SECRET', 'RRSNELwMaMsBPnr7' );
  
-define( 'TWILIO_SID', 'AC0c9e1b3252223abec1f45891ae0aee79' );
+
 define( 'TWILIO_TOKEN', '26002c558e6985e5ce7696ef13b87c1b' );
 define( 'TWILIO_NUMBER', '+15034003757' );
 define( 'IMAGE_SWAP_DIR', __DIR__ . '/.tmp/' );
