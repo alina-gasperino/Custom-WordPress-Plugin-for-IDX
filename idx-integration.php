@@ -83,8 +83,7 @@ function run_idx_integration() {
 
 }
 run_idx_integration();
-$value = get_option('my_idx_options_filters')['available_lot_sizes'];
-print_r($value);
+
 function my_idx_add_admin_menu() {
     add_menu_page(
         'Vestor Filter IDX Settings',             // Page title
@@ -507,11 +506,19 @@ function sms_signature_cb() {
 
 function available_lot_size_cb() {
     $options = get_option('my_idx_options_filters');
+    $default = [
+        [
+            'size' => '0 to 2,999 SqFt',
+            'description' => '2999sqft',
+            'range' => '',
+            'categories' => [4161]
+        ]
+    ];
     $lot_filters = get_index_values('lot-size') ?: []; // Replace with actual function to get lot sizes
     $lot_options = [];
     $lot_sizes = isset($options['available_lot_sizes']) && is_array($options['available_lot_sizes'])
                 ? $options['available_lot_sizes']
-                : [];
+                : $default;
 
     echo '<div id="available-lot-sizes-container">';
     
@@ -551,7 +558,7 @@ function available_lot_size_cb() {
                 }
                 
                 echo '</select>';
-                echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
+                echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
                 echo '</div>';
             }
         } else {
@@ -564,7 +571,7 @@ function available_lot_size_cb() {
             }
             
             echo '</select>';
-            echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
+            echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
             echo '</div>';
         }
         
@@ -580,12 +587,17 @@ function available_lot_size_cb() {
 
 function available_status_options_cb() {
     $options = get_option('my_idx_options_filters');
+    $default = [
+        [
+            'size' => 'Active',
+            'description' => 'active',
+            'categories' => [4145]
+        ]
+    ];
     $status_filters = get_index_values( 'status', '`value` ASC' ) ?: [];
-	$status_options = [];
     $status_options = isset($options['available_status_options']) && is_array($options['available_status_options']) 
                 ? $options['available_status_options'] 
-                : array();
-
+                : $default;
     echo '<div id="available-status-options-container">';    
     foreach ($status_options as $index => $size) {
         $num = $index + 1;
@@ -617,10 +629,11 @@ function available_status_options_cb() {
                 }
                 
                 echo '</select>';
-                echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
+                echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
                 echo '</div>';
             }
         } else {
+            echo "empty";
             // If no categories are set, display a default empty select
             echo '<div class="category-field">';
             echo '<select name="my_idx_options_filters[available_status_options][' . $index . '][categories][0]">';
@@ -630,7 +643,7 @@ function available_status_options_cb() {
             }
             
             echo '</select>';
-            echo '<a href="#" class="remove-category"><i class="fa fa-times-circle"></i></a>';
+            echo '<a class="remove-category"><i class="fa fa-times-circle"></i></a>';
             echo '</div>';
         }
         
@@ -965,13 +978,13 @@ function my_idx_sanitize_callback($input) {
         }
     }
     if (isset($input['available_status_options']) && is_array($input['available_status_options'])) {
-        foreach ($input['available_status_options'] as $index => $size) {
-            $sanitized['available_status_options'][$index]['size'] = sanitize_text_field($size['size']);
-            $sanitized['available_status_options'][$index]['description'] = sanitize_textarea_field($size['description']);
+        foreach ($input['available_status_options'] as $index => $status) {
+            $sanitized['available_status_options'][$index]['size'] = sanitize_text_field($status['size']);
+            $sanitized['available_status_options'][$index]['description'] = sanitize_textarea_field($status['description']);
     
             // Sanitize categories
-            if (isset($size['categories']) && is_array($size['categories'])) {
-                $sanitized['available_status_options'][$index]['categories'] = array_map('sanitize_text_field', $size['categories']);
+            if (isset($status['categories']) && is_array($status['categories'])) {
+                $sanitized['available_status_options'][$index]['categories'] = array_map('sanitize_text_field', $status['categories']);
             } else {
                 $sanitized['available_status_options'][$index]['categories'] = [];
             }
