@@ -84,7 +84,8 @@ function run_idx_integration() {
 
 }
 run_idx_integration();
-
+$value = get_option('my_idx_options_filters')['available_status_options'];
+print_r($value);
 function my_idx_add_admin_menu() {
     add_menu_page(
         'Vestor Filter IDX Settings',             // Page title
