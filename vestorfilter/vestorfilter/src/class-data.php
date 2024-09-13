@@ -164,7 +164,6 @@ class Data {
             if ( $status['value'] === 'sold' ) {
                 $status_values[ 'sold_1yr' ] = 'Sold Last 12 Months';
                 unset( $status_values['sold'] );
-                //$status_values[ 'sold' ] = 'Sold All Time';
             } else {
                 $status_values[ $status['value'] ] = $status['label'];
             }
