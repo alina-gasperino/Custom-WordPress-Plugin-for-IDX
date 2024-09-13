@@ -7,12 +7,12 @@ jQuery(document).ready(function($) {
             <div class="lot-size-field">
                 <div class="label_wrapper"><h3>Entry ${index + 1}</h3><a class="remove-lot-size">Remove</a></div>
                 <div class="input_wrapper">
-                    <label for="my_idx_options_filters[available_lot_sizes][${index}][size]">Lot Size Label</label>
-                    <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][size]" placeholder="Size">
+                    <label for="my_idx_options_filters[available_lot_sizes][${index}][label]">Lot Size Label</label>
+                    <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][label]" placeholder="Size">
                 </div>
                 <div class="input_wrapper">
-                    <label for="my_idx_options_filters[available_lot_sizes][${index}][description]">Lot Size Value</label>
-                    <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][description]" placeholder="Description">
+                    <label for="my_idx_options_filters[available_lot_sizes][${index}][value]">Lot Size Value</label>
+                    <input type="text" name="my_idx_options_filters[available_lot_sizes][${index}][value]" placeholder="Description">
                 </div>
                 <div class="input_wrapper">
                     <label for="my_idx_options_filters[available_lot_sizes][${index}][range]">Actual Lot Size Range</label>
@@ -56,7 +56,7 @@ jQuery(document).ready(function($) {
     function getCategorySelectBox(lotSizeIndex, categoryIndex) {
         var $existingSelectBox = $("#available-lot-sizes-container .lot-size-field:first .categories select");
         var $newSelectBox = $existingSelectBox.clone();
-        $newSelectBox.attr("name", `my_idx_options_filters[available_lot_sizes][${lotSizeIndex}][categories][${categoryIndex}]`);
+        $newSelectBox.attr("name", `my_idx_options_filters[available_lot_sizes][${lotSizeIndex}][terms][${categoryIndex}]`);
         return `<div class="category-field">
                     ${$newSelectBox.prop('outerHTML')}
                     <a class="remove-category"><i class="fa fa-times-circle"></i></a>
@@ -78,12 +78,12 @@ jQuery(document).ready(function($) {
             <div class="status-option-field">
                 <div class="label_wrapper"><h3>Entry ${index + 1}</h3><a class="remove-status-option">Remove</a></div>
                 <div class="input_wrapper">
-                    <label for="my_idx_options_filters[available_status_options][${index}][size]">Status Label</label>
-                    <input type="text" name="my_idx_options_filters[available_status_options][${index}][size]" placeholder="Size">
+                    <label for="my_idx_options_filters[available_status_options][${index}][label]">Status Label</label>
+                    <input type="text" name="my_idx_options_filters[available_status_options][${index}][label]" placeholder="Size">
                 </div>
                 <div class="input_wrapper">
-                    <label for="my_idx_options_filters[available_status_options][${index}][description]">Status Value</label>
-                    <input type="text" name="my_idx_options_filters[available_status_options][${index}][description]" placeholder="Description">
+                    <label for="my_idx_options_filters[available_status_options][${index}][value]">Status Value</label>
+                    <input type="text" name="my_idx_options_filters[available_status_options][${index}][value]" placeholder="Description">
                 </div>
                 <div class="categories-container input_wrapper">
                     <label>Status Categories in RETS</label>
@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
     function getCategorySelectBox(lotSizeIndex, categoryIndex) {
         var $existingSelectBox = $("#available-status-options-container .status-option-field:first .categories select");
         var $newSelectBox = $existingSelectBox.clone();
-        $newSelectBox.attr("name", `my_idx_options_filters[available_status_options][${lotSizeIndex}][categories][${categoryIndex}]`);
+        $newSelectBox.attr("name", `my_idx_options_filters[available_status_options][${lotSizeIndex}][terms][${categoryIndex}]`);
         return `<div class="category-field">
                     ${$newSelectBox.prop('outerHTML')}
                     <a class="remove-category"><i class="fa fa-times-circle"></i></a>

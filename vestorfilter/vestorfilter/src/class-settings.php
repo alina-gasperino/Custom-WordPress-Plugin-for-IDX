@@ -115,7 +115,9 @@ class Settings extends \VestorFilter\Util\Singleton {
 			case 'status':
 				$value = get_option('my_idx_options_filters')['available_status_options'];
 				break;
-			
+			case 'lot':
+				$value = get_option('my_idx_options_filters')['available_lot_sizes'];
+				break;
 			default:
 				$value = get_option('my_idx_options_filters')[$key];
 				break;

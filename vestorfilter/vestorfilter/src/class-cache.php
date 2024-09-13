@@ -397,8 +397,6 @@ class Cache extends \VestorFilter\Util\Singleton {
 		$indextable = self::$index_table_name;
 		$cachetable = self::$cache_table_name;
 
-		//$usermetatable = $vfdb->usermeta;
-
 		$locindextable = Location::$index_name;
 		$locationtable = Location::$table_name;
 		$geotable = Location::$geo_name;
@@ -442,7 +440,6 @@ class Cache extends \VestorFilter\Util\Singleton {
 						$join_type = 'LEFT';
 					}
 					if ( isset( $columns[ $what['key'] ] ) ) {
-						//$table_alias = "d{$index}";
 						$table_column = $columns[ $what['key'] ];
 					} else if ( ! in_array( $what['key'], $search_columns ) ) {
 						$table_alias = "d{$index}";
@@ -533,12 +530,6 @@ class Cache extends \VestorFilter\Util\Singleton {
 			}
 		}
 		if ( isset( $search['location'] ) ) {
-			/*$query .= "INNER JOIN $locindextable as li ON (li.property_id = pr.ID) INNER JOIN $locationtable as loc ON (li.location_id = loc.ID)";
-			if ( is_array( $search['location'] ) ) {
-				$where[] = sprintf( '(li.location_id IN (%1$s) OR loc.duplicate_of IN (%1$s)) ', implode( ',', $search['location'] ) );
-			} else if ( is_numeric( $search['location'] ) ) {
-				$where[] = $vfdb->prepare( '(li.location_id = %1$d OR loc.duplicate_of = %1$d) ', $search['location'] );
-			}*/
 			$query .= "INNER JOIN $locindextable as li ON (li.property_id = pr.ID)";
 			if ( is_array( $search['location'] ) ) {
 				$where[] = sprintf( 'li.location_id IN (%1$s) ', implode( ',', $search['location'] ) );
@@ -579,11 +570,6 @@ class Cache extends \VestorFilter\Util\Singleton {
 		}
 		$query = apply_filters( 'vestorfilter_sql_after_join', $query );
 
-
-		if ( ! empty( $search['modified_after'] ) ) {
-//			$where[] = sprintf( 'pr.modified >= %d', $search['modified_after'] );
-		}
-
 		if ( ! empty( $search['geo'] ) && is_array( $search['geo'] ) ) {
 
 			if ( $search['geo']['min'][0] < $search['geo']['max'][0] ) {
@@ -616,9 +602,6 @@ class Cache extends \VestorFilter\Util\Singleton {
 		}
 
 		$query .= 'GROUP BY pr.id';
-		/*if ( ! empty( $group_by ) ) {
-			$query .= ',' . implode( ',', $group_by );
-		}*/
 		$query .= ' ';
 
 		if ( ! empty( $search['order'] ) && empty( $order_by ) ) {
@@ -650,12 +633,7 @@ class Cache extends \VestorFilter\Util\Singleton {
 
 		remove_all_filters( 'vestorfilter_sql_after_join' );
 		remove_all_filters( 'vestorfilter_sql_index_where' );
-        if(current_user_can('administrator')) {
-//            echo '<pre>';
-//            print_r($query);
-//            echo '</pre>';
-//            exit;
-        }
+
 		return $vfdb->get_results( $query );
 
 	}
@@ -675,9 +653,6 @@ class Cache extends \VestorFilter\Util\Singleton {
         $table = $wpdb->prefix . 'test_table';
         $table = $wpdb->prefix . 'property_v2';
 
-//        if(current_user_can('administrator')) {
-//            $table = 'copy_wp_property_v2';
-//        }
         $locindextable = Location::$index_name;
         $texttable = self::$text_table_name;
 
@@ -692,13 +667,8 @@ class Cache extends \VestorFilter\Util\Singleton {
         } else {
             $query .= " FROM $table as pr ";
         }
-//        $query .= " LEFT JOIN $tableData as p ON pr.id = p.id ";
-//        if ( empty( $search['count'] ) ) {
-//            $query .= " INNER JOIN $geotable AS `geo` ON ( `geo`.property_id = pr.ID )";
-//            $query .= " INNER JOIN $cachetable AS `cache` ON ( `cache`.property_id = pr.ID )";
-//        }
 
-        $values = [];
+		$values = [];
         $where = [];
 
         if ( defined( 'VF_ALLOWED_FEEDS' ) || ! empty( $search['sources'] ) ) {
@@ -706,8 +676,6 @@ class Cache extends \VestorFilter\Util\Singleton {
             $where[] = 'pr.`post_id` IN (' . implode( ',', $allowed ) . ')';
         }
 
-//        $search_columns = Property::search_columns();
-//
         $land = true;
         if(isset($search['index'])) {
             foreach ($search['index'] as $index) {
@@ -717,12 +685,11 @@ class Cache extends \VestorFilter\Util\Singleton {
             }
         }
         if($_GET['frequency']) {
+			print_r($search['data']);
             foreach ($search['data'] as $key => $data) {
                 if($data['key'] == 'onmarket') {
                     $search['data'][$key]['value'][0] = strtotime(date('Y-m-d', $data['value'][0] / 100)) * 100;
-//                    $search['data'][$key]['value'][0] = strtotime(date('Y-m-d', 1696464000)) * 100;
                     $search['data'][$key]['value'][1] = strtotime(date('Y-m-d', $data['value'][1] / 100)) * 100;
-//                    $search['data'][$key]['value'][1] = strtotime(date('Y-m-d', 1696550400)) * 100;
                 }
             }
         }
@@ -800,14 +767,6 @@ class Cache extends \VestorFilter\Util\Singleton {
                 } else if(in_array($what[0], [4157])) {
                     $index_where = "pr.`55plus` IS NOT NULL AND pr.`55plus` != 0 ";
                 }
-//                $index += 1;
-//                $query .= "INNER JOIN $indextable as i{$index} ON (i{$index}.property_id = pr.ID) ";
-//                if ( is_array( $what ) ) {
-//                    $index_where = "i{$index}.value_id IN (" . implode( ',', $what ) . ')';
-//                } else {
-//                    $index_where = $vfdb->prepare( "i{$index}.value_id = %d", $what );
-//                }
-//                $index_where = apply_filters( 'vestorfilter_sql_index_where', $index_where, $what );
                 if($index_where != '') {
                     $where[] = $index_where;
                 }
@@ -823,32 +782,6 @@ class Cache extends \VestorFilter\Util\Singleton {
                 $where[] = " des.`value` $comparison '$value' ";
             }
             $query .= ' INNER JOIN wp_propertycache_text as des ON pr.`property_id` = des.`property_id` ';
-        }
-
-        if ( isset( $search['location'] ) ) {
-//           $location = $search['location'][0];
-//           $where[] = " pr.`location` LIKE '%$location%' ";
-//            $query .= "INNER JOIN $locindextable as li ON (li.property_id = pr.ID)";
-//            if ( is_array( $search['location'] ) ) {
-//                $where[] = sprintf( 'li.location_id IN (%1$s) ', implode( ',', $search['location'] ) );
-//            } else if ( is_numeric( $search['location'] ) ) {
-//                $where[] = $vfdb->prepare( 'li.location_id = %1$d ', $search['location'] );
-//            }
-        }
-        if ( isset( $search['school'] ) ) {
-
-//            if ( is_array( $search['school'] ) ) {
-//                $i = 0;
-//                foreach( $search['school'] as $school_id ) {
-//                    $i++;
-//                    $query .= "INNER JOIN `$locindextable` as `skl{$i}` ON (`skl{$i}`.`property_id` = pr.ID) ";
-//                    $where[] = sprintf( '`skl%d`.`location_id` = %d', $i, $school_id );
-//                }
-//            } else if ( is_numeric( $search['school'] ) ) {
-//                $query .= "INNER JOIN $locindextable as skl ON (skl.property_id = pr.ID) ";
-//                $where[] = $vfdb->prepare( 'skl.location_id = %d', $search['school'] );
-//            }
-
         }
         if ( isset( $search['user'] ) ) {
 
@@ -906,63 +839,13 @@ class Cache extends \VestorFilter\Util\Singleton {
         if ( ! empty( $order_by ) ) {
             $query .= $order_by;
         }
-//        $query .= " LIMIT 600";
-//        $query .= " AND pr.`lat` BETWEEN 45355677 AND 45729344";
 
-//        $query .= 'GROUP BY pr.id';
-        /*if ( ! empty( $group_by ) ) {
-            $query .= ',' . implode( ',', $group_by );
-        }*/
-//        $query .= ' ';
-
-//        if ( ! empty( $search['order'] ) && empty( $order_by ) ) {
-//            $query .= ' ORDER BY ';
-//            foreach ( $search['order'] as $sort => $dir ) {
-//                if ( is_array( $dir ) ) {
-//                    $query .= "{$dir['col']} {$dir['dir']},";
-//                } else {
-//                    $query .= "pr.`$sort` $dir,";
-//                }
-//            }
-//            $query = trim( $query, ',' );
-//        }
-//        if ( ! empty( $order_by ) ) {
-//            $query .= ' ORDER BY ' . $order_by;
-//        }
-
-//        if ( ! empty( $search['limit'] ) ) {
-//            $query .= " LIMIT %d,%d";
-//            $values[] = $search['offset'] ?? 0;
-//            $values[] = $search['limit'];
-//        } // elseif ( empty( $search['count'] ) ) {
-//			$query .= " LIMIT 0,600";
-//		}
-//        if ( ! empty( $values ) ) {
-//            $query = $vfdb->prepare( $query, $values );
-//        }
-//
-//        remove_all_filters( 'vestorfilter_sql_after_join' );
-//        remove_all_filters( 'vestorfilter_sql_index_where' );
-//
-
-        /***
-         * SELECT pr.*,
-        geo.lat,
-        geo.lon,
-        geo.property_type,
-        cache.block_cache,
-        cache.data_cache,
-        cache.address FROM wp_propertycache as pr INNER JOIN wp_locationcache_geo AS `geo` ON(`geo`.property_id=pr.ID)INNER JOIN wp_propertycache_cache AS `cache`ON(`cache`.property_id=pr.ID)INNER JOIN wp_propertycache_index as i4 ON(i4.property_id=pr.ID)INNER JOIN wp_locationcache_property as li ON(li.property_id=pr.ID)WHERE pr.post_id IN(647)AND(pr.photos>0 AND pr.hidden=0)AND i4.value_id IN(51750)AND li.location_id IN(284)AND geo.lat BETWEEN 45432541 AND 45652886 AND geo.lon BETWEEN-122836763 AND-122472038 GROUP BY pr.id ORDER BY pr.modified DESC
-         */
         $query = str_replace('WHERE AND', 'WHERE', $query);
         if($_GET['frequency'] || $_GET['customer']) {
             echo '<pre>';
             print_r($query);
             echo '</pre>';
         }
-//        if(current_user_can('administrator')) {
-//            $query .= ' LIMIT 600';
-//        }
         return $vfdb->get_results( $query );
 
     }
