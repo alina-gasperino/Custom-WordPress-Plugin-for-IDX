@@ -47,31 +47,6 @@ class Filters {
 		self::$instance = $this;
 
 		self::$filters = [
-			/*'search' => [
-				'label'   => 'Custom Keyword Search',
-				'desc'    => 'Keywords',
-				'display' => false,
-				'query'   => function ( $values ) {
-					$meta_query = [];
-					$values = explode( ' ', $values );
-					foreach ( $values as $value ) {
-						$value = filter_var( $value, FILTER_SANITIZE_STRING );
-						$meta_query[] = [
-							'key'        => 'description',
-							'comparison' => 'LIKE',
-							'value'     => "%$value%",
-						];
-					}
-					return [
-						'text' => $meta_query,
-					];
-				},
-				'function' => '__return_null',
-				'format'   => '__return_null',
-				'value'    => '__return_null',
-				'icon'     => 'search',
-				
-			],*/
 			'ppsf' => [
 				'label'    => 'Best price per square foot',
 				'desc'     => 'Price per ft&sup2;',

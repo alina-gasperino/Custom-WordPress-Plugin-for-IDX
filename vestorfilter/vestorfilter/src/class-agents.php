@@ -216,39 +216,6 @@ class Agents extends \VestorFilter\Util\Singleton {
 			)
 		);
 
-
-		// REMOVED CARD OPTIONS ON
-        // THE REQUEST OF STEPHEN
-		/*
-		$meta_boxes[] = array(
-			'id'         => 'agentmeta_card',
-			'title'      => esc_html__( 'Agent Card Options', 'vestorfilter' ),
-			'post_types' => array( 'agent' ),
-			'context'    => 'normal',
-			'priority'   => 'high',
-			'autosave'   => 'false',
-			'fields'     => array(
-				array(
-					'id'   => $prefix . 'filters',
-					'type'    => 'checkbox_list',
-					'name'    => esc_html__( 'Appears on Vestor Filter', 'vestorfilter' ),
-					'options' => $checkboxes
-				),
-				array(
-					'id'   => $prefix . 'contact_line_2',
-					'type' => 'text',
-					'name' => esc_html__( 'Text underneath name', 'vestorfilter' ),
-				),
-				array(
-					'id'   => $prefix . 'agent_info',
-					'type' => 'textarea',
-					'name' => esc_html__( 'Text on "agent advice" card', 'vestorfilter' ),
-					'rows' => 3,
-				),
-			),
-		);
-        */
-
 		return $meta_boxes;
 
 	}

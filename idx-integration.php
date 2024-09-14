@@ -1041,3 +1041,256 @@ function my_idx_sanitize_callback($input) {
     }
     return $sanitized;
 }
+
+function agent_custom_fields() {
+    // Agent Properties meta box
+    add_meta_box(
+        'agentmeta type_agent',             // Unique ID
+        'Agent Properties',             // Box title
+        'agent_properties_fields_html', // Content callback
+        'agent',                        // Post type
+        'normal',                       // Context
+        'high'                          // Priority
+    );
+
+    // Roster Information meta box
+    add_meta_box(
+        'agentmeta_roster type_agent',           // Unique ID
+        'Roster Information',           // Box title
+        'roster_information_fields_html', // Content callback
+        'agent',                        // Post type
+        'normal',                       // Context
+        'high'                          // Priority
+    );
+}
+add_action( 'add_meta_boxes', 'agent_custom_fields' );
+
+function agent_properties_fields_html( $post ) {
+    // Nonce for security
+    wp_nonce_field( 'save_agent_properties', 'agent_properties_nonce' );
+
+    // Retrieve saved data
+    $show = get_post_meta( $post->ID, '_agent_show', true );
+    $first_name = get_post_meta( $post->ID, '_agent_fname', true );
+    $last_name  = get_post_meta( $post->ID, '_agent_lname', true );
+    $phone      = get_post_meta( $post->ID, '_agent_phone', true );
+    $email      = get_post_meta( $post->ID, '_agent_email', true );
+    ?>
+
+    <p>
+        <label for="agent_card_show">Show Card On Property Results</label>
+        <input type="checkbox" name="agent_card_show" id="agent_card_show" value="1" <?php checked( $show, 1 ); ?> />
+    </p>
+    <p>
+        <label for="agent_first_name">First Name:</label>
+        <input type="text" name="agent_first_name" id="agent_first_name" value="<?php echo esc_attr( $first_name ); ?>" />
+    </p>
+    <p>
+        <label for="agent_last_name">Last Name:</label>
+        <input type="text" name="agent_last_name" id="agent_last_name" value="<?php echo esc_attr( $last_name ); ?>" />
+    </p>
+    <p>
+        <label for="agent_email">Email:</label>
+        <input type="email" name="agent_email" id="agent_email" value="<?php echo esc_attr( $email ); ?>" />
+    </p>
+    <p>
+        <label for="agent_phone">Phone Number:</label>
+        <input type="text" name="agent_phone" id="agent_phone" value="<?php echo esc_attr( $phone ); ?>" />
+    </p>
+
+    <?php
+}
+
+function roster_information_fields_html( $post ) {
+    // Nonce for security
+    wp_nonce_field( 'save_roster_information', 'roster_information_nonce' );
+
+    // Retrieve saved data
+    $group = get_post_meta( $post->ID, '_agent_group', true );
+    if ( empty( $group ) ) {
+        $group = 'Secondary'; // Default value
+    }
+    $title      = get_post_meta( $post->ID, '_agent_line2', true );
+    $tagline      = get_post_meta( $post->ID, '_agent_line3', true );
+    $bio        = get_post_meta( $post->ID, '_agent_bio', true );
+    $website_url   = get_post_meta( $post->ID, '_agent_url', true );
+    $fb_url   = get_post_meta( $post->ID, '_agent_social_facebook', true );
+    $twitter_url   = get_post_meta( $post->ID, '_agent_social_twitter', true );
+    $linkedin_url   = get_post_meta( $post->ID, '_agent_social_linkedin', true );
+    $insta_url   = get_post_meta( $post->ID, '_agent_social_instagram', true );
+    $pinterest_url   = get_post_meta( $post->ID, '_agent_social_pinterest', true );
+    $youtube_url   = get_post_meta( $post->ID, '_agent_social_youtube', true );
+    ?>
+
+    <p>
+        <label>Group:</label><br>
+        <input type="radio" name="agent_status" value="Primary" <?php checked( $group, 'Primary' ); ?> /> Primary<br>
+        <input type="radio" name="agent_status" value="Secondary" <?php checked( $group, 'Secondary' ); ?> /> Secondary<br>
+    </p>
+    <p>
+        <label for="agent_line2">Title Under Name:</label>
+        <input type="text" name="agent_line2" id="agent_line2" value="<?php echo esc_attr( $title ); ?>" />
+    </p>
+    <p>
+        <label for="agent_line3">Tagline Under Name:</label>
+        <input type="text" name="agent_line3" id="agent_line3" value="<?php echo esc_attr( $tagline ); ?>" />
+    </p>
+    <p>
+        <label for="agent_bio">Short Bio:</label>
+        <?php
+        // WYSIWYG Editor for Bio
+        $settings = array(
+            'textarea_name' => 'agent_bio',  // The name of the textarea for form submission
+            'textarea_rows' => 8,
+            'media_buttons' => false         // Hide the "Add Media" button
+        );
+        wp_editor( $bio, 'agent_bio_editor', $settings );
+        ?>
+    </p>
+    <p>
+        <label for="website_url">Website URL:</label>
+        <input type="url" name="website_url" id="website_url" value="<?php echo esc_attr( $website_url ); ?>" />
+    </p>
+    <p>
+        <label for="fb_url">Facebook URL:</label>
+        <input type="url" name="fb_url" id="fb_url" value="<?php echo esc_attr( $fb_url ); ?>" />
+    </p>
+    <p>
+        <label for="twitter_url">Twitter URL:</label>
+        <input type="url" name="twitter_url" id="twitter_url" value="<?php echo esc_attr( $twitter_url ); ?>" />
+    </p>
+    <p>
+        <label for="linkedin_url">LinkedIn URL:</label>
+        <input type="url" name="linkedin_url" id="linkedin_url" value="<?php echo esc_attr( $linkedin_url ); ?>" />
+    </p>
+    <p>
+        <label for="insta_url">Instagram URL:</label>
+        <input type="url" name="insta_url" id="insta_url" value="<?php echo esc_attr( $insta_url ); ?>" />
+    </p>
+    <p>
+        <label for="pinterest_url">Pinterest URL:</label>
+        <input type="url" name="pinterest_url" id="pinterest_url" value="<?php echo esc_attr( $pinterest_url ); ?>" />
+    </p>
+    <p>
+        <label for="youtube_url">Youtube URL:</label>
+        <input type="url" name="youtube_url" id="youtube_url" value="<?php echo esc_attr( $youtube_url ); ?>" />
+    </p>
+
+    <?php
+}
+
+function save_agent_custom_fields( $post_id ) {
+    // Check if nonce is valid
+    if ( ! isset( $_POST['agent_properties_nonce'] ) || ! wp_verify_nonce( $_POST['agent_properties_nonce'], 'save_agent_properties' ) ) {
+        return;
+    }
+    if ( ! isset( $_POST['roster_information_nonce'] ) || ! wp_verify_nonce( $_POST['roster_information_nonce'], 'save_roster_information' ) ) {
+        return;
+    }
+
+    // Prevent autosave and bulk edits from altering data
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    if ( isset( $_POST['agent_card_show'] ) ) {
+        update_post_meta( $post_id, '_agent_show', 1 ); // Save 1 if checked
+    } else {
+        update_post_meta( $post_id, '_agent_show', 0 ); // Save 0 if unchecked
+    }
+
+    // Save First Name field
+    if ( isset( $_POST['agent_first_name'] ) ) {
+        $first_name = sanitize_text_field( $_POST['agent_first_name'] );
+        update_post_meta( $post_id, '_agent_fname', $first_name );
+    }
+
+    // Save Last Name field
+    if ( isset( $_POST['agent_last_name'] ) ) {
+        $last_name = sanitize_text_field( $_POST['agent_last_name'] );
+        update_post_meta( $post_id, '_agent_lname', $last_name );
+    }
+
+    // Save Email field
+    if ( isset( $_POST['agent_email'] ) ) {
+        $email = sanitize_email( $_POST['agent_email'] );
+        update_post_meta( $post_id, '_agent_email', $email );
+    }
+
+    // Save Phone Number field
+    if ( isset( $_POST['agent_phone'] ) ) {
+        $phone = sanitize_text_field( $_POST['agent_phone'] );
+        update_post_meta( $post_id, '_agent_phone', $phone );
+    }
+
+    // Save Radio Button for Group
+    if ( isset( $_POST['agent_status'] ) ) {
+        $group = sanitize_text_field( $_POST['agent_status'] ); // Sanitize input
+        update_post_meta( $post_id, '_agent_group', $group ); // Save sanitized group
+    }
+
+    // Save Title Under Name field
+    if ( isset( $_POST['agent_line2'] ) ) {
+        $title = sanitize_text_field( $_POST['agent_line2'] ); // Sanitize input
+        update_post_meta( $post_id, '_agent_line2', $title ); // Save sanitized title
+    }
+
+    // Save Tagline Under Name field
+    if ( isset( $_POST['agent_line3'] ) ) {
+        $tagline = sanitize_text_field( $_POST['agent_line3'] ); // Sanitize input
+        update_post_meta( $post_id, '_agent_line3', $tagline ); // Save sanitized tagline
+    }
+
+    // Save Short Bio field
+    if ( isset( $_POST['agent_bio'] ) ) {
+        $bio = wp_kses_post( $_POST['agent_bio'] ); // Sanitize and allow HTML
+        update_post_meta( $post_id, '_agent_bio', $bio ); // Save sanitized bio
+    }
+
+    // Save Website URL field
+    if ( isset( $_POST['website_url'] ) ) {
+        $website_url = esc_url_raw( $_POST['website_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_url', $website_url ); // Save sanitized URL
+    }
+
+    // Save Facebook URL field
+    if ( isset( $_POST['fb_url'] ) ) {
+        $fb_url = esc_url_raw( $_POST['fb_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_facebook', $fb_url ); // Save sanitized URL
+    }
+
+    // Save Twitter URL field
+    if ( isset( $_POST['twitter_url'] ) ) {
+        $twitter_url = esc_url_raw( $_POST['twitter_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_twitter', $twitter_url ); // Save sanitized URL
+    }
+
+    // Save LinkedIn URL field
+    if ( isset( $_POST['linkedin_url'] ) ) {
+        $linkedin_url = esc_url_raw( $_POST['linkedin_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_linkedin', $linkedin_url ); // Save sanitized URL
+    }
+
+    // Save Instagram URL field
+    if ( isset( $_POST['insta_url'] ) ) {
+        $insta_url = esc_url_raw( $_POST['insta_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_instagram', $insta_url ); // Save sanitized URL
+    }
+
+    // Save Pinterest URL field
+    if ( isset( $_POST['pinterest_url'] ) ) {
+        $pinterest_url = esc_url_raw( $_POST['pinterest_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_pinterest', $pinterest_url ); // Save sanitized URL
+    }
+
+    // Save YouTube URL field
+    if ( isset( $_POST['youtube_url'] ) ) {
+        $youtube_url = esc_url_raw( $_POST['youtube_url'] ); // Sanitize URL
+        update_post_meta( $post_id, '_agent_social_youtube', $youtube_url ); // Save sanitized URL
+    }
+}
+add_action( 'save_post', 'save_agent_custom_fields' );
