@@ -105,6 +105,10 @@ class Form_Table extends \WP_List_Table {
 	  		
 		$entries = $this->get_entries( $this->user_id );
 
+		if ( !is_array( $entries ) && !is_countable( $entries ) ) {
+			$entries = []; // Fallback to empty array if it's not countable
+		}
+
 		$this->set_pagination_args( [
 			'total_items' => count( $entries ),
 			'per_page'    => count( $entries ),
@@ -114,14 +118,15 @@ class Form_Table extends \WP_List_Table {
 	}
 
 	public function get_entries( $user_id ) {
+		if ( class_exists( 'FrmEntry' ) ){
+			$entries = \FrmEntry::getAll(
+				[ 'it.user_id' => $user_id ],
+				' ORDER BY it.created_at DESC',
+				8
+			);
 
-		$entries = \FrmEntry::getAll(
-			[ 'it.user_id' => $user_id ],
-			' ORDER BY it.created_at DESC',
-			8
-		);
-
-		return $entries;
+			return $entries;
+		}
 
 	}
 

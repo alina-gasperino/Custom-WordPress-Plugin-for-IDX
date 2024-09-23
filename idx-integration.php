@@ -85,6 +85,22 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
+global $wpdb;
+$wpdb->query( '
+
+		CREATE TABLE IF NOT EXISTS `wp_vflog` (
+			`ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			`log_action` varchar(20) NOT NULL,
+			`log_time` int(10) unsigned NOT NULL,
+			`log_property` int(10) unsigned DEFAULT NULL,
+			`log_value` varchar(50) DEFAULT NULL,
+			`user_id` bigint(20) unsigned DEFAULT NULL,
+			`performed_by` bigint(20) unsigned DEFAULT NULL,
+			PRIMARY KEY (`ID`)
+		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+		');
+
 function my_idx_add_admin_menu() {
     add_menu_page(
         'Vestor Filter IDX Settings',             // Page title

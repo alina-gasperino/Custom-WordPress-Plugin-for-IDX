@@ -389,7 +389,7 @@ class Calendar extends \VestorFilter\Util\Singleton {
 		self::reset_user_tasks( $user_id );
 
 		$now = new \DateTime( '@' . time() );
-		$now->setTimezone( new \DateTimeZone( get_option('timezone_string') ) );
+		$now->setTimezone( new \DateTimeZone( 'UTC' ) );
 
 		self::create_task( 'new-lead-followup-1', $user_id, $now );
 

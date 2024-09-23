@@ -99,7 +99,7 @@ class Tasks_Table extends \WP_List_Table {
 		}
 
 		$date = new \DateTime( '@' . $time );
-		$date->setTimezone( new \DateTimeZone( get_option('timezone_string') ) );
+		$date->setTimezone( new \DateTimeZone( 'UTC' ) );
 		
 		return $date->format( ' Y-m-d h:i a' );
 	}
