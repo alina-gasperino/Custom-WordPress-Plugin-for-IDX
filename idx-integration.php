@@ -64,7 +64,7 @@ register_deactivation_hook( __FILE__, 'deactivate_idx_integration' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-idx-integration.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-preinstall.php';
-// require plugin_dir_path( __FILE__ ) . 'includes/db-connector.php';
+require plugin_dir_path( __FILE__ ) . 'includes/page-templates-registration.php';
 require plugin_dir_path( __FILE__ ) . 'vestorfilter/index.php';
 
 /**
