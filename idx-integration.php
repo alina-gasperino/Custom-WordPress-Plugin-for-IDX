@@ -872,6 +872,17 @@ function idx_styles() {
 }
 add_action('admin_enqueue_scripts', 'idx_styles');
 
+function custom_styles() {
+	wp_enqueue_style('front', plugin_dir_url( __FILE__ ) . 'css/front.css', array(), wp_get_theme()->get('Version'));
+}
+add_action('wp_enqueue_scripts', 'custom_styles');
+
+function custom_scripts() {
+    wp_enqueue_script('main', plugin_dir_url( __FILE__ ) . 'js/vestortheme.js', array('jquery'), null, true);
+    wp_enqueue_script('main', plugin_dir_url( __FILE__ ) . 'js/filters.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'custom_scripts');
+
 function my_idx_sanitize_callback($input) {
     $sanitized = array();
 	$sanitized['use_geocode_for_cities'] = !empty($input['use_geocode_for_cities']) ? 1 : 0;

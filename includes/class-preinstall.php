@@ -1,6 +1,7 @@
 <?php
 
 $source_table_name = 'wp_propertysource';
+$table_name = 'wp_locationcache';
 
 $prop_table_name  = 'wp_propertycache';
 $meta_table_name  = 'wp_propertycache_meta';
@@ -81,5 +82,84 @@ function get_index_values( $taxonomy_slug, $order = '' ) {
     }
 
     return $vars;
+
+}
+
+function get( $location_id ) {
+    global $vfdb, $table_name;
+
+    $data = wp_cache_get( 'location_data__' . $location_id, 'vestorfilter' );
+
+    if ( ! empty( $data ) ) {
+        return $data;
+    }
+
+    $data = $vfdb->get_row( $vfdb->prepare(
+        'SELECT * FROM ' . $table_name . ' WHERE `ID` = %s',
+        $location_id
+    ) );
+
+    wp_cache_set( 'location_data__' . $location_id, $data, 'vestorfilter' );
+
+    return $data;
+
+}
+
+function get_slug( $location ) {
+
+    if ( is_numeric( $location ) ) {
+        $location = get( $location );
+    }
+    if ( ! is_object( $location ) || empty( $location ) ) {
+        return '';
+    }
+
+    if ( ! empty( $location->slug ) ) {
+        $slug = $location->slug;
+    } else {
+        $slug = sanitize_title( $location->value );
+    }
+    if ( ! empty( $location->type ) ) {
+        $slug = sanitize_title( $location->type ) . '/' . $slug;
+    }
+
+    return $slug;
+
+}
+
+function get_all_data( $type = '', $sort = '', $duplicates = false ) {
+    global $vfdb, $table_name;
+
+    $data = wp_cache_get( "location_data-$type-$sort", 'vestorfilter' );
+
+    if ( ! empty( $data ) ) {
+        return $data;
+    }
+
+    $query = 'SELECT * FROM ' . $table_name . ' WHERE `count` > 0 ';
+    if ( $type ) {
+        $query .= $vfdb->prepare( ' AND `type` = %s', $type );
+    }
+
+    if ( empty( $duplicates ) ) {
+        $query .= ' AND `duplicate_of` IS NULL';
+    }
+    if ( $sort ) {
+        $query .= ' ORDER BY ' . $sort;
+    }
+
+    $data = $vfdb->get_results( $query );
+
+
+    foreach( $data as &$location ) {
+        if ( $slug = get_slug( $location ) ) {
+            $location->url = $slug;
+        }
+        $location = apply_filters( 'vestorfilter_location_data_item', $location, $type, $sort );
+    }
+
+    wp_cache_set( "location_data-$type-$sort", $data, 'vestorfilter' );
+
+    return $data;
 
 }
