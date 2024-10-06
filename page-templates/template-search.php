@@ -11,19 +11,19 @@ namespace VestorTheme;
 use VestorFilter\Util\Template as Template;
 
 if ( isset( $_GET['location' ] ) ) {
-
+echo "tru";
 	$location = filter_input( INPUT_GET, 'location', FILTER_SANITIZE_NUMBER_INT );
 
 	if ( strpos( $location, '[' ) !== false ) {
-
+		
 	} else {
+		
 		$location = \VestorFilter\Location::get( $location );
-		print_r($location);
 		if ( $location ) {
 
 			$locale_url = trailingslashit( \VestorFilter\Settings::get_page_url( 'search' ) );
 			$locale_url .= \VestorFilter\Location::get_slug( $location ) . '/';
-			$locale_url = add_query_arg( [ 'location' => $location->ID, 'property-type' => 'all' ], $locale_url );
+			$locale_url = add_query_arg( [ 'location' => $location->ID, 'property-type' => 'all' ], $locale_url );	
 
 			add_filter( 'get_canonical_url', function ( $url ) use ( $locale_url ) {
 				
@@ -39,7 +39,7 @@ if ( isset( $_GET['location' ] ) ) {
 					'type'        => 'website',
 				];
 			} );
-echo $locale_url;
+
 		}
 	}
 }

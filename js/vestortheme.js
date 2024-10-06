@@ -1,4 +1,3 @@
-var vfDebugMode = true;
 var vfDebug = ( ...params ) => {
 	if ( ! vfDebugMode ) {
 		return;
@@ -7962,7 +7961,6 @@ var vestorSearch = ( function() {
 			let url = new URL( searchForm.getAttribute( 'action' ) );
 			resultsArgs.url = url.pathname;
 		}
-
 		loadResults( resultsArgs, true );
 
 	};
@@ -7979,11 +7977,6 @@ var vestorSearch = ( function() {
 		}
 
 		let lookupUrl = '/wp-json/vestorfilter/v1/search/map-data';
-		//if ( document.body.dataset.mapReady === 'true' ) {
-		//	document.body.dataset.mapReady = 'false';
-		//	return;
-		//}
-
 		if ( query && query.length > 0 ) {
 			lookupUrl += '?' + query;
 		}

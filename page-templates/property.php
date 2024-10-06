@@ -92,7 +92,7 @@ wp_enqueue_script( 'vestorhouse-map' );
 
 	<article id="property" <?php post_class( 'page__wrap' ); ?> data-property="<?php echo $property_row[0]->ID ?>">
 
-		<?php echo $filtered_html ?>
+		<?php echo $filtered_html; ?>
 
 	</article>
 
