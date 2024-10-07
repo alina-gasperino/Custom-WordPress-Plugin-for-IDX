@@ -898,7 +898,7 @@ var vestorSearch = ( function() {
 			return;
 		}
 
-		let lookupUrl = '/wp-json/vestorfilter/v1/search/map-data';
+		let lookupUrl = '/wordpress/wp-json/vestorfilter/v1/search/map-data';
 		//if ( document.body.dataset.mapReady === 'true' ) {
 		//	document.body.dataset.mapReady = 'false';
 		//	return;

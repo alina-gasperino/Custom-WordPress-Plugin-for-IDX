@@ -148,7 +148,7 @@ class Plugin {
 		$search_template = wp_cache_get( 'search_template', 'vestorfilter' );
 
 		if ( empty( $search_template ) ) {
-			$search_template = Settings::get_page_template( 'search' );
+			$search_template = Settings::get_page_template( 'search_page' );
 
 			if ( empty( $search_template ) ) {
 				return;
@@ -169,7 +169,7 @@ class Plugin {
 		$property_template = wp_cache_get( 'property_template', 'vestorfilter' );
 
 		if ( empty( $property_template ) ) {
-			$property_template = Settings::get_page_template( 'property' );
+			$property_template = Settings::get_page_template( 'single_property' );
 
 			if ( empty( $property_template ) ) {
 				return;
@@ -189,7 +189,7 @@ class Plugin {
 		$saved_template = wp_cache_get( 'saved_template', 'vestorfilter' );
 
 		if ( empty( $property_template ) ) {
-			$saved_template = Settings::get_page_template( 'saved' );
+			$saved_template = Settings::get_page_template( 'saved_properties' );
 
 			if ( empty( $saved_template ) ) {
 				return;

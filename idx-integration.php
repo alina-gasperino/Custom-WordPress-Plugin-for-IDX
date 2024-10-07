@@ -85,6 +85,8 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
+$value = get_option('my_idx_options_templates')['search_page'];
+echo $value;
 global $wpdb;
 $wpdb->query( '
 
@@ -878,6 +880,12 @@ function custom_styles() {
 add_action('wp_enqueue_scripts', 'custom_styles');
 
 function custom_scripts() {
+    if ( defined( 'VF_IMG_URL' ) ) {
+		$image_url = VF_IMG_URL;
+	} else {
+		$upload_dir = wp_upload_dir( 'vf' );
+		$image_url = $upload_dir['url'];
+	}
     wp_enqueue_script('main', plugin_dir_url( __FILE__ ) . 'js/vestortheme.min.js', array('jquery'), null, true);
     wp_add_inline_script(
 		'main',
@@ -894,6 +902,19 @@ function custom_scripts() {
 		'var apiTokens = ' . json_encode(
 			[ 'google' => "AIzaSyDlrcQS4-85JSq7PKUIj4naArhdC6ff5uY" ]
 		),
+		true
+	);
+    wp_add_inline_script(
+		'main',
+		'var vfEndpoints = ' . json_encode( [
+			'search'   => \VestorFilter\Search::get_search_query_endpoint(),
+			'userMaps' => \VestorFilter\Search::get_user_maps_endpoint(),
+			'exact'    => \VestorFilter\Search::get_exact_query_endpoint(),
+			'location' => \VestorFilter\Location::get_location_query_endpoint(),
+			'cache'    => \VestorFilter\Cache::get_endpoint(),
+			'property' => \VestorFilter\Property::base_url(),
+			'images'   => untrailingslashit( $image_url ),
+		] ),
 		true
 	);
     wp_enqueue_script('filter', plugin_dir_url( __FILE__ ) . 'js/filters.js', array('jquery'), null, true);

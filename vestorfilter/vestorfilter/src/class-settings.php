@@ -87,14 +87,18 @@ class Settings extends \VestorFilter\Util\Singleton {
 	}
 
 	public static function get_page_template( $key ) {
-
-		$value = get_option( 'vestorfilter' );
+		if($key == "search") {
+			$value = get_option('my_idx_options_templates')['search_page'];
+		}
+		else {
+			$value = get_option('my_idx_options_templates')[$key];
+		}
 
 		if ( empty( $value ) ) {
 			return false;
 		}
 
-		return $value[ $key . '_page' ] ?? false;
+		return $value ?? false;
 
 	}
 

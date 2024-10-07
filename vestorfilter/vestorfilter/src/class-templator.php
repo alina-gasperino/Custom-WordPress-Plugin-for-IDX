@@ -76,13 +76,6 @@ class Templator extends \VestorFilter\Util\Singleton {
                         $replacement = strpos( $value, '//' ) !== false ? $value : self::$image_url . $value;
                     }
                     break;
-                /*case 'vf':
-                    if ( $value === 'url' && $subset ) {
-                        $url = $cache['url'];
-                        $url = add_query_arg( 'vf', $subset, $url );
-                        $replacement = $url;
-                    }
-                    break;*/
                 case 'icon':
                     $replacement = sprintf(
                         '<svg class="vf-use-icon vf-use-icon--%1$s"><use xlink:href="#%1$s"></use></svg>',

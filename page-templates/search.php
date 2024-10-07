@@ -18,7 +18,6 @@ if ( isset( $_GET['location' ] ) ) {
 
 	} else {
 		$location = \VestorFilter\Location::get( $location );
-		print_r($location);
 		if ( $location ) {
 
 			$locale_url = trailingslashit( \VestorFilter\Settings::get_page_url( 'search' ) );
@@ -39,7 +38,6 @@ if ( isset( $_GET['location' ] ) ) {
 					'type'        => 'website',
 				];
 			} );
-echo $locale_url;
 		}
 	}
 }

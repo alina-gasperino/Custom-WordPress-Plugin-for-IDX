@@ -6,7 +6,7 @@
 	wp_enqueue_script( 'vestorhouse-filters' );
 	wp_enqueue_script( 'vestorhouse-search' );
 
-	$search_page = Settings::get_page_template( 'search' );
+	$search_page = Settings::get_page_template( 'search_page' );
 	if ( empty( $search_page ) || ! ( $search_url = get_permalink( $search_page ) ) ) {
 		echo 'VestorFilter has not been correctly configured on this domain.';
 		return;

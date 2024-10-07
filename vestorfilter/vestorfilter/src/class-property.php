@@ -904,7 +904,7 @@ class Property {
 			return $base_url;
 		}
 
-		$property_template = Settings::get_page_template( 'property' );
+		$property_template = Settings::get_page_template( 'single_property' );
 		if ( empty( $property_template ) ) {
 			return false;
 		}

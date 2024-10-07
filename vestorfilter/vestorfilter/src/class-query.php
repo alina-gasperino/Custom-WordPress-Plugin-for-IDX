@@ -216,7 +216,7 @@ class Query {
 
 		if ( ! empty( $filters['lot-size'] ) ) {
 
-			$lot_options = Settings::get( 'filters_lot' );
+			$lot_options = get_option('my_idx_options_filters')['available_lot_sizes'];;
 			foreach( $lot_options as $option ) {
 				if ( $option['value'] === $filters['lot-size'] ) {
 					$terms = $option['terms'];

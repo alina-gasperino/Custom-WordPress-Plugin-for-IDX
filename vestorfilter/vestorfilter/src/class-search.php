@@ -161,7 +161,7 @@ class Search {
         if ( empty( $page ) ) {
             return;
         }
-        $search_page = absint( Settings::get_page_template( 'search' ) );
+        $search_page = absint( Settings::get_page_template( 'search_page' ) );
 
         if ( $page !== $search_page ) {
             return;
