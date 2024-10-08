@@ -20,9 +20,6 @@ if ( ! is_array( $current_locations ) ) {
 	$current_locations = explode( ',', $current_locations );
 }
 
-//if ( empty( $data ) && !current_user_can('administrator')) {
-//	$mode = 'list';
-//}
 if ( isset( $_GET['mode'] ) ) {
 	$mode = ( $_GET['mode'] === 'list' ? 'list' : 'map' );
 }
@@ -150,31 +147,7 @@ if ( ! empty( $force_geo ) ) {
 		var vfMapBounds = <?= json_encode( $bounds ) ?>;
 		var initialVestorMapPins = [];
 		var vfLotSizes = <?= json_encode( $lot_values ) ?>;
-			<?php /*
-			$minmax = [ 
-				[ 'lat' => Location::float_to_geo( 90 ), 'lon' => Location::float_to_geo( 180 ) ],
-				[ 'lat' => Location::float_to_geo( -90 ), 'lon' => Location::float_to_geo( -180 ) ] 
-			];
-			$count = 0;
-			foreach ( $data as $property ) {
-				if ( $count > 20 ) {
-					break;
-				}
-				if ( $count < 20 ) {
-					if ( $count > 0 ) {
-						echo ',';
-					}
-					$content[] = (array) $property;
-					unset( $property->block_cache );
-
-					echo json_encode( $property );
-					
-				}
-				$count ++;
-			}
-			?>
-		];
-		<?php */
+			<?php
 		if ( ! empty( $minmax ) ) {
 			foreach( $minmax as $i => $coord ) {
 				$minmax[$i] = [
@@ -214,25 +187,11 @@ if ( ! empty( $force_geo ) ) {
 			} );
 		<?php } ?>
 
-		//console.log( initialVestorMapData, rect );
     <?php //endif; ?>
 	</script>
-	<?php /*
-	<div class="vf-search__map--icons" style="display:none">
-		<span class="vf-search-map__icon" data-property-type="sf"><?php echo Icons::inline( 'pin-sf' ) ?></span>
-		<span class="vf-search-map__icon" data-property-type="mf"><?php echo Icons::inline( 'pin-mf' ) ?></span>
-		<span class="vf-search-map__icon" data-property-type="commercial"><?php echo Icons::inline( 'pin-commercial' ) ?></span>
-		<span class="vf-search-map__icon" data-property-type="land"><?php echo Icons::inline( 'pin-land' ) ?></span>
-		<span class="vf-search-map__icon" data-property-type="other"><?php echo Icons::inline( 'pin-other' ) ?></span>
-		<span class="vf-search-map__icon" data-property-type="selected"><?php echo Icons::inline( 'pin-selected' ) ?></span>
-	</div>
-	*/ ?>
+
 	<div class="vf-search__map-results">
 		<ul class="map-search-results">
-			<?php //if ( empty( $data ) && !current_user_can('administrator') ) : ?>
-<!--				<li class="map-search-results__item map-search-results__item--empty">-->
-<!--					<p>No properties could be found within your specified search paramaters.</p>-->
-<!--				</li>-->
 			<?php if ( $mode === 'list' ) : ?>
 				<?php 
 				

@@ -684,7 +684,7 @@ class Cache extends \VestorFilter\Util\Singleton {
                 }
             }
         }
-        if($_GET['frequency']) {
+        if(isset($_GET['frequency'])) {
 			print_r($search['data']);
             foreach ($search['data'] as $key => $data) {
                 if($data['key'] == 'onmarket') {
@@ -841,11 +841,6 @@ class Cache extends \VestorFilter\Util\Singleton {
         }
 
         $query = str_replace('WHERE AND', 'WHERE', $query);
-        if($_GET['frequency'] || $_GET['customer']) {
-            echo '<pre>';
-            print_r($query);
-            echo '</pre>';
-        }
         return $vfdb->get_results( $query );
 
     }

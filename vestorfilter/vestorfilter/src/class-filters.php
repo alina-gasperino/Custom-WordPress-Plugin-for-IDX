@@ -115,20 +115,14 @@ class Filters {
 
 					$price    = $property->get_prop( 'price', true );
 					$drop     =  $property->get_prop( 'price_drop_recent', true );
-					//$modified = strtotime( $this->get_meta( 'modified' ) );
 
 					if ( $price >= $drop ) {
 						return null;
 					}
-
-					/*if ( $modified < time() - 3600*24*7 ) {
-						return null;
-					}*/
 					
 					return $drop - $price;
 				},
 				'format' => function( $value ) {
-					//$value = round( $value/100000, 1 );
 					return sprintf( '$%s', number_format( $value/100 , 0 ) );
 				},
 				'query' => function( $values ) {

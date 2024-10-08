@@ -75,6 +75,17 @@ class Settings extends \VestorFilter\Util\Singleton {
 	}
 
 	public static function get( $key ) {
+		switch ($key) {
+			case 'default_location_id':
+				$value = get_option('my_idx_options_general')['location_search'];
+				break;
+			case 'default_results_view':
+				$value = get_option('my_idx_options_general')['search_results_view'];
+				break;
+			default:
+				# code...
+				break;
+		}
 
 		$value = get_option( 'my_idx_settings' );
 
@@ -126,7 +137,7 @@ class Settings extends \VestorFilter\Util\Singleton {
 				$value = get_option('my_idx_options_filters')[$key];
 				break;
 		}
-
+echo $key;
 		return $value;
 
 	}

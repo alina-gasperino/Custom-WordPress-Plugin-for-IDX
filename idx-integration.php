@@ -85,11 +85,10 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
-$value = get_option('my_idx_options_templates')['search_page'];
-echo $value;
+$var = get_option('my_idx_options_filters')['best_price_per_sqft'];
+
 global $wpdb;
 $wpdb->query( '
-
 		CREATE TABLE IF NOT EXISTS `wp_vflog` (
 			`ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			`log_action` varchar(20) NOT NULL,
@@ -100,8 +99,7 @@ $wpdb->query( '
 			`performed_by` bigint(20) unsigned DEFAULT NULL,
 			PRIMARY KEY (`ID`)
 		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-
-		');
+	');
 
 function my_idx_add_admin_menu() {
     add_menu_page(
@@ -291,7 +289,7 @@ function search_results_view_cb() {
     ?>
     <select multiple="1" name="my_idx_options_general[search_results_view]">
         <option value="map" <?php selected($selected, 'map'); ?>>Map</option>
-        <option value="grid" <?php selected($selected, 'grid'); ?>>Grid</option>
+        <option value="list" <?php selected($selected, 'grid'); ?>>Grid</option>
     </select>
     <?php
 }
@@ -917,8 +915,40 @@ function custom_scripts() {
 		] ),
 		true
 	);
-    wp_enqueue_script('filter', plugin_dir_url( __FILE__ ) . 'js/filters.js', array('jquery'), null, true);
-    wp_enqueue_script('search', plugin_dir_url( __FILE__ ) . 'js/search.js', array('jquery'), null, true);
+    wp_add_inline_script(
+		'main',
+		'var vfFormats = ' . json_encode( \VestorFilter\Filters::get_formats() ),
+		true
+	);
+    wp_add_inline_script(
+		'main',
+		'var vfPaths = ' . json_encode( [
+			'distUrl' => plugin_dir_url( __FILE__ ) . 'dist',
+		] ),
+		true
+	);
+
+    $sources = [];
+    if ( defined( 'VF_ALLOWED_FEEDS' ) ) {
+        foreach( VF_ALLOWED_FEEDS as $source_id ) {
+            $source = new \VestorFilter\Source( $source_id );
+            $logo = $source->get_compliance_logo();
+            $text = $source->get_compliance_line( '{{ agency }}' );
+            if ( $logo || $text ) {
+                $sources[$source_id] = [
+                    'logo' => $logo,
+                    'text' => $text,
+                ];
+            }
+        }
+    }
+    wp_add_inline_script(
+		'main',
+		'var vfSources = ' . json_encode( $sources ) . ';',
+		true
+	);
+    // wp_enqueue_script('filter', plugin_dir_url( __FILE__ ) . 'js/filters.js', array('jquery'), null, true);
+    // wp_enqueue_script('search', plugin_dir_url( __FILE__ ) . 'js/search.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'custom_scripts');
 

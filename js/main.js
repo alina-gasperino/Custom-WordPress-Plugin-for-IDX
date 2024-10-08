@@ -2968,7 +2968,6 @@ const startupMaps = () => {
 		var script = document.createElement('script');
 		script.src = `https://maps.googleapis.com/maps/api/js?key=${apiTokens.google}&callback=loadResultsMap&libraries=geometry,drawing`;
 		script.async = true;
-
 		document.head.appendChild(script);
 
 	}

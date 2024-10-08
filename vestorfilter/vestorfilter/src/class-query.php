@@ -33,11 +33,6 @@ class Query {
 			$favorites = true;
 		} else {
 			$query = self::make_query( $query, $this->current_vf, $this->page_num, $this->args['per_page'], $sample, $filter_map );
-            if($_GET['customer']) {
-                echo '<pre>';
-                print_r($query);
-                echo '</pre>';
-            }
 			if ( is_wp_error( $query ) ) {
 				throw new \Exception( $query->get_error_message() );
 			}
@@ -117,11 +112,6 @@ class Query {
                     }
 
                     $found = array_slice($found, 0, 300);
-                    if($_GET['frequency']) {
-                        echo '<pre>';
-                        print_r($found);
-                        echo '</pre>';
-                    }
                     $IDs = [];
                     foreach ($found as $key => $property) {
                         $IDs[] = $property->property_id;
@@ -216,7 +206,7 @@ class Query {
 
 		if ( ! empty( $filters['lot-size'] ) ) {
 
-			$lot_options = get_option('my_idx_options_filters')['available_lot_sizes'];;
+			$lot_options = get_option('my_idx_options_filters')['available_lot_sizes'];
 			foreach( $lot_options as $option ) {
 				if ( $option['value'] === $filters['lot-size'] ) {
 					$terms = $option['terms'];
@@ -320,13 +310,6 @@ class Query {
 		$fields = Data::get_query_fields();
 		foreach( $fields as $field ) {
 			$multiplier = in_array( $field, Property::search_columns() ) ? 1 : 100;
-            if($_GET['frequency']) {
-                if($field == 'dom') {
-                    echo '<pre>';
-                    print_r($field . ' ' . $multiplier);
-                    echo '</pre>';
-                }
-            }
 			if ( empty( $filters[$field] ) ) {
 				continue;
 			}
@@ -505,7 +488,7 @@ class Query {
 			$query['show_hidden'] = true;
 		}
 
-        if($_GET['customer']) {
+        if(isset($_GET['customer'])) {
             foreach ($query['data'] as $key => $value) {
                 if($value['key'] == 'onmarket') {
                     $date = $_GET['date'] ?? date('Y-m-d');
@@ -517,8 +500,6 @@ class Query {
             }
         }
 
-        // BREAKPOINT
-		//print_r($query);
 		$query = apply_filters( 'vestorfilter_query__after_setup', $query, $filters );
 
 
