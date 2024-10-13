@@ -690,7 +690,7 @@ class Filters {
 	public static function get_filter_description( $key ) {
 
 		if ( empty( self::$descriptions ) ) {
-			self::$descriptions = Settings::get_filter_options( 'desc' );
+			self::$descriptions = Settings::get_filter_options( $key );
 		}
 
 		return self::$descriptions[ $key ] ?? '';

@@ -133,11 +133,41 @@ class Settings extends \VestorFilter\Util\Singleton {
 			case 'lot':
 				$value = get_option('my_idx_options_filters')['available_lot_sizes'];
 				break;
+			case 'ppsf':
+				$value = get_option('my_idx_options_filters')['best_price_per_sqft'];
+				echo $value;
+				break;
+			case 'bpd':
+				$value = get_option('my_idx_options_filters')['biggest_price_seven'];
+				break;
+			case 'ppls':
+				$value = get_option('my_idx_options_filters')['best_price_per_acre'];
+				break;
+			case 'bpc':
+				$value = get_option('my_idx_options_filters')['best_priced_condo'];
+				break;
+			case 'ppu':
+				$value = get_option('my_idx_options_filters')['best_price_per_unit'];
+				break;
+			case 'ppbc':
+				$value = get_option('my_idx_options_filters')['best_price_per_bedroom'];
+				break;
+			case 'elc':
+				$value = get_option('my_idx_options_filters')['extra_living'];
+				break;
+			case 'notm':
+				$value = get_option('my_idx_options_filters')['newest_market'];
+				break;
+			case 'lotm':
+				$value = get_option('my_idx_options_filters')['longest_market'];
+				break;
+			case 'fixer':
+				$value = get_option('my_idx_options_filters')['smart_fixer_list'];
+				break;
 			default:
 				$value = get_option('my_idx_options_filters')[$key];
 				break;
 		}
-echo $key;
 		return $value;
 
 	}

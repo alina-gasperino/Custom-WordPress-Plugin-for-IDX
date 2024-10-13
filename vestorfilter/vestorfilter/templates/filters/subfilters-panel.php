@@ -9,18 +9,11 @@ $misc_filters = '';
 ?>
 <div class="vf-search__subfilters navbar-collapse">
 
-	<!--input type="hidden" data-filter-value id="filter--offon" name="vestorsearch" value="true"-->
-
 	<?php \VestorFilter\Util\Template::get_part( 'vestorfilter', 'filters/vestorfilters-panel' ); ?>
 
 	<ul class="navbar-nav" style="z-index: 11;">
 
 	<?php
-//    if(current_user_can('administrator')) {
-//        echo '<pre>';
-//        print_r(Data::get_allowed_filters());
-//        echo '</pre>';
-//    }
         foreach ( Data::get_allowed_filters() as $key => $filter ) : ?>
 
 		<?php
@@ -85,10 +78,6 @@ $misc_filters = '';
 			<?php
 
 			$classes = 'vf-search__filters-toggle pill-btn dropdown-toggle';
-			
-			//if ( ! empty( $filter['misc'] ) ) {
-			//	$classes .= ' stay-open';
-			//}
 
 			$classes = apply_filters( 'vestortemplate_search_filter__' . $key, $classes, $value, $filter );
 

@@ -267,20 +267,6 @@ class Data {
                     '5' => '5',
                 ],
             ],
-            /*
-                        'bedrooms'      => [
-                            'label' => __( 'Beds', 'vestorfilters' ),
-                            'type'   => 'options',
-                            'options' => [
-                                '1:' => '1+',
-                                '2:' => '2+',
-                                '3:' => '3+',
-                                '4:' => '4+',
-                                '5:' => '5+',
-                            ],
-                        ],
-            */
-
             'bathrooms'     => [
                 'label' => __( 'Baths', 'vestorfilters' ),
                 'type'  => 'min-max-options',
@@ -299,22 +285,6 @@ class Data {
                     '5' => '5',
                 ],
             ],
-
-
-            /*
-                        'bathrooms'     => [
-                            'label' => __( 'Baths', 'vestorfilters' ),
-                            'type'   => 'options',
-                            'options' => [
-                                '1:' => '1+',
-                                '2:' => '2+',
-                                '3:' => '3+',
-                                '4:' => '4+',
-                                '5:' => '5+',
-                            ],
-                        ],
-            */
-
             'sqft'          => [
                 'label'  => __( 'Sq. Ft', 'vestorfilters' ),
                 'type'  => 'min-max-options',
@@ -341,52 +311,6 @@ class Data {
                     '6000' => '6000 sqft'
                 ],
             ],
-
-            /*
-                        'sqft'          => [
-                            'label'  => __( 'Sq. Ft', 'vestorfilters' ),
-                            'type'   => 'options',
-                            'options' => [
-                                '1:400'    => '400 ft&sup2; -',
-                                '400:' => '400 ft&sup2; +',
-                                '1000:'   => '1,000 ft&sup2; +',
-                                '1500:'   => '1,500 ft&sup2; +',
-                                '2000:'   => '2,000 ft&sup2; +',
-                                '3000:'   => '3,000K ft&sup2; +',
-                                '4000:'   => '4,000K ft&sup2; +',
-                                '5000:'   => '5,000K ft&sup2; +',
-                            ],
-                        ],
-            */
-
-            /*
-                        'sqft'          => [
-                            'label'  => __( 'Sq. Ft', 'vestorfilters' ),
-                            'type'  => 'min-max-options',
-                            'format' => 'simple',
-                            'min-options' => [
-                                '1' => '0',
-                                '400' => '400 sqft',
-                                '1000' => '1000 sqft',
-                                '1500' => '1500 sqft',
-                                '2000' => '2000 sqft',
-                                '3000' => '3000 sqft',
-                                '4000' => '4000 sqft',
-                                '5000' => '5000 sqft',
-                                '7000' => '7000+ sqft',
-                            ],
-                            'max-options' => [
-                                '400' => '400 sqft',
-                                '1000' => '1000 sqft',
-                                '1500' => '1500 sqft',
-                                '2000' => '2000 sqft',
-                                '3000' => '3000 sqft',
-                                '4000' => '4000 sqft',
-                                '5000' => '5000 sqft',
-                                '6000' => '6000 sqft'
-                            ],
-                        ],
-            */
             'lot-size'      => [
                 'label'  => __( 'Lot', 'vestorfilters' ),
                 'type'    => 'options',
@@ -396,8 +320,6 @@ class Data {
 
             'dom'           => [
                 'label'   => __( 'Days', 'vestorfilters' ),
-                //'label2'  => __( 'on Market', 'vestorfilters' ),
-
                 'type'  => 'min-max-options',
                 'format' => 'simple',
                 'min-options' => [
@@ -414,21 +336,6 @@ class Data {
                     '365' => '1 Years',
                 ],
             ],
-
-            /*
-                        'dom'           => [
-                            'label'   => __( 'Days', 'vestorfilters' ),
-                            //'label2'  => __( 'on Market', 'vestorfilters' ),
-                            'type'    => 'options',
-                            'options' => [
-                                ':2'    => '1 day',
-                                ':8'  => 'Less than 7 days',
-                                ':31' => 'Less than 30 days',
-                                '30:'  => '30 days or more',
-                            ],
-                        ],
-            */
-
             'status'        => [
                 'label'   => __( 'Status', 'vestorfilters' ),
                 'type'    => 'options',

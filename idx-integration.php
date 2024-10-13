@@ -85,8 +85,6 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
-$var = get_option('my_idx_options_filters')['best_price_per_sqft'];
-
 global $wpdb;
 $wpdb->query( '
 		CREATE TABLE IF NOT EXISTS `wp_vflog` (

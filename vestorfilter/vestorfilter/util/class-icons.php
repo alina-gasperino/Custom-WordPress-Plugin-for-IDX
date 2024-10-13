@@ -36,9 +36,9 @@ class Icons {
 
 	function setup_sources() {
 
-		self::add_source( 'theme', Theme::$current_theme_path . '/dist/icons', Theme::$current_theme_url . '/dist/icons' );
+		self::add_source( 'theme', plugin_dir_path( __FILE__ ) . 'dist/icons', plugin_dir_url( __FILE__ ) . 'dist/icons' );
 		if ( Theme::$is_child ) {
-			self::add_source( 'parent', Theme::$parent_theme_path . '/dist/icons', Theme::$parent_theme_url . '/dist/icons' );
+			self::add_source( 'parent', plugin_dir_path( __FILE__ ) . 'dist/icons', plugin_dir_url( __FILE__ ) . 'dist/icons' );
 		}
 
 		self::$sources = apply_filters( 'vestorfilter_icon_sources', self::$sources );
