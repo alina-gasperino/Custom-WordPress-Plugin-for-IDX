@@ -1,5 +1,5 @@
 <?php
-
+namespace VestorFilter; 
 use VestorFilter\Util\Template as Template;
 use VestorFilter\Cache as Cache;
 use VestorFilter\Property as Property;
@@ -240,7 +240,7 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 			?>
 
 			<div class="datatable__row type-string key-mlsid">
-				<span class="icon" aria-hidden="true"><?= Util\Icons::use('data-mlsid'); ?></span>
+				<span class="icon" aria-hidden="true"><?php echo use_icon('data-mlsid'); ?></span>
 				<span class="label">MLS ID</span>
 				<span class="value"><?php echo $property->MLSID(); ?></span>
 			</div>

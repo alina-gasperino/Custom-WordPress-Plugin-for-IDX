@@ -161,21 +161,7 @@ $misc_filters = '';
 		</li>
 
 	</ul>
-<?php
-
-    /**
-     * Click Catcher DIV element
-     *
-     * None visible element to catch the user clicks outside
-     * filter menus and close them by triggering
-     * function " closeMoreFilters() ".
-     *
-     * @Note:   It has no other purpose.
-     *          It has no styling css rule class.
-     * @id:     filter-click-catcher
-     */
-
-?>
+	
     <div id="filter-click-catcher" style="position:fixed; min-width: 100%; height: 100vh; top:49px; left: 0px; z-index: 10; overflow-x: hidden; pointer-events: none;" data-click-catcher="close" onclick="closeMoreFilters();"></div>
 </div>
 <style>

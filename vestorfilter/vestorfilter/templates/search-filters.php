@@ -32,7 +32,7 @@
 	<div class="vf-search__subfilter-group" id="vf-subfilter-panel">
 
 		<a class="btn btn-toggle btn-primary vf-search__filters-reset" href="<?= esc_attr( $url ) ?>">
-			<?= Icons::use( 'action-reset' ); ?>
+			<?php echo use_icon( 'action-reset' ); ?>
 			<span class="screen-reader-text">Reset</span>
 		</a>
 

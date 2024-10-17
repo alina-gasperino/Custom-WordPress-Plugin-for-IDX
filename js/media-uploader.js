@@ -1,5 +1,4 @@
 jQuery(document).ready(function ($) {
-    // Function to handle media upload for each specific field
     function handleMediaUpload(button) {
         var fileFrame;
         var wrapper = button.closest('.file-upload-wrapper');

@@ -58,7 +58,7 @@ foreach ( $fields as $label => $field ) {
 			?>
 			<div class="datatable__subrow type-<?php echo $template['type'] ?>">
 			<?php if ( $icons_ok && $icon !== ( $field['icon'] ?? null ) ): ?>
-			<span aria-hidden="true" class="icon"><?php echo use_icon( $icon ) ?></span>
+			<span aria-hidden="true" class="icon"><?php echo use_icon( $icon ); ?></span>
 			<?php endif; ?>
 			<?php
 

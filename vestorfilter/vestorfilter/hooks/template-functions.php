@@ -3,5 +3,6 @@
 namespace VestorFilter;
 
 function use_icon( $icon_id ) {
-	return '<svg class="vf-use-icon vf-use-icon--' . $icon_id . '"><use xlink:href="#' . $icon_id . '"></use></svg>';
+	$icon =  file_get_contents(plugin_dir_url( __DIR__ ) . '/util/dist/icons/' .$icon_id .'.svg');
+	return $icon;
 }

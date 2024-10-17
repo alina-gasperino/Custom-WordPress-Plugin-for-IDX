@@ -915,6 +915,11 @@ function custom_scripts() {
 	);
     wp_add_inline_script(
 		'main',
+		'var vfAllowLocationless = ' . ( \VestorFilter\Search::is_location_free_search_allowed() ? 'true' : 'false' ),
+		true
+	);
+    wp_add_inline_script(
+		'main',
 		'var vfFormats = ' . json_encode( \VestorFilter\Filters::get_formats() ),
 		true
 	);

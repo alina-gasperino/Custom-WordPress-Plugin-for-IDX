@@ -3324,13 +3324,6 @@ const vestorMaps = ( function() {
 		}
 	};
 
-	/*
-	<div class="vf-search__map-vf-description">
-		<h3><?= $vf ? esc_html( Filters::get_filter_name( $vf ) ) : '' ?></h3>
-		<p><?= $vf ? esc_html( Filters::get_filter_description( $vf ) ) : '' ?></p>
-	</div>
-	*/
-
 	if ( mapResultsPanel && mapResultsPanel.parentNode ) {
 		let vfPanel = document.getElementById( 'vestorfilter-selection-panel' );
 		if ( vfPanel ) {

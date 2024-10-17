@@ -1,3 +1,8 @@
+<?php
+namespace VestorFilter; 
+
+use \VestorFilter\Util\Icons as Icons;
+?>
 <?php if ( ! empty( $header ) ) : ?>
 <header><?php echo $header; ?></header>
 <?php endif; ?>
@@ -26,7 +31,7 @@ foreach ( $fields as $label => $field ) {
 
 	<div class="datatable__row type-multifield">
 		<?php if ( isset( $field['icon'] ) && $icons_ok ) : ?>
-		<span aria-hidden="true" class="icon"><!--{{ icon:<?=$field['icon']?> }}--></span>
+		<span aria-hidden="true" class="icon"><?php echo use_icon($field['icon']);?></span>
 		<?php endif; ?>
 		<span class="label"><?php echo esc_html( apply_filters( 'vestorfilter_data_label__' . $label, $label ) ); ?></span>
 		<button class="btn with-icon with-icon__down-caret accordion-toggle" aria-expanded="false" aria-controls="datatable__<?php echo $key ?>-values<?= $indentifier ?>"><span class='sr-only'>Expand</span></button>
@@ -133,7 +138,7 @@ foreach ( $fields as $label => $field ) {
 
 	<div class="datatable__row type-<?php echo $template['type']; ?> key-<?php echo $field; ?>">
 		<?php if ( $icons_ok ): ?>
-		<span aria-hidden="true" class="icon"><!--{{ icon:<?=$icon?> }}--></span>
+		<span aria-hidden="true" class="icon"><?php echo use_icon($icon); ?></span>
 		<?php endif; if ( ! empty( $with_label ) ): ?>
 		<span class="label"><?php echo esc_html( apply_filters( 'vestorfilter_data_label__' . $field, $template['label'] ) ); ?></span>
 		<?php endif; ?>
@@ -156,5 +161,5 @@ foreach ( $fields as $label => $field ) {
 	}
 
 } // endforeach
-
 ?>
+<script src="<?php echo plugin_dir_url( __DIR__ ); ?>/js/strings.js"></script>
