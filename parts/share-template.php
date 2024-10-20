@@ -1,4 +1,5 @@
 <?php
+	namespace VestorFilter;
 	use VestorFilter\Util;
 ?>
 <section class="property-template__actions">
@@ -13,7 +14,7 @@
 		] );
 
 		$share_list = '<li>' . implode( '</li><li>', $share_btns ) . '</li>';
-		$share_list .= '<li><button title="Copy to Clipboard" type="button" class="btn btn-link btn-link--copy" data-copy-url="{{ property:url }}">' . Util\Icons::use( 'share-copy') . '</button></li>';
+		$share_list .= '<li><button title="Copy to Clipboard" type="button" class="btn btn-link btn-link--copy" data-copy-url="{{ property:url }}">' . use_icon( 'share-copy') . '</button></li>';
 
 
 		?>

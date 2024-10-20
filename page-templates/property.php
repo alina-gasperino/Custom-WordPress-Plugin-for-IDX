@@ -103,11 +103,10 @@ wp_enqueue_script( 'vestorhouse-map' );
 	var thisProperty = <?= json_encode( $cache ) ?>;
 </script>
 
-<div style="display:none" id="share-links-template"><?php get_template_part( 'parts/share-template' ); ?></div>
-<div style="display:none" id="agent-card-template"><?php get_template_part( 'parts/agent-template' ); ?></div>
-<div style="display:none" id="tour-card-template"><?php get_template_part( 'parts/tour-template' ); ?></div>
-<div style="display:none" id="calculator-template"><?php get_template_part( 'parts/calculator-template' ); ?></div>
+<div style="display:none" id="share-links-template"><?php include plugin_dir_path(__DIR__) . 'parts/share-template.php'; ?></div>
+<div style="display:none" id="agent-card-template"><?php include plugin_dir_path(__DIR__) . 'parts/agent-template.php'; ?></div>
+<div style="display:none" id="tour-card-template"><?php include plugin_dir_path(__DIR__) . 'parts/tour-template.php'; ?></div>
+<div style="display:none" id="calculator-template"><?php include plugin_dir_path(__DIR__) . 'parts/calculator-template.php'; ?></div>
 
 <?php Template::action( 'after_main', 'property' ); ?>
-
 <?php get_footer(); ?>

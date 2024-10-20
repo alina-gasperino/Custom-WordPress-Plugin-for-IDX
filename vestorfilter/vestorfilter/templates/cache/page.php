@@ -48,7 +48,7 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 
 		<?php if ( ! empty( $open_house ) ) : ?>
 			<div class="datatable__row">
-				<span class="icon" aria-hidden="true"><?= Util\Icons::use('data-oh'); ?></span>
+				<span class="icon" aria-hidden="true"><?= use_icon('data-oh'); ?></span>
 				<span class="label">Open House</span>
 				<span class="value"><?php
 
@@ -62,12 +62,12 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 		<?php endif; ?>
 		<?php if ( ! empty( $tour_1 ) ) : ?>
 		<a href="<?php echo esc_url( $tour_1 ); ?>" class="btn datatable__half has-icon btn-secondary" target="_blank">
-			<?php echo strpos( 'youtube', $tour_1 ) !== false || strpos( 'youtu.be', $tour_1 ) !== false || strpos( 'vimeo', $tour_1 ) ? Util\Icons::use('data-video') : Util\Icons::use('data-tour') ?>
+			<?php echo strpos( 'youtube', $tour_1 ) !== false || strpos( 'youtu.be', $tour_1 ) !== false || strpos( 'vimeo', $tour_1 ) ? use_icon('data-video') : use_icon('data-tour') ?>
 			<span><?php esc_html_e( 'Tour', 'vestorfilters' ); ?><?php if ( ! empty( $tour_2 ) ) echo ' #1'; ?></span>
 		</a>
 		<?php endif; if ( ! empty( $tour_2 ) ) : ?>
 		<a href="<?php echo esc_url( $tour_2 ); ?>" class="btn datatable__half has-icon btn-secondary" target="_blank">
-			<?php echo strpos( 'youtube', $tour_2 ) !== false || strpos( 'youtu.be', $tour_2 ) !== false || strpos( 'vimeo', $tour_2 ) ? Util\Icons::use('data-video') : Util\Icons::use('data-tour'); ?>
+			<?php echo strpos( 'youtube', $tour_2 ) !== false || strpos( 'youtu.be', $tour_2 ) !== false || strpos( 'vimeo', $tour_2 ) ? use_icon('data-video') : use_icon('data-tour'); ?>
 			<span><?php esc_html_e( 'Tour #2', 'vestorfilters' ); ?></span>
 		</a>
 		<?php endif; ?>
@@ -120,7 +120,7 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 		<?php if ( strtolower( $property->get_prop( 'status' ) ) === 'active' ) : ?>
 		<button class="property-template__gallery--more-photos" data-gallery-toggle>
 			<span class="label">
-				<?= Util\Icons::use('data-photo') ?>
+				<?= use_icon('data-photo') ?>
 				<span><?php echo esc_html( count( $photos ) ) ?> Photos Available</span>
 			</span>
 			<?php if ( ! empty( $compliance_photo_text ) ) : ?>
@@ -277,25 +277,25 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 						<div class="accordion collapse" aria-hidden="true" id="datatable__unit-<?= $count ?>-values">
 							<?php if ( $beds && ! empty( $unit[ $beds ] ) ) : ?>
 							<div class="datatable__subrow type-int">
-								<span aria-hidden="true" class="icon"><?= Util\Icons::use('data-bedrooms'); ?></span>
+								<span aria-hidden="true" class="icon"><?= use_icon('data-bedrooms'); ?></span>
 								<span class="value"><?= $unit[ $beds ] ?> bedrooms</span>
 							</div>
 							<?php endif; ?>
 							<?php if ( $bath && ! empty( $unit[ $bath ] ) ) : ?>
 							<div class="datatable__subrow type-float">
-								<span aria-hidden="true" class="icon"><?= Util\Icons::use('data-bathrooms'); ?></span>
+								<span aria-hidden="true" class="icon"><?= use_icon('data-bathrooms'); ?></span>
 								<span class="value"><?= $unit[ $bath ] ?> bathrooms</span>
 							</div>
 							<?php endif; ?>
 							<?php if ( $sqft && ! empty( $unit[ $sqft ] ) ) : ?>
 							<div class="datatable__subrow type-int">
-								<span aria-hidden="true" class="icon"><?= Util\Icons::use('data-sqft'); ?></span>
+								<span aria-hidden="true" class="icon"><?= use_icon('data-sqft'); ?></span>
 								<span class="value"><?= $unit[ $sqft ] ?> sq. ft</span>
 							</div>
 							<?php endif; ?>
 							<?php if ( $rent && ! empty( $unit[ $rent ] ) ) : ?>
 							<div class="datatable__subrow type-currency">
-								<span aria-hidden="true" class="icon"><?= Util\Icons::use('data-rent'); ?></span>
+								<span aria-hidden="true" class="icon"><?= use_icon('data-rent'); ?></span>
 								<span class="value">Rent: $<?= $unit[ $rent ] ?></span>
 							</div>
 							<?php endif; ?>

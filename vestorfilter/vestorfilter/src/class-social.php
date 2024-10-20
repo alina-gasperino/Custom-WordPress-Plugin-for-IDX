@@ -49,7 +49,7 @@ class Social extends \VestorFilter\Util\Singleton {
 			}
 		}
 
-		$icon = apply_filters( 'vestorfilter_social_share_icon', Util\Icons::use('share-' . $network, '', 24, 24 ), $network, $args );
+		$icon = apply_filters( 'vestorfilter_social_share_icon', use_icon('share-' . $network), $network, $args );
 
 		$tag = sprintf(
 			$tag,

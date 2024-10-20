@@ -221,22 +221,12 @@ class Agents extends \VestorFilter\Util\Singleton {
 	}
 
 	public static function get_all( $cards = true ) {
-
 		$return = wp_cache_get( 'all_agents', 'vestorfilter' );
 		if ( ! empty( $return ) ) {
 			return $return;
 		}
 
-		$args = [ 
-			'post_type'      => 'agent',
-			'nopaging'       => true,
-			'posts_per_page' => -1,
-		];
-		if ( $cards ) {
-			$args['meta_key']   = '_agent_show';
-			$args['meta_value'] = '1';
-		}
-
+		$args = array('post_type' => 'agent', 'posts_per_page' => -1);
 		$agents = get_posts( $args );
 
 		$return = [];

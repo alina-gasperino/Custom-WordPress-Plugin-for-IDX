@@ -1,6 +1,7 @@
 <?php
 
 $agents = \VestorFilter\Agents::get_all();
+
 $agent  = $agents[ rand( 0, count( $agents ) - 1 ) ];
 
 $image =  $agent->get_image_url( 'thumbnail' );
