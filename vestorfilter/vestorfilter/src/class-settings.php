@@ -101,6 +101,9 @@ class Settings extends \VestorFilter\Util\Singleton {
 		if($key == "search") {
 			$value = get_option('my_idx_options_templates')['search_page'];
 		}
+		elseif($key == "saved") {
+			$value = get_option('my_idx_options_templates')['saved_properties'];
+		}
 		else {
 			$value = get_option('my_idx_options_templates')[$key];
 		}

@@ -19,7 +19,7 @@ define( 'IS_PROPERTY_TEMPLATE', true );
 global $property;
 
 // $mls_id = get_query_var( 'mlsid' );
-$mls_id = "22161940";
+$mls_id = "23137327";
 if ( empty( $mls_id ) ) {
 	include '404.php';
 	exit;
@@ -72,11 +72,9 @@ add_filter( 'vestorfilter_og_tags', function() use ( $cache ) {
 
 $filtered_html = \VestorFilter\Templator::filter_html( $cache['html'], $cache );
 
-// lock_navigation();
 get_header();
 the_post();
 
-//wp_enqueue_script( 'vestorhouse-property' );
 wp_enqueue_script( 'vestorhouse-favorites' );
 wp_enqueue_script( 'vestorhouse-map' );
 

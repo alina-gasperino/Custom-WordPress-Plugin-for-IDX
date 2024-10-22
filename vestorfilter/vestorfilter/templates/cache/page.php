@@ -13,10 +13,8 @@ if ( $hidden > 0 ) {
 
 $property->load_all_vestorfilters();
 
-//$compliance_logo       = $property->get_source()->get_compliance_logo();
 $compliance_text       = $property->get_source()->get_compliance_line( $property->get_office_name() );
 $compliance_source     = $property->get_source()->slug();
-//$compliance_location   = false;
 $compliance_photo_text = $property->get_source()->get_compliance_line_under_photo( $property->get_office_name() );
 
 
@@ -112,7 +110,6 @@ $compliance_photo_text = $property->get_source()->get_compliance_line_under_phot
 <?php if ( $property->has_photos() ) : ?>
 
 <section class="property-template__gallery" id="gallery">
-
 	<?php $photos = $property->get_photos(); ?>
 	<figure class="property-template__gallery--photo" data-gallery-photo>
 		<img src="{{ property:photo[0] }}" alt="<?php echo esc_attr( $photos[0]->alt ); ?>">
