@@ -163,3 +163,16 @@ function get_all_data( $type = '', $sort = '', $duplicates = false ) {
     return $data;
 
 }
+
+function get_locations() {
+    $location_options = array();
+    $location_types_allowed = apply_filters( 'vestorfilter_allowed_default_locations', [ 'city', 'county', 'zip' ] );
+    foreach( $location_types_allowed as $type ) {
+        $locations = get_all_data( $type );
+        foreach( $locations as $locale ) {
+            $location_options[ $locale->ID ] = $locale->value;
+        }
+    }
+    
+    return $location_options;
+}

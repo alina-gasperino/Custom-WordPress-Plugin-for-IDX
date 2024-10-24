@@ -40,7 +40,7 @@ class Data {
         add_filter( 'vestortemplate_filter_value__price', [ $this, 'filter_price_label' ], 10, 2 );
         add_filter( 'vestortemplate_filter_value__location', [ $this, 'filter_location_label' ], 10, 2 );
 
-        add_filter( 'vestorfilter_status_available_options', [ $this, 'filter_status_options' ] );
+        // add_filter( 'vestorfilter_status_available_options', [ $this, 'filter_status_options' ] );
 
         do_action( 'vestorfilter_data_installed', $this );
 
@@ -168,13 +168,11 @@ class Data {
                 $status_values[ $status['value'] ] = $status['label'];
             }
         }
-
         $lot_options = Settings::get_filter_options( 'lot' );
         $lot_values  = [];
         foreach( $lot_options as $option ) {
             $lot_values[ $option['value'] ] = $option['label'];
         }
-
         $type_values = self::get_property_types();
 
         $filters = [
@@ -349,9 +347,7 @@ class Data {
             'status'        => [
                 'label'   => __( 'Status', 'vestorfilters' ),
                 'type'    => 'options',
-                'classes' => [ 'no-label' ],
-                'options' => $status_values, //Cache::get_index_values( 'status', '`value` ASC' ),
-                'default' => key( $status_values ),
+                'options' => $status_values, 
                 'index'   => true,
             ],
 

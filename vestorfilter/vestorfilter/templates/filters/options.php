@@ -5,7 +5,6 @@ if ( empty( $input_prefix ) ) {
 }
 
 $available = apply_filters( "vestorfilter_{$key}_available_options", get_option( "vestorfilter_{$key}_options" ) ?: array() );
-
 ?>
 <div class="option-toggles" data-for="<?php echo esc_attr( $input_prefix ); ?><?php echo esc_attr( $key ); ?>">
 

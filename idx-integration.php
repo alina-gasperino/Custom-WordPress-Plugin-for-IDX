@@ -101,7 +101,7 @@ $wpdb->query( '
 
 function my_idx_add_admin_menu() {
     add_menu_page(
-        'Vestor Filter IDX Settings',             // Page title
+        'Vestor Filter IDX Settings',
         'Vestor Filter IDX Settings',             // Menu title
         'manage_options',             // Capability
         'my_idx_settings',          // Menu slug
@@ -272,11 +272,14 @@ function location_area_cb() {
 function location_search_cb() {
     $options = get_option('my_idx_options_general');
     $selected = $options['location_search'] ?? '';
+    $locate_options = get_locations();
     ?>
     <select name="my_idx_options_general[location_search]">
-        <option value="option1" <?php selected($selected, 'option1'); ?>>Option 1</option>
-        <option value="option2" <?php selected($selected, 'option2'); ?>>Option 2</option>
-        <option value="option3" <?php selected($selected, 'option3'); ?>>Option 3</option>
+        <?php foreach ($locate_options as $key => $locate) {?>
+            <option value=<?php echo $key; ?> <?php selected($selected, $key); ?>><?php echo $locate; ?></option>
+        <?php
+        }
+        ?>
     </select>
     <?php
 }

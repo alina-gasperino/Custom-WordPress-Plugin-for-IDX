@@ -28,7 +28,6 @@ class Settings extends \VestorFilter\Util\Singleton {
 		add_action( 'wp_footer', [ $this, 'gtm_head' ], 1 );
 
 		add_action( 'mb_settings_page_submit_buttons', [ $this, 'hide_some_meta_boxes' ] );
-
 	}
 
 	public function register_settings() {
