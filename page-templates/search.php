@@ -43,7 +43,6 @@ if ( isset( $_GET['location' ] ) ) {
 }
 
 if ( is_user_logged_in() ) {
-	
 	if ( current_user_can( 'see_leads' ) ) {
 		$is_agent = true;
 		$friends = get_users( [
@@ -97,7 +96,6 @@ if ( ! empty( $friends ) ) {
 } 
 
 get_template_part( 'parts/save-map-dialog', null, [ 'friends' => $friends ?? [], 'is_agent' => $is_agent ?? false ] );
-
 
 ?>
 

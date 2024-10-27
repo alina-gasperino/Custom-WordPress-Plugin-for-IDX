@@ -78,7 +78,7 @@ if ( ! empty( $force_geo ) ) {
 
 		<div class="vf-search__map-custom-selector">
 			<button type="button" aria-controls="user-maps-selector" aria-expanded="false" class="btn vf-search__map-draw-mode-btn">
-				<svg class="vf-use-icon vf-use-icon--data-polygon"><use xlink:href="#action-draw"></use></svg>
+				<svg class="vf-use-icon vf-use-icon--data-polygon"><?php echo use_icon("action-draw"); ?><use xlink:href="#action-draw"></use></svg>
 			</button>
 			<button type="button" data-custom-map="save" class="btn vf-search__map-save-btn">
 				<svg class="vf-use-icon vf-use-icon--data-save"><use xlink:href="#data-save"></use></svg>

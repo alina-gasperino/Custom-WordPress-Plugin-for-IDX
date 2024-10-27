@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- generator="WordPress/6.4.3" created="2024-10-25 07:14" -->
+
+<channel>
+	<title>Portland Homes for Sale</title>
+	<pubDate>Fri, 25 Oct 2024 07:14:33 +0000</pubDate>
+
+	<form>
+		<id>1</id>
+		<form_key><![CDATA[contact-agent]]></form_key>
+		<name><![CDATA[Contact Agent]]></name>
+		<description><![CDATA[<p>We would like to hear from you. Please send us a message by filling out the form below and we will get back with you shortly.</p>
+]]></description>
+		<created_at>2020-09-18 17:54:08</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"on_submit_migrated":"1","akismet":"1","ajax_load":"1","ajax_submit":"1","js_validate":"1","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"protect_files":"0","noindex_files":"0","open_date":"2020-10-29 12:49","custom_style":"1","submit_conditions":{"show_hide":"show","any_all":"all"},"start_over_label":"Start Over","before_html":"[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" tabindex=\\\"0\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","success_msg":"Thank you! We'll respond to your message as soon as possible.","show_form":false,"prev_value":"Previous"}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>1</id>
+			<field_key><![CDATA[contact_name]]></field_key>
+			<name><![CDATA[Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[[first_name] [last_name]]]></default_value>
+			<field_order>1</field_order>
+			<form_id>1</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","in_section":"0","admin_only":[""],"unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>3</id>
+			<field_key><![CDATA[contact_email]]></field_key>
+			<name><![CDATA[Email]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[[email]]]></default_value>
+			<field_order>2</field_order>
+			<form_id>1</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","invalid":"Please enter a valid email address","classes":"frm_full","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","in_section":"0","admin_only":[""],"unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>53</id>
+			<field_key><![CDATA[57efo]]></field_key>
+			<name><![CDATA[Phone]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[phone]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>1</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>5</id>
+			<field_key><![CDATA[contact_message]]></field_key>
+			<name><![CDATA[Message]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[textarea]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>4</field_order>
+			<form_id>1</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","classes":"frm_full","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","in_section":"0","admin_only":[""],"unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>50</id>
+			<field_key><![CDATA[contact_mlsid]]></field_key>
+			<name><![CDATA[MLS ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>5</field_order>
+			<form_id>1</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>51</id>
+			<field_key><![CDATA[contact_page]]></field_key>
+			<name><![CDATA[Origin URL]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>6</field_order>
+			<form_id>1</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>52</id>
+			<field_key><![CDATA[contact_agent]]></field_key>
+			<name><![CDATA[Agent ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>7</field_order>
+			<form_id>1</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>98</id>
+			<field_key><![CDATA[75cb6]]></field_key>
+			<name><![CDATA[Submit]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[submit]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>8</field_order>
+			<form_id>1</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[[]]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>2</id>
+		<form_key><![CDATA[user-registration]]></form_key>
+		<name><![CDATA[User Registration]]></name>
+		<description><![CDATA[]]></description>
+		<created_at>2017-06-22 22:09:18</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"show_form":"1","akismet":"1","ajax_submit":"1","js_validate":"1","success_msg":"Your account has successfully been registered, you will receive a confirmation email shortly.","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","noindex_files":"0","open_date":"2019-01-29 16:49","custom_style":"1","submit_value":"Register","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"<legend class=\\\"frm_hidden\\\">[form_name]<\/legend>\r\n[if form_name]<h3 class=\\\"frm_form_title\\\">[form_name]<\/h3>[\/if form_name]\r\n[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous","on_submit_migrated":1}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>12</id>
+			<field_key><![CDATA[reg_fname]]></field_key>
+			<name><![CDATA[Your First Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>1</field_order>
+			<form_id>2</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"This field cannot be blank.","invalid":"Text is invalid","classes":"frm_first frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>13</id>
+			<field_key><![CDATA[reg_lname]]></field_key>
+			<name><![CDATA[Last Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>2</field_order>
+			<form_id>2</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","invalid":"Text is invalid","classes":"frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>7</id>
+			<field_key><![CDATA[reg_email]]></field_key>
+			<name><![CDATA[Email Address]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>2</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"in_section":"0","watch_lookup":[""],"blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\">[error]<\/div>[\/if error]\r\n<\/div>","captcha_size":"normal","captcha_theme":"light","slide":0,"star":0,"ftypes":[],"data_type":"select","restrict":0,"start_year":2000,"end_year":2020,"locale":"","attach":false,"delete":false,"clock":12,"single_time":0,"start_time":"00:00","end_time":"23:59","repeat":0,"add_label":"Add","remove_label":"Remove","btsp":{"prepend":"","append":""}}]]></field_options>
+		</field>
+		<field>
+			<id>39</id>
+			<field_key><![CDATA[reg_goal]]></field_key>
+			<name><![CDATA[What is your goal?]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[select]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>4</field_order>
+			<form_id>2</form_id>
+			<required>1</required>
+			<options><![CDATA[[{"label":"","value":"","image":"0"},{"label":"Find my next home.","value":"Find my next home.","image":"0"},{"label":"Find my next investment","value":"Find my next investment","image":"0"},{"label":"Sell then buy my next home.","value":"Sell then buy my next home.","image":"0"},{"label":"Sell then buy my next investment.","value":"Sell then buy my next investment.","image":"0"},{"label":"Just looking for now.","value":"Just looking for now.","image":"0"}]]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","other":"0","in_section":"0","blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>11</id>
+			<field_key><![CDATA[phone]]></field_key>
+			<name><![CDATA[Your Phone Number]]></name>
+			<description><![CDATA[Please enter only numbers. Your phone number will also be used as your account password, until you reset it.]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>5</field_order>
+			<form_id>2</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"This field cannot be blank.","invalid":"Phone number is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"","maxnum":"","step":"1"}]]></field_options>
+		</field>
+		<field>
+			<id>40</id>
+			<field_key><![CDATA[epce5]]></field_key>
+			<name><![CDATA[User ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[user_id]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>6</field_order>
+			<form_id>2</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>97</id>
+			<field_key><![CDATA[sms_consent]]></field_key>
+			<name><![CDATA[]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[checkbox]]></type>
+			<default_value><![CDATA[["yes"]]]></default_value>
+			<field_order>7</field_order>
+			<form_id>2</form_id>
+			<required>0</required>
+			<options><![CDATA[[{"label":"I agree to receive messages to help with my home search.","value":"yes","image":"0"}]]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","other":"0","in_section":"0","blank":"","separate_value":"1","classes":"no-container","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <div  id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/div>\r\n    <div class=\\\"frm_opt_container\\\" aria-labelledby=\\\"field_[key]_label\\\" role=\\\"group\\\">[input]<\/div>\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","image_size":"small"}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>4</id>
+		<form_key><![CDATA[user-login]]></form_key>
+		<name><![CDATA[User Login]]></name>
+		<description><![CDATA[]]></description>
+		<created_at>2020-10-14 21:13:57</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"show_form":"1","no_save":"1","ajax_submit":"1","js_validate":"1","success_msg":"You\\'ve been successfully logged in!","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","open_date":"2020-10-14 14:13","custom_style":"1","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"[if form_name]<h3 class=\\\"frm_form_title\\\">[form_name]<\/h3>[\/if form_name]\r\n[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" tabindex=\\\"0\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous","on_submit_migrated":1}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>27</id>
+			<field_key><![CDATA[login_email]]></field_key>
+			<name><![CDATA[Email]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>1</field_order>
+			<form_id>4</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":"","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>28</id>
+			<field_key><![CDATA[login_pass]]></field_key>
+			<name><![CDATA[Password]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[password]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>2</field_order>
+			<form_id>4</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>29</id>
+			<field_key><![CDATA[login_id]]></field_key>
+			<name><![CDATA[User ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[user_id]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>4</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>5</id>
+		<form_key><![CDATA[edit-user-profile]]></form_key>
+		<name><![CDATA[Edit My Profile]]></name>
+		<description><![CDATA[]]></description>
+		<created_at>2016-03-22 22:26:53</created_at>
+		<logged_in>1</logged_in>
+		<is_template>0</is_template>
+		<editable>1</editable>
+		<options><![CDATA[{"show_form":"1","no_save":"1","success_msg":"Your profile was successfully updated.","edit_msg":"Your profile was successfully updated.","logged_in_role":[""],"single_entry":"1","cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","open_date":"2019-01-29 16:53","custom_style":"1","submit_value":"Save Profile","edit_value":"Save Profile","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"<legend class=\\\"frm_hidden\\\">[form_name]<\/legend>\r\n<hr>\r\n<h3>Edit your Profile<\/h3>\r\n[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<input type=\\\"button\\\" value=\\\"[back_label]\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook] \/>[\/if back_button]\r\n<input type=\\\"submit\\\" value=\\\"[button_label]\\\" [button_action] \/>\r\n\r\n[if save_draft]<a href=\\\"#\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous"}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>30</id>
+			<field_key><![CDATA[edit_fname]]></field_key>
+			<name><![CDATA[Your First Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[[first_name]]]></default_value>
+			<field_order>1</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","watch_lookup":[""],"blank":"","required_indicator":"","invalid":"Name is invalid","classes":"frm_first frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\">[error]<\/div>[\/if error]\r\n<\/div>","btsp":{"prepend":"","append":""}}]]></field_options>
+		</field>
+		<field>
+			<id>31</id>
+			<field_key><![CDATA[edit_lname]]></field_key>
+			<name><![CDATA[Last Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[[last_name]]]></default_value>
+			<field_order>2</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","watch_lookup":[""],"label":"hidden","blank":"","required_indicator":"","classes":"frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\">[error]<\/div>[\/if error]\r\n<\/div>","btsp":{"prepend":"","append":""}}]]></field_options>
+		</field>
+		<field>
+			<id>38</id>
+			<field_key><![CDATA[edit_phone]]></field_key>
+			<name><![CDATA[Phone Number]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[phone]]></type>
+			<default_value><![CDATA[[user_meta key=phone]]]></default_value>
+			<field_order>3</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","invalid":"Phone is invalid","classes":"frm_two_thirds","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"1","maxnum":"10","step":"1"}]]></field_options>
+		</field>
+		<field>
+			<id>33</id>
+			<field_key><![CDATA[edit_email]]></field_key>
+			<name><![CDATA[New Email Address]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>4</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","conf_field":"inline","in_section":"0","watch_lookup":[""],"blank":"","required_indicator":"","invalid":"Email Address is invalid","classes":"frm_separator_before frm_is_split","custom_html":"<div id=\"frm_field_[id]_container\" class=\"frm_form_field form-field [required_class][error_class]\">\r\n    <label for=\"field_[key]\" class=\"frm_primary_label\">[field_name]\r\n        <span class=\"frm_required\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\"frm_description\" id=\"frm_desc_field_[key]\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\"frm_error\">[error]<\/div>[\/if error]\r\n<\/div>","btsp":{"prepend":"","append":""}}]]></field_options>
+		</field>
+		<field>
+			<id>32</id>
+			<field_key><![CDATA[edit_password]]></field_key>
+			<name><![CDATA[New password]]></name>
+			<description><![CDATA[Enter Password]]></description>
+			<type><![CDATA[password]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>5</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","conf_field":"inline","conf_desc":"Confirm Password","in_section":"0","blank":"","required_indicator":"","invalid":"Password is invalid","classes":"frm_separator_before frm_is_split","custom_html":"<div id=\"frm_field_[id]_container\" class=\"frm_form_field form-field [required_class][error_class]\">\r\n    <label for=\"field_[key]\" class=\"frm_primary_label\">[field_name]\r\n        <span class=\"frm_required\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\"frm_description\" id=\"frm_desc_field_[key]\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\"frm_error\">[error]<\/div>[\/if error]\r\n<\/div>","default_blank":"Enter Password","btsp":{"prepend":"","append":""}}]]></field_options>
+		</field>
+		<field>
+			<id>37</id>
+			<field_key><![CDATA[3uv1p]]></field_key>
+			<name><![CDATA[User ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[user_id]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>6</field_order>
+			<form_id>5</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","watch_lookup":[""],"blank":"","btsp":""}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>6</id>
+		<form_key><![CDATA[schedule-tour]]></form_key>
+		<name><![CDATA[Schedule a Tour]]></name>
+		<description><![CDATA[]]></description>
+		<created_at>2020-10-29 16:15:43</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"show_form":"1","akismet":"1","ajax_load":"1","ajax_submit":"1","js_validate":"1","success_msg":"Thanks! We\\'ll follow up shortly to confirm your appointment.","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","noindex_files":"0","open_date":"2020-10-29 09:15","custom_style":"1","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" tabindex=\\\"0\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous","on_submit_migrated":1}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>54</id>
+			<field_key><![CDATA[tour_date]]></field_key>
+			<name><![CDATA[Text]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>1</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","classes":"frm_third","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","days_of_the_week":["0","1","2","3","4","5","6"],"excepted_dates":[],"start_year":"-10","end_year":"+10","locale":"en","blackout_dates":[],"display_inline":false,"minimum_date_cond":"","minimum_date_val":"","maximum_date_cond":"","maximum_date_val":""}]]></field_options>
+		</field>
+		<field>
+			<id>42</id>
+			<field_key><![CDATA[tour_time]]></field_key>
+			<name><![CDATA[Preferred Time of Day]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[time]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>2</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"This field cannot be blank.","invalid":"Time is invalid","classes":"frm_third","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <div  id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/div>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","step":"30","start_time":"9:00","end_time":"19:00","clock":"12"}]]></field_options>
+		</field>
+		<field>
+			<id>43</id>
+			<field_key><![CDATA[tour_type]]></field_key>
+			<name><![CDATA[Type of Tour]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[radio]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[[{"label":"In Person","value":"In Person","image":"0"},{"label":"Virtual","value":"Virtual","image":"0"}]]]></options>
+			<field_options><![CDATA[{"align":"frm_two_col","admin_only":[""],"unique_msg":"This value must be unique.","other":"0","in_section":"0","blank":"","classes":"frm_third","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <div  id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/div>\r\n    <div class=\\\"frm_opt_container\\\" aria-labelledby=\\\"field_[key]_label\\\" role=\\\"group\\\">[input]<\/div>\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","image_size":"small"}]]></field_options>
+		</field>
+		<field>
+			<id>44</id>
+			<field_key><![CDATA[tour_name]]></field_key>
+			<name><![CDATA[Your Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[[first_name] [last_name]]]></default_value>
+			<field_order>4</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","invalid":"Text is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>46</id>
+			<field_key><![CDATA[tour_email]]></field_key>
+			<name><![CDATA[Email Address to Contact You]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[[email]]]></default_value>
+			<field_order>5</field_order>
+			<form_id>6</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","invalid":"Email is invalid","classes":"frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>47</id>
+			<field_key><![CDATA[tour_phone]]></field_key>
+			<name><![CDATA[Phone Number to Contact You]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[phone]]></type>
+			<default_value><![CDATA[[user_meta key=phone]]]></default_value>
+			<field_order>6</field_order>
+			<form_id>6</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"admin_only":[""],"unique_msg":"This value must be unique.","in_section":"0","blank":"","invalid":"Phone is invalid","classes":"frm_half","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>"}]]></field_options>
+		</field>
+		<field>
+			<id>48</id>
+			<field_key><![CDATA[tour_link]]></field_key>
+			<name><![CDATA[Property Link]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>7</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>49</id>
+			<field_key><![CDATA[tour_mlsid]]></field_key>
+			<name><![CDATA[MLS ID]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>8</field_order>
+			<form_id>6</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"unique_msg":"This value must be unique.","in_section":"0","blank":""}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>8</id>
+		<form_key><![CDATA[mortgage-calculator]]></form_key>
+		<name><![CDATA[Simple Mortgage Calculator]]></name>
+		<description><![CDATA[]]></description>
+		<created_at>2019-11-27 20:36:10</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"akismet":"1","ajax_submit":"1","js_validate":"1","success_msg":"Your request was successfully submitted. Thank you!","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","noindex_files":"0","open_date":"2019-01-29 16:52","custom_style":"1","submit_value":"Send","submit_conditions":{"show_hide":"show","any_all":"all"},"form_class":"mortgage-calculator is-simple","before_html":"[if form_description]<div class=\\\"frm_description\\\">[form_description]<\/div>[\/if form_description]\r\n<button type=\\\"submit\\\" disabled style=\\\"display: none\\\" aria-hidden=\\\"true\\\"><\/button>","submit_html":"<div class=\\\"frm_submit\\\">\r\n<p class=\\\"small-text\\\">The calculator is not a commitment to lend and should only be used as a general estimate.<\/p>\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous","on_submit_migrated":1}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>65</id>
+			<field_key><![CDATA[72a868d148f40cc]]></field_key>
+			<name><![CDATA[Loan Details]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>1</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"label":"none","blank":"","classes":"calculator-fields","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field frm_section_heading form-field[error_class]\\\">\r\n<h3 class=\\\"frm_pos_[label_position][collapse_class]\\\">[field_name]<\/h3>\r\n[if description]<div class=\\\"frm_description\\\">[description]<\/div>[\/if description]\r\n[collapse_this]\r\n<\/div>","repeat":"0","admin_only":[""],"btsp":"","in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>66</id>
+			<field_key><![CDATA[mortgage_amt]]></field_key>
+			<name><![CDATA[Sale Price]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value>500000</default_value>
+			<field_order>2</field_order>
+			<form_id>8</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","required_indicator":"","invalid":"Mortgage Amount is invalid","classes":"is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"999999999","step":"1","admin_only":[""],"in_section":"65","prepend":"$","append":".00","watch_lookup":[""],"btsp":{"prepend":"","append":""},"use_calc":0,"autopopulate_value":false,"default_blank":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>67</id>
+			<field_key><![CDATA[downpayment_amt]]></field_key>
+			<name><![CDATA[Down Payment Amount]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value>100000</default_value>
+			<field_order>3</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","classes":"is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","admin_only":[""],"in_section":"65","prepend":"$","append":".00","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>68</id>
+			<field_key><![CDATA[mortgage_interest]]></field_key>
+			<name><![CDATA[Interest Rate]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[range]]></type>
+			<default_value>5</default_value>
+			<field_order>4</field_order>
+			<form_id>8</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","required_indicator":"","invalid":"Interest Rate (%) is invalid","classes":"frm_half frm_first is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"20","step":".01","admin_only":[""],"in_section":"65","append":"%","btsp":"","use_calc":0,"autopopulate_value":false,"get_values_form":"","get_values_field":"","watch_lookup":[""],"get_most_recent_value":"","lookup_filter_current_user":false,"default_blank":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>69</id>
+			<field_key><![CDATA[mortgage_length]]></field_key>
+			<name><![CDATA[Mortgage Period]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[range]]></type>
+			<default_value>30</default_value>
+			<field_order>5</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Slider is invalid","classes":"frm_half is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"1","maxnum":"50","step":"1","admin_only":[""],"in_section":"65","append":"years","btsp":"","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>70</id>
+			<field_key><![CDATA[ooq9d372962b5da]]></field_key>
+			<name><![CDATA[Section Buttons]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[end_divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>6</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","btsp":""}]]></field_options>
+		</field>
+		<field>
+			<id>71</id>
+			<field_key><![CDATA[kdlat]]></field_key>
+			<name><![CDATA[Additional Costs]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>7</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"label":"","blank":"","classes":"calculator-adtl","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field frm_section_heading form-field[error_class]\\\">\r\n<h3 class=\\\"frm_pos_[label_position][collapse_class]\\\">[field_name]<\/h3>\r\n[if description]<div class=\\\"frm_description\\\">[description]<\/div>[\/if description]\r\n[collapse_this]\r\n<\/div>","repeat":"0","admin_only":[""],"in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>73</id>
+			<field_key><![CDATA[property_tax_value]]></field_key>
+			<name><![CDATA[Yearly Property Taxes]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value>6600</default_value>
+			<field_order>10</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","classes":"frm_half is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","step":"1","admin_only":[""],"calc_dec":"0","in_section":"71","prepend":"$","append":".00","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>74</id>
+			<field_key><![CDATA[monthly_insurance]]></field_key>
+			<name><![CDATA[Yearly Insurance]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value>1700</default_value>
+			<field_order>11</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","classes":"frm_half is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","admin_only":[""],"is_currency":"1","in_section":"71","prepend":"$","append":".00","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>75</id>
+			<field_key><![CDATA[hoa_fee]]></field_key>
+			<name><![CDATA[HOA Fee]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value>0</default_value>
+			<field_order>12</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","classes":"frm_fourth is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","step":"1","admin_only":[""],"in_section":"71","prepend":"$","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>76</id>
+			<field_key><![CDATA[hoa_freq]]></field_key>
+			<name><![CDATA[Frequency]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[select]]></type>
+			<default_value>1</default_value>
+			<field_order>13</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[[{"label":"\/ Month","value":"1","image":"0"},{"label":"\/ Quarter","value":"3","image":"0"},{"label":"\/ Semi-Annual","value":"6","image":"0"},{"label":"\/ Year","value":"12","image":"0"}]]]></options>
+			<field_options><![CDATA[{"blank":"","separate_value":"1","classes":"frm_fourth is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","admin_only":[""],"in_section":"71","unique_msg":"This value must be unique.","other":"0"}]]></field_options>
+		</field>
+		<field>
+			<id>77</id>
+			<field_key><![CDATA[pmi]]></field_key>
+			<name><![CDATA[Mortgage Insurance (PMI)]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[range]]></type>
+			<default_value>0</default_value>
+			<field_order>14</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Slider is invalid","classes":"frm_half is-sharable","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"5","step":"0.01","admin_only":[""],"in_section":"71","append":"%","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>78</id>
+			<field_key><![CDATA[oknmu]]></field_key>
+			<name><![CDATA[Section Buttons]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[end_divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>15</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>79</id>
+			<field_key><![CDATA[calculator-result]]></field_key>
+			<name><![CDATA[Calculations]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>16</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"label":"","blank":"","classes":"calculator-result","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field frm_section_heading form-field[error_class]\\\">\r\n<h3 class=\\\"frm_pos_[label_position][collapse_class]\\\">[field_name]<\/h3>\r\n[if description]<div class=\\\"frm_description\\\">[description]<\/div>[\/if description]\r\n[collapse_this]\r\n<\/div>","repeat":"0","admin_only":[""],"in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>80</id>
+			<field_key><![CDATA[monthly_payment]]></field_key>
+			<name><![CDATA[Mortgage Payment]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>17</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","step":"0.01","read_only":"1","admin_only":[""],"calc":"( [66] - [67] ) * ( ( [68] + [77] ) \/ 1200) \/ (1 - (Math.pow(1\/(1 + ( ( [68] + [77] ) \/ 1200 ) ), ( [69] * 12 ) ) ) )","is_currency":"1","in_section":"79","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>81</id>
+			<field_key><![CDATA[monthly_fees]]></field_key>
+			<name><![CDATA[Additional Costs]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>18</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","classes":"monthly_fees","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","minnum":"0","maxnum":"9999999","step":"0.01","read_only":"1","admin_only":[""],"calc":"( ( [73] + [74] ) \/ 12 ) + ( [75] \/ [76] )","is_currency":"1","in_section":"79","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>82</id>
+			<field_key><![CDATA[total_costs]]></field_key>
+			<name><![CDATA[Total Monthly Cost]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[number]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>19</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Number is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>\r\n[share-form-values]","minnum":"0","maxnum":"9999999","step":"0.01","read_only":"1","admin_only":[""],"calc":"[80] + [81]","is_currency":"1","in_section":"79","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>83</id>
+			<field_key><![CDATA[keqiv]]></field_key>
+			<name><![CDATA[Section Buttons]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[end_divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>20</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>84</id>
+			<field_key><![CDATA[calculator-cta]]></field_key>
+			<name><![CDATA[Would you like to get pre-approved today?]]></name>
+			<description><![CDATA[We will send all these numbers to our recommended local lender.]]></description>
+			<type><![CDATA[divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>21</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"label":"","blank":"","classes":"calculator-cta","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field frm_section_heading form-field[error_class]\\\">\r\n<h3 class=\\\"frm_pos_[label_position][collapse_class]\\\">[field_name]<\/h3>\r\n[if description]<div class=\\\"frm_description\\\">[description]<\/div>[\/if description]\r\n[collapse_this]\r\n<\/div>","repeat":"0","admin_only":[""],"btsp":"","in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>85</id>
+			<field_key><![CDATA[brzmi5c67a4b513630248e00f]]></field_key>
+			<name><![CDATA[Your Name]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[[first_name] [last_name]]]></default_value>
+			<field_order>22</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Text is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","admin_only":[""],"in_section":"84","btsp":{"prepend":"","append":""},"unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>86</id>
+			<field_key><![CDATA[vpj92]]></field_key>
+			<name><![CDATA[Phone]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[phone]]></type>
+			<default_value><![CDATA[[user_meta key=phone]]]></default_value>
+			<field_order>23</field_order>
+			<form_id>8</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","placeholder":"(123) 555-4567","admin_only":[""],"in_section":"84","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>87</id>
+			<field_key><![CDATA[7mj7n5e338af5ab673861acc5]]></field_key>
+			<name><![CDATA[Email]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[email]]></type>
+			<default_value><![CDATA[[email]]]></default_value>
+			<field_order>24</field_order>
+			<form_id>8</form_id>
+			<required>1</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"label":"none","blank":"This field cannot be blank.","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","placeholder":"youraddress@example.com","admin_only":[""],"in_section":"84","btsp":{"prepend":"","append":""},"unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+		<field>
+			<id>88</id>
+			<field_key><![CDATA[n5o2s097133852b034ab2c3f2]]></field_key>
+			<name><![CDATA[Section Buttons]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[end_divider]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>25</field_order>
+			<form_id>8</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","btsp":"","in_section":"0","unique_msg":"This value must be unique."}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>9</id>
+		<form_key><![CDATA[search_update_preferences]]></form_key>
+		<name><![CDATA[Instant Home Alerts]]></name>
+		<description><![CDATA[<p>Get email updates on your schedule.</p>
+]]></description>
+		<created_at>2021-01-25 18:22:03</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"show_form":"1","no_save":"1","ajax_submit":"1","js_validate":"1","success_msg":"Thanks! Your preferences have been saved.","logged_in_role":[""],"editable_role":[""],"edit_page_id":"","open_date":"2021-01-25 10:22","submit_value":"Subscribe","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"[form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" tabindex=\\\"0\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous","on_submit_migrated":1}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>89</id>
+			<field_key><![CDATA[email_update_frequency]]></field_key>
+			<name><![CDATA[How often should we send you this saved search criteria?]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[radio]]></type>
+			<default_value>1</default_value>
+			<field_order>1</field_order>
+			<form_id>9</form_id>
+			<required>0</required>
+			<options><![CDATA[{"3":{"label":"Immediately, every time a home matches.","value":"0","image":"0"},"0":{"label":"Once a day","value":"1","image":"0"},"1":{"label":"Once a week","value":"7","image":"0"},"2":{"label":"Once a month","value":"30","image":"0"},"4":{"label":"Never, just save the criteria in my dashboard.","value":"never","image":"0"}}]]></options>
+			<field_options><![CDATA[{"blank":"","separate_value":"1","custom_html":"<div id=\"frm_field_[id]_container\" class=\"frm_form_field form-field [required_class][error_class]\">\n    <div  id=\"field_[key]_label\" class=\"frm_primary_label\">[field_name]\n        <span class=\"frm_required\">[required_label]<\/span>\n    <\/div>\n    <div class=\"frm_opt_container\" aria-labelledby=\"field_[key]_label\" role=\"group\">[input]<\/div>\n    [if description]<div class=\"frm_description\" id=\"frm_desc_field_[key]\">[description]<\/div>[\/if description]\n    [if error]<div class=\"frm_error\" id=\"frm_error_field_[key]\">[error]<\/div>[\/if error]\n<\/div>","image_size":"small","admin_only":[""]}]]></field_options>
+		</field>
+		<field>
+			<id>90</id>
+			<field_key><![CDATA[search_name]]></field_key>
+			<name><![CDATA[Name this search]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>2</field_order>
+			<form_id>9</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Text is invalid","custom_html":"<div id=\"frm_field_[id]_container\" class=\"frm_form_field form-field [required_class][error_class]\">\n    <label for=\"field_[key]\" id=\"field_[key]_label\" class=\"frm_primary_label\">[field_name]\n        <span class=\"frm_required\">[required_label]<\/span>\n    <\/label>\n    [input]\n    [if description]<div class=\"frm_description\" id=\"frm_desc_field_[key]\">[description]<\/div>[\/if description]\n    [if error]<div class=\"frm_error\" id=\"frm_error_field_[key]\">[error]<\/div>[\/if error]\n<\/div>","admin_only":[""]}]]></field_options>
+		</field>
+		<field>
+			<id>91</id>
+			<field_key><![CDATA[search_query_hash]]></field_key>
+			<name><![CDATA[Search Hash]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>9</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":""}]]></field_options>
+		</field>
+	</form>
+	<form>
+		<id>10</id>
+		<form_key><![CDATA[save_search_for_user]]></form_key>
+		<name><![CDATA[Save Search For User]]></name>
+		<description><![CDATA[<p>Save this search in a user\'s dashboard</p>
+]]></description>
+		<created_at>2021-02-08 20:15:03</created_at>
+		<logged_in>0</logged_in>
+		<is_template>0</is_template>
+		<editable>0</editable>
+		<options><![CDATA[{"show_form":"1","no_save":"1","ajax_submit":"1","js_validate":"1","success_msg":"This search has been saved for the selected user.","logged_in_role":[""],"cookie_expiration":"8000","editable_role":[""],"edit_page_id":"","protect_files":"0","open_date":"2021-01-25 10:22","custom_style":"1","submit_value":"Save for User","submit_conditions":{"show_hide":"show","any_all":"all"},"before_html":"[form_description]","submit_html":"<div class=\\\"frm_submit\\\">\r\n[if back_button]<button type=\\\"submit\\\" name=\\\"frm_prev_page\\\" formnovalidate=\\\"formnovalidate\\\" class=\\\"frm_prev_page\\\" [back_hook]>[back_label]<\/button>[\/if back_button]\r\n<button class=\\\"frm_button_submit\\\" type=\\\"submit\\\"  [button_action]>[button_label]<\/button>\r\n[if save_draft]<a href=\\\"#\\\" tabindex=\\\"0\\\" class=\\\"frm_save_draft\\\" [draft_hook]>[draft_label]<\/a>[\/if save_draft]\r\n<\/div>","prev_value":"Previous"}]]></options>
+		<status><![CDATA[published]]></status>
+		<parent_form_id>0</parent_form_id>
+		<field>
+			<id>92</id>
+			<field_key><![CDATA[saved_lead_id]]></field_key>
+			<name><![CDATA[Select a user]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[select]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>1</field_order>
+			<form_id>10</form_id>
+			<required>0</required>
+			<options><![CDATA[[{"label":"","value":"","image":"0"}]]]></options>
+			<field_options><![CDATA[{"blank":"","separate_value":"1","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","admin_only":[""]}]]></field_options>
+		</field>
+		<field>
+			<id>93</id>
+			<field_key><![CDATA[saved_search_freq]]></field_key>
+			<name><![CDATA[How Often?]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[radio]]></type>
+			<default_value>7</default_value>
+			<field_order>2</field_order>
+			<form_id>10</form_id>
+			<required>0</required>
+			<options><![CDATA[{"0":{"label":"Once a day","value":"1","image":"0"},"1":{"label":"Once a week","value":"7","image":"0"},"2":{"label":"Once a month","value":"30","image":"0"},"4":{"label":"Never","value":"never","image":"0"}}]]></options>
+			<field_options><![CDATA[{"blank":"","separate_value":"1","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <div  id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/div>\r\n    <div class=\\\"frm_opt_container\\\" aria-labelledby=\\\"field_[key]_label\\\" role=\\\"group\\\">[input]<\/div>\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","image_size":"small","admin_only":[""]}]]></field_options>
+		</field>
+		<field>
+			<id>94</id>
+			<field_key><![CDATA[saved_search_name]]></field_key>
+			<name><![CDATA[Name this search]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[text]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>3</field_order>
+			<form_id>10</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":"","invalid":"Text is invalid","custom_html":"<div id=\\\"frm_field_[id]_container\\\" class=\\\"frm_form_field form-field [required_class][error_class]\\\">\r\n    <label for=\\\"field_[key]\\\" id=\\\"field_[key]_label\\\" class=\\\"frm_primary_label\\\">[field_name]\r\n        <span class=\\\"frm_required\\\">[required_label]<\/span>\r\n    <\/label>\r\n    [input]\r\n    [if description]<div class=\\\"frm_description\\\" id=\\\"frm_desc_field_[key]\\\">[description]<\/div>[\/if description]\r\n    [if error]<div class=\\\"frm_error\\\" id=\\\"frm_error_field_[key]\\\">[error]<\/div>[\/if error]\r\n<\/div>","admin_only":[""]}]]></field_options>
+		</field>
+		<field>
+			<id>95</id>
+			<field_key><![CDATA[saved_search_query_hash]]></field_key>
+			<name><![CDATA[Search Hash]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>4</field_order>
+			<form_id>10</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":""}]]></field_options>
+		</field>
+		<field>
+			<id>96</id>
+			<field_key><![CDATA[saved_search_filters]]></field_key>
+			<name><![CDATA[Filters]]></name>
+			<description><![CDATA[]]></description>
+			<type><![CDATA[hidden]]></type>
+			<default_value><![CDATA[]]></default_value>
+			<field_order>5</field_order>
+			<form_id>10</form_id>
+			<required>0</required>
+			<options><![CDATA[]]></options>
+			<field_options><![CDATA[{"blank":""}]]></field_options>
+		</field>
+	</form>
+	<view>
+		<title>Formidable Style</title>
+		<link></link>
+		<post_author><![CDATA[]]></post_author>
+		<description></description>
+		<content><![CDATA[{"theme_css":"ui-lightness","theme_name":"UI Lightness","center_form":"","form_width":"100%","form_align":"left","direction":"ltr","fieldset":"0px","fieldset_color":"000000","fieldset_padding":"0 0 15px 0","fieldset_bg_color":"","title_size":"40px","title_color":"444444","title_margin_top":"10px","title_margin_bottom":"60px","form_desc_size":"14px","form_desc_color":"666666","form_desc_margin_top":"10px","form_desc_margin_bottom":"25px","form_desc_padding":"0","font":"","font_size":"15px","label_color":"3f4b5b","weight":"normal","position":"none","align":"left","width":"150px","required_color":"B94A48","required_weight":"bold","label_padding":"0 0 3px 0","description_font_size":"12px","description_color":"666666","description_weight":"normal","description_style":"normal","description_align":"left","description_margin":"0","field_font_size":"14px","field_height":"32px","line_height":"normal","field_width":"100%","auto_width":"","field_pad":"6px 10px","field_margin":"20px","field_weight":"normal","text_color":"555555","border_color":"BFC3C8","field_border_width":"1px","field_border_style":"solid","bg_color":"ffffff","remove_box_shadow":"","bg_color_active":"ffffff","border_color_active":"66afe9","remove_box_shadow_active":"","text_color_error":"444444","bg_color_error":"ffffff","border_color_error":"B94A48","border_width_error":"1px","border_style_error":"solid","bg_color_disabled":"ffffff","border_color_disabled":"E5E5E5","text_color_disabled":"A1A1A1","radio_align":"block","check_align":"block","check_font_size":"13px","check_label_color":"444444","check_weight":"normal","section_font_size":"18px","section_color":"444444","section_weight":"bold","section_pad":"15px 0 3px 0","section_mar_top":"15px","section_mar_bottom":"30px","section_bg_color":"","section_border_color":"e8e8e8","section_border_width":"2px","section_border_style":"solid","section_border_loc":"-top","collapse_icon":"6","collapse_pos":"after","repeat_icon":"1","repeat_icon_color":"ffffff","submit_style":"","submit_font_size":"15px","submit_width":"auto","submit_height":"auto","submit_bg_color":"579AF6","submit_border_color":"579AF6","submit_border_width":"1px","submit_text_color":"ffffff","submit_weight":"normal","submit_border_radius":"4px","submit_bg_img":"","submit_margin":"10px","submit_padding":"10px 20px","submit_shadow_color":"eeeeee","submit_hover_bg_color":"efefef","submit_hover_color":"444444","submit_hover_border_color":"cccccc","submit_active_bg_color":"efefef","submit_active_color":"444444","submit_active_border_color":"cccccc","border_radius":"4px","error_bg":"F2DEDE","error_border":"EBCCD1","error_text":"B94A48","error_font_size":"14px","success_bg_color":"DFF0D8","success_border_color":"D6E9C6","success_text_color":"468847","success_font_size":"14px","important_style":"","progress_bg_color":"eaeaea","progress_active_color":"ffffff","progress_active_bg_color":"579AF6","progress_color":"3f4b5b","progress_border_color":"E5E5E5","progress_border_size":"2px","progress_size":"24px","custom_css":"","toggle_font_size":"15px","toggle_on_color":"579AF6","toggle_off_color":"eaeaea","slider_font_size":"24px","slider_color":"579AF6","slider_bar_color":"579AF6","date_head_bg_color":"579AF6","date_head_color":"ffffff","date_band_color":"#2568c4","bg_image_id":"","bg_image_opacity":"100%"}]]></content>
+		<excerpt><![CDATA[]]></excerpt>
+		<post_id>6250</post_id>
+		<post_date>2023-09-19 02:06:42</post_date>
+		<post_date_gmt>2023-09-19 09:06:42</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>formidable-style-2</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>1</menu_order>
+		<post_type>frm_styles</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Email Notification</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"email_to":"office@portlandbuyersteam.com","cc":"","bcc":"","from":"[sitename] <contact@portlandhomesforsale.com>","reply_to":"[3]","email_subject":"Contact Request from [sitename]","email_message":"[default-message]","inc_user_info":"1","email_attachment_id":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[email]]></excerpt>
+		<post_id>369</post_id>
+		<post_date>2015-04-06 17:18:12</post_date>
+		<post_date_gmt>2015-04-07 00:18:12</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>1_email_369</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>1</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[1_email_1]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Admin Email Notification</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"email_to":"office@portlandbuyersteam.com","cc":"","bcc":"","from":"[sitename] <contact@portlandhomesforsale.com>","reply_to":"","email_subject":"[[sitename]] New User Registration","email_message":"[default-message]","email_attachment_id":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[email]]></excerpt>
+		<post_id>383</post_id>
+		<post_date>2017-06-22 22:32:21</post_date>
+		<post_date_gmt>2017-06-23 05:32:21</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>2_email_383</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[62_email_2]]></meta_value>
+		</postmeta>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[62_email_142]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>User Email Notification</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"email_to":"[7]","cc":"","bcc":"","from":"[sitename] <[admin_email]>","reply_to":"","email_subject":"Successful Registration","email_message":"You have been successfully registered on [sitename]. Your username is [6].","email_attachment_id":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[email]]></excerpt>
+		<post_id>384</post_id>
+		<post_date>2017-06-22 22:32:21</post_date>
+		<post_date_gmt>0000-00-00 00:00:00</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>2_email_384</post_name>
+		<status>draft</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[62_email_4]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Register User</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"reg_email":"7","reg_username":"","reg_password":"12","reg_first_name":"12","reg_last_name":"13","reg_display_name":"12","reg_user_url":"","reg_role":"subscriber","reg_avatar":"","reg_usermeta":[{"meta_name":"phone","field_id":"11"},{"meta_name":"goal","field_id":"39"},{"meta_name":"_sms_consent","field_id":"97"}],"reg_redirect":"","reg_create_role":["administrator"],"conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[register]]></excerpt>
+		<post_id>385</post_id>
+		<post_date>2017-06-22 22:32:21</post_date>
+		<post_date_gmt>2017-06-23 05:32:21</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>2_register_385</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[62_register_1]]></meta_value>
+		</postmeta>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[62_register_144]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Register User</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"reg_email":"33","reg_username":"","reg_password":"32","reg_first_name":"30","reg_last_name":"31","reg_display_name":"display_firstlast","reg_user_url":"","reg_role":"subscriber","reg_avatar":"","reg_usermeta":[{"meta_name":"phone","field_id":"38"}],"reg_redirect":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[register]]></excerpt>
+		<post_id>403</post_id>
+		<post_date>2016-03-22 22:35:10</post_date>
+		<post_date_gmt>2016-03-23 05:35:10</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>5_register_403</post_name>
+		<status>draft</status>
+		<post_parent>0</post_parent>
+		<menu_order>5</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[12_register_135]]></meta_value>
+		</postmeta>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[722_register_28457]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Email</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"email_to":"office@portlandbuyersteam.com","cc":"","bcc":"","from":"[sitename] <contact@portlandhomesforsale.com>","reply_to":"[46]","email_subject":"Schedule a Tour request from [sitename]","email_message":"[default-message]","inc_user_info":"1","email_attachment_id":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[email]]></excerpt>
+		<post_id>428</post_id>
+		<post_date>2020-10-29 09:15:43</post_date>
+		<post_date_gmt>2020-10-29 16:15:43</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>6_email_428</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>6</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[6_email_]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Email</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"email_to":"office@portlandbuyersteam.com","cc":"","bcc":"","from":"[sitename] <contact@portlandhomesforsale.com>","reply_to":"","email_subject":"","email_message":"[default-message]","email_attachment_id":"","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[email]]></excerpt>
+		<post_id>753</post_id>
+		<post_date>2019-11-27 21:01:42</post_date>
+		<post_date_gmt>2019-11-28 05:01:42</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>8_email_753</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>8</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[169_email_101-2]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Twilio SMS</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"to":"503-773-0000","from":"+15034003757","custom":"","message":"A new contact form has been submitted on {{SHORTURL}} by [1]\r\nPhone: [53]\r\nEmail: [3]\r\nMessage: [5]","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[twilio]]></excerpt>
+		<post_id>1393</post_id>
+		<post_date>2021-05-21 06:55:22</post_date>
+		<post_date_gmt>2021-05-21 13:55:22</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>1_twilio_1393</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>1</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[1_twilio_470]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Twilio SMS</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"to":"+15037730000","from":"+15034003757","custom":"","message":"A new tour request has been scheduled on {{SHORTURL}} by [44]\r\nEmail: [46]\r\nPhone: [47]\r\nTime of Day: [42]\r\nTour: [43]\r\nProperty: [48]","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[twilio]]></excerpt>
+		<post_id>1394</post_id>
+		<post_date>2021-05-21 07:03:52</post_date>
+		<post_date_gmt>2021-05-21 14:03:52</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>6_twilio_1394</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>6</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[6_twilio_529]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Twilio SMS</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"to":"+15037730000","from":"+15034003757","custom":"","message":"A new user has registered on {{SHORTURL}} - [12] [13]\r\nEmail: [7]\r\nPhone: [11]\r\nGoal: [39]","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[twilio]]></excerpt>
+		<post_id>1395</post_id>
+		<post_date>2021-05-21 07:05:21</post_date>
+		<post_date_gmt>2021-05-21 14:05:21</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>2_twilio_1395</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[2_twilio_485]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Send Twilio SMS</title>
+		<link></link>
+		<post_author><![CDATA[stephenfitzcellphone@gmail.com]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"to":"+15037730000","from":"+15034003757","custom":"","message":"A new mortgage calculator form has been submitted on {{SHORTURL}} by [85]\r\nPhone: [86]\r\nEmail: [87]","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[twilio]]></excerpt>
+		<post_id>1396</post_id>
+		<post_date>2021-05-21 07:07:52</post_date>
+		<post_date_gmt>2021-05-21 14:07:52</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>8_twilio_1396</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>8</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[8_twilio_854]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Add to MailChimp</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"list_id":"8ccf41a6a4","address_action":"subscribe","fields":{"EMAIL":"3","FNAME":"","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","FRM_TAGS":""},"optin":"0","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[mailchimp]]></excerpt>
+		<post_id>5921</post_id>
+		<post_date>2022-09-09 13:37:45</post_date>
+		<post_date_gmt>2022-09-09 20:37:45</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>1_mailchimp_1494</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>1</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Add to MailChimp</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"list_id":"8ccf41a6a4","address_action":"subscribe","fields":{"EMAIL":"","FNAME":"","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","FRM_TAGS":""},"optin":"0","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[mailchimp]]></excerpt>
+		<post_id>5922</post_id>
+		<post_date>2022-09-09 13:38:17</post_date>
+		<post_date_gmt>2022-09-09 20:38:17</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>6_mailchimp_1495</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>6</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Add to MailChimp</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"list_id":"8ccf41a6a4","address_action":"subscribe","fields":{"EMAIL":"87","FNAME":"","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","FRM_TAGS":""},"optin":"0","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[mailchimp]]></excerpt>
+		<post_id>5923</post_id>
+		<post_date>2022-09-09 13:39:22</post_date>
+		<post_date_gmt>2022-09-09 20:39:22</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>8_mailchimp_5923</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>8</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+		<postmeta>
+			<meta_key>_wp_old_slug</meta_key>
+			<meta_value><![CDATA[8_mailchimp_1497]]></meta_value>
+		</postmeta>
+	</view>
+	<view>
+		<title>Add to MailChimp</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"list_id":"8ccf41a6a4","address_action":"subscribe","fields":{"EMAIL":"7","FNAME":"","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","FRM_TAGS":""},"optin":"0","conditions":{"send_stop":"send","any_all":"any"}}]]></content>
+		<excerpt><![CDATA[mailchimp]]></excerpt>
+		<post_id>5924</post_id>
+		<post_date>2022-09-09 13:40:02</post_date>
+		<post_date_gmt>2022-09-09 20:40:02</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>2_mailchimp_485</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"Your account has successfully been registered, you will receive a confirmation email shortly.","show_form":"1"}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6235</post_id>
+		<post_date>2023-08-25 09:44:26</post_date>
+		<post_date_gmt>2023-08-25 16:44:26</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>2</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"Thank you! We'll respond to your message as soon as possible.","show_form":""}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6245</post_id>
+		<post_date>2023-08-28 11:33:46</post_date>
+		<post_date_gmt>2023-08-28 18:33:46</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation-2</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>1</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"Thanks! Your preferences have been saved.","show_form":"1"}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6246</post_id>
+		<post_date>2023-08-28 11:52:05</post_date>
+		<post_date_gmt>2023-08-28 18:52:05</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation-3</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>9</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"Thanks! We'll follow up shortly to confirm your appointment.","show_form":"1"}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6247</post_id>
+		<post_date>2023-08-28 11:52:10</post_date>
+		<post_date_gmt>2023-08-28 18:52:10</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation-4</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>6</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"Your request was successfully submitted. Thank you!","show_form":""}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6248</post_id>
+		<post_date>2023-08-28 11:52:28</post_date>
+		<post_date_gmt>2023-08-28 18:52:28</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation-5</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>8</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+	<view>
+		<title>Confirmation</title>
+		<link></link>
+		<post_author><![CDATA[stephen]]></post_author>
+		<description></description>
+		<content><![CDATA[{"event":["create"],"success_action":"message","success_msg":"You've been successfully logged in!","show_form":"1"}]]></content>
+		<excerpt><![CDATA[on_submit]]></excerpt>
+		<post_id>6280</post_id>
+		<post_date>2024-07-05 04:57:19</post_date>
+		<post_date_gmt>2024-07-05 11:57:19</post_date_gmt>
+		<comment_status>closed</comment_status>
+		<ping_status>closed</ping_status>
+		<post_name>confirmation-6</post_name>
+		<status>publish</status>
+		<post_parent>0</post_parent>
+		<menu_order>4</menu_order>
+		<post_type>frm_form_actions</post_type>
+		<post_password><![CDATA[]]></post_password>
+		<is_sticky>0</is_sticky>
+	</view>
+</channel>

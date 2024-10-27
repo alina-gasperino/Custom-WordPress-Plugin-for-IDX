@@ -85,6 +85,9 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
+
+
+
 global $wpdb;
 $wpdb->query( '
 		CREATE TABLE IF NOT EXISTS `wp_vflog` (
@@ -172,6 +175,7 @@ function my_idx_settings_init() {
 	add_settings_field('header_logo', 'Header Logo', 'header_logo_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('company_logo', 'Company Logo', 'company_logo_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('footer_text', 'Footer Text', 'footer_text_cb', 'my_idx_general', 'my_idx_general_section');
+    add_settings_field('form_install', 'Install Forms', 'form_install_cb', 'my_idx_general', 'my_idx_general_section');
     add_settings_field('label', '', 'label_cb', 'my_idx_general', 'my_idx_general_section');
 	add_settings_field('twilio_phone', 'Twilio Phone Number', 'twilio_phone_cb', 'my_idx_general', 'my_idx_general_section');
     add_settings_field('aws_bucket', 'AWS Bucket Name', 'aws_bucket_cb', 'my_idx_general', 'my_idx_general_section');
@@ -348,6 +352,82 @@ function footer_text_cb() {
 	?>
 	<textarea id="footer_text" name="my_idx_options_general[footer_text]" rows="5" cols="50"style="width: 100%;"><?php echo esc_textarea($textarea_value); ?></textarea>
 	<?php
+}
+function formidable_process_xml_upload() {
+    // Check if the uploaded file is valid.
+    if (empty($_FILES['formidable_xml_file']['tmp_name'])) {
+        echo '<div class="error"><p>No file uploaded.</p></div>';
+        return;
+    }
+
+    $file = $_FILES['formidable_xml_file'];
+
+    // Check if Formidable is active and its classes are loaded.
+    if (!class_exists('FrmXMLHelper')) {
+        echo '<div class="error"><p>Formidable Forms plugin is not active.</p></div>';
+        return;
+    }
+
+    // Ensure the file is an XML file.
+    $file_type = wp_check_filetype($file['name']);
+    if ($file_type['ext'] !== 'xml') {
+        echo '<div class="error"><p>Only XML files are allowed.</p></div>';
+        return;
+    }
+
+    // Read the XML file content.
+    $xml_content = file_get_contents($file['tmp_name']);
+    if (!$xml_content) {
+        echo '<div class="error"><p>Unable to read the XML file.</p></div>';
+        return;
+    }
+
+    // Load XML and use Formidable's import function.
+    $xml = simplexml_load_string($xml_content);
+    if (!$xml) {
+        echo '<div class="error"><p>Invalid XML format.</p></div>';
+        return;
+    }
+
+    // Import the XML file content into Formidable.
+    if (class_exists('FrmXMLHelper')) {
+        $result = FrmXMLHelper::import_xml($xml);
+        if (is_wp_error($result)) {
+            echo '<div class="error"><p>Error importing XML: ' . $result->get_error_message() . '</p></div>';
+        } else {
+            echo '<div class="updated"><p>Formidable form imported successfully.</p></div>';
+        }
+    }
+}
+function form_install_cb() {
+    $plugin_slug = 'formidable';
+    require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+    require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+
+    $plugin_status = install_plugin_install_status(array('slug' => $plugin_slug));
+
+    if ($plugin_status['status'] == 'install') {
+        echo '<a href="' . esc_url(wp_nonce_url(
+            self_admin_url('update.php?action=install-plugin&plugin=' . $plugin_slug),
+            'install-plugin_' . $plugin_slug
+        )) . '" class="button button-primary">Install Formidable Forms</a>';
+    } elseif ($plugin_status['status'] == 'update_available') {
+        echo '<a href="' . esc_url(wp_nonce_url(
+            self_admin_url('update.php?action=upgrade-plugin&plugin=' . $plugin_slug),
+            'upgrade-plugin_' . $plugin_slug
+        )) . '" class="button button-secondary">Update Formidable Forms</a>';
+    } else {
+        echo '<p>Formidable Forms is already installed and up to date. Upload Formidable XML File.</p>';
+        if (isset($_POST['submit']) && isset($_FILES['formidable_xml_file'])) {
+            formidable_process_xml_upload();
+        }
+        echo '
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="formidable_xml_file" accept=".xml" required>
+            <br><br>
+            <input type="submit" name="submit" value="Upload and Import" class="button button-primary">
+        </form>';
+    }
 }
 function label_cb() {
     echo '<tr class="info_wrapper"><td colspan="2"><h4>Third-Party Integration (Optional)</h4><hr /></td></tr>';
