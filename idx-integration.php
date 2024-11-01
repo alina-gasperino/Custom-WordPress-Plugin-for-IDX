@@ -85,9 +85,6 @@ function run_idx_integration() {
 }
 run_idx_integration();
 
-
-
-
 global $wpdb;
 $wpdb->query( '
 		CREATE TABLE IF NOT EXISTS `wp_vflog` (
@@ -955,6 +952,7 @@ add_action('admin_enqueue_scripts', 'idx_styles');
 
 function custom_styles() {
 	wp_enqueue_style('front', plugin_dir_url( __FILE__ ) . 'css/front.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('property', plugin_dir_url( __FILE__ ) . 'css/property.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style('lightgallery', plugin_dir_url( __FILE__ ) . 'dist/vendor/lightgallery-2.2.1/css/lightgallery-bundle.css', array(), '2.2.1');
 }
 add_action('wp_enqueue_scripts', 'custom_styles');

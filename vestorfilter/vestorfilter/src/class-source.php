@@ -465,13 +465,12 @@ class Source {
 		$source_user = $this->meta[ '_datasource_username' ][0];
 		$source_pass = $this->meta[ '_datasource_password' ][0];
 		$source_ua   = $this->meta[ '_datasource_useragent_postfix' ][0];
+		echo $source_url;
+		echo "user". $source_user;
+		echo "pass". $source_pass;
+		echo "ua". $source_ua;
 
 		$this->classes = $this->meta[ '_datasource_classes' ] ?? null;
-		//if ( ! empty( $classes ) ) {
-		//	$this->classes = explode( ',', $classes[0] );
-		//	var_dump( $this->classes );
-		//}
-
 
 		$config = new \PHRETS\Configuration;
 		$config->setLoginUrl( $source_url )
